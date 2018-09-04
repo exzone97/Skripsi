@@ -1,0 +1,130 @@
+\documentclass[a4paper,twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage[cm]{fullpage}
+\pagestyle{myheadings}
+\usepackage{etoolbox}
+\usepackage{setspace} 
+\usepackage{lipsum} 
+\setlength{\headsep}{30pt}
+\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
+% \pagestyle{empty}
+
+\makeatletter
+\renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
+\renewcommand{\thispagestyle}[1]{}
+\markright{\textbf{\textsc{AIF401/AIF402 \textemdash Rencana Kerja Skripsi \textemdash Sem. Genap 2018/2019}}}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\baselinestretch}{1}
+\setlength{\parindent}{0 pt}
+\setlength{\parskip}{6 pt}
+
+\onehalfspacing
+ 
+\begin{document}
+
+\title{\@judultopik}
+\author{\nama \textendash \@npm} 
+
+%tulis nama dan NPM anda di sini:
+\newcommand{\nama}{Jonathan Alva}
+\newcommand{\@npm}{2015730047}
+\newcommand{\@judultopik}{Pengembangan Aplikasi Transfer Data di WSN} % Judul/topik anda
+\newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
+\newcommand{\tanggal}{05/09/2018}
+
+% Dokumen hasil template ini harus dicetak bolak-balik !!!!
+
+\maketitle
+
+\pagenumbering{arabic}
+
+\section{Deskripsi}
+{\it Wireless Sensor Network} (Jaringan Sensor Nirkabel) adalah suatu jaringan nirkabel yang terdiri dari kumpulan sensor ({\it node}) dengan kemampuan deteksi({\it sensing}), komputasi, dan komunikasi yang tersebar pada suatu tempat. Setiap sensor akan mengumpulkan data dari area yang dideteksi seperti temperatur, suara, getaran, tekanan, gerakan, kelembaban udara dan deteksi lainnya tergantung kemampuan sensor tersebut. {\it Wireless Sensor Network} dapat diimplementasikan pada berbagai bidang kehidupan manusia diantaranya bidang militer untuk deteksi musuh, bidang pertanian untuk pemantauan pertumbuhan tanaman, bidang kesehatan, deteksi bahaya dan bencana alam, bidang pembangunan dan tata kota, dan bidang pendidikan.  
+
+Terdapat dua macam topologi {\it Wireless Sensor Network}, yaitu kluster dan flat. Pada topologi kluster {\it node-node} akan disusun secara hierarki dan {\it node-node} tersebut akan memiliki peran sebagai {\it cluster head, child node, dan parent node}. {\it Cluster head} berfungsi sebagai pengatur beberapa {\it child node}. Sedangkan pada topologi flat hanya terdapat dua macam {\it node} secara fungsional, yaitu {\it source node} dan {\it sink node}. Semua sensor akan mengirim data ke satu tujuan akhir yaitu {\it sink node}. 
+
+Dalam praktiknya pengiriman data merupakan suatu hal yang penting pada {\it Wireless Sensor Network}. Data yang didapat dari sensor harus dapat sampai ke {\it base station} dengan utuh dan akurat ({\it reliable}). Data yang {\it reliable} ini sangat penting karena kesimpulan atau tindakan selanjutnya yang akan diambil akan bergantung pada data-data tersebut. Terdapat beberapa cara untuk memastikan data {\it reliable} yaitu dengan {\it Link-Layer Retransmission}, {\it End-to-End Retransmission}, dan {\it Erasure Code}.
+
+(nama sensor) merupakan salah satu tipe {\it wireless sensor} yang umum digunakan. (nama sensor) memiliki (jumlah sensor) buah kemampuan sensor di dalamnya. Sensor tersebut adalah sensor x,y,z. Kita dapat menggunakan semua sensor atau hanya beberapa sensor, hal ini disesuaikan dengan kebutuhan kita. Pada skripsi ini, beberapa (nama sensor) akan digunakan untuk membuat {\it Wireless Sensor Network} yang akan mendeteksi (salah satu kemampuan sensor) dengan topologi (one hop/ multihop). {\it Wireless Sensor Network} yang dibuat juga akan dapat melakukan transfer data ke sensor lain yang berperan sebagai {\it base station}.  Karena untuk menentukan tindakan selanjutnya diperlukan data yang {\it reliable}, maka akan dibuat juga {\it Wireless Sensor Network} yang memiliki sifat {\it reliable} tersebut. 
+
+\section{Rumusan Masalah}
+\begin{itemize}
+	\item Bagaimana cara membuat protokol pengiriman data dari setiap {\it wireless sensor} yang reliable pada {\it Wireless Sensor Network} ?
+	\item Bagaimana cara menampilkan data-data yang didapat dari setiap {\it wireless sensor} ?
+\end{itemize}
+
+\section{Tujuan}
+\begin{itemize}
+	\item Mengetahui cara membuat protokol pengiriman data dari setiap {\it wireless sensor} yang reliable pada {\it Wireless Sensor Network}.
+	\item Mengetahui cara menampilkan data-data yang didapat dari setiap {\it wireless sensor}.
+\end{itemize}
+
+\section{Deskripsi Perangkat Lunak}
+Pada skripsi ini akan dibuat dua perangkat lunak. Perangkat lunak pertama adalah aplikasi transfer data pada {\it Wireless Sensor Network}. Perangkat lunak kedua memiliki tujuan untuk analisis data hasil transfer data dari {\it wireless sensor}. Perangkat lunak pertama memiliki fitur minimal sebagai berikut:
+\begin{itemize}
+	\item Pengguna dapat melakukan deteksi ... dengan {\it wireless sensor}.		
+\end{itemize}
+
+Perangkat kedua akan memiliki fitur minimal sebagai berikut:
+\begin{itemize}
+	\item Merekam data dari setiap {\it wireless sensor} untuk hasil deteksi ... yang berbentuk x/....
+\end{itemize}
+
+\section{Detail Pengerjaan Skripsi}
+Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
+	\begin{enumerate}
+		\item Mempelajari 
+		\item 
+		\item 
+		\item 
+		\item 
+		\item 
+		\item Mengimplementasi 
+		\item Melakukan pengujian fitur-fitur yang sudah dibuat.
+		\item Menulis dokumen skripsi.
+	\end{enumerate}
+
+\section{Rencana Kerja}
+Rincian capaian yang direncanakan di Skripsi 1 adalah sebagai berikut:
+\begin{enumerate}
+\item 
+\item 
+\item 
+\end{enumerate}
+
+Sedangkan yang akan diselesaikan di Skripsi 2 adalah sebagai berikut:
+\begin{enumerate}
+\item 
+\item 
+\item 
+\end{enumerate}
+
+\vspace{1cm}
+\centering Bandung, \tanggal\\
+\vspace{2cm} \nama \\ 
+\vspace{1cm}
+
+Menyetujui, \\
+\ifdefstring{\jumpemb}{2}{
+\vspace{1.5cm}
+\begin{centering} Menyetujui,\\ \end{centering} \vspace{0.75cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013 \\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Utama
+\end{minipage} \hspace{0.5cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Pendamping
+\end{minipage}
+\vspace{0.5cm}
+}{
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Tunggal
+}
+\end{document}
+
