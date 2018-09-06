@@ -46,64 +46,63 @@
 \section{Deskripsi}
 {\it Wireless Sensor Network} (Jaringan Sensor Nirkabel) adalah suatu jaringan nirkabel yang terdiri dari kumpulan sensor ({\it node}) dengan kemampuan deteksi({\it sensing}), komputasi, dan komunikasi yang tersebar pada suatu tempat. Setiap sensor akan mengumpulkan data dari area yang dideteksi seperti temperatur, suara, getaran, tekanan, gerakan, kelembaban udara dan deteksi lainnya tergantung kemampuan sensor tersebut. {\it Wireless Sensor Network} dapat diimplementasikan pada berbagai bidang kehidupan manusia diantaranya bidang militer untuk deteksi musuh, bidang pertanian untuk pemantauan pertumbuhan tanaman, bidang kesehatan, deteksi bahaya dan bencana alam, bidang pembangunan dan tata kota, dan bidang pendidikan.  
 
-Terdapat dua macam topologi {\it Wireless Sensor Network}, yaitu kluster dan flat. Pada topologi kluster {\it node-node} akan disusun secara hierarki dan {\it node-node} tersebut akan memiliki peran sebagai {\it cluster head, child node, dan parent node}. {\it Cluster head} berfungsi sebagai pengatur beberapa {\it child node}. Sedangkan pada topologi flat hanya terdapat dua macam {\it node} secara fungsional, yaitu {\it source node} dan {\it sink node}. Semua sensor akan mengirim data ke satu tujuan akhir yaitu {\it sink node}. 
+Terdapat dua macam topologi {\it Wireless Sensor Network}, yaitu kluster dan flat. Pada topologi kluster {\it node-node} akan disusun secara hierarki dan {\it node-node} tersebut ada yang memiliki peran sebagai {\it cluster head, child node, dan parent node}. {\it Cluster head} berfungsi sebagai pengatur beberapa {\it child node}. Sedangkan pada topologi flat hanya terdapat dua macam {\it node} secara fungsional, yaitu {\it source node} dan {\it sink node}. Semua sensor akan mengirim data ke satu tujuan akhir yaitu {\it sink node}. 
 
 Dalam praktiknya pengiriman data merupakan suatu hal yang penting pada {\it Wireless Sensor Network}. Data yang didapat dari sensor harus dapat sampai ke {\it base station} dengan utuh dan akurat ({\it reliable}). Data yang {\it reliable} ini sangat penting karena kesimpulan atau tindakan selanjutnya yang akan diambil akan bergantung pada data-data tersebut. Terdapat beberapa cara untuk memastikan data {\it reliable} yaitu dengan {\it Link-Layer Retransmission}, {\it End-to-End Retransmission}, dan {\it Erasure Code}.
 
-(nama sensor) merupakan salah satu tipe {\it wireless sensor} yang umum digunakan. (nama sensor) memiliki (jumlah sensor) buah kemampuan sensor di dalamnya. Sensor tersebut adalah sensor x,y,z. Kita dapat menggunakan semua sensor atau hanya beberapa sensor, hal ini disesuaikan dengan kebutuhan kita. Pada skripsi ini, beberapa (nama sensor) akan digunakan untuk membuat {\it Wireless Sensor Network} yang akan mendeteksi (salah satu kemampuan sensor) dengan topologi (one hop/ multihop). {\it Wireless Sensor Network} yang dibuat juga akan dapat melakukan transfer data ke sensor lain yang berperan sebagai {\it base station}.  Karena untuk menentukan tindakan selanjutnya diperlukan data yang {\it reliable}, maka akan dibuat juga {\it Wireless Sensor Network} yang memiliki sifat {\it reliable} tersebut. 
+Pada skripsi ini akan dibangun aplikasi untuk transfer data pada {\it Wireless Sensor Network}. {\it Wireless Sensor Network} yang dibuat juga dapat melakukan transfer data ke sensor lain yang berperan sebagai {\it base station}. Karena sensor memiliki kapasitas penyimpanan yang kecil dan data yang {\it reliable} sangat dibutuhkan untuk menentukan tindakan selanjutnya, maka akan dibangun juga {\it Wireless Sensor Network} yang memiliki sifat {\it reliable} tersebut. 
 
 \section{Rumusan Masalah}
 \begin{itemize}
-	\item Bagaimana cara membuat protokol pengiriman data dari setiap {\it wireless sensor} yang reliable pada {\it Wireless Sensor Network} ?
-	\item Bagaimana cara menampilkan data-data yang didapat dari setiap {\it wireless sensor} ?
+	\item Bagaimana cara membangun aplikasi transfer data dari setiap {\it wireless sensor node} pada {\it Wireless Sensor Network} ?
+	\item Bagaimana cara membangun aplikasi transfer data yang {\it reliable} pada {\it Wireless Sensor Network} ?
 \end{itemize}
 
 \section{Tujuan}
 \begin{itemize}
-	\item Mengetahui cara membuat protokol pengiriman data dari setiap {\it wireless sensor} yang reliable pada {\it Wireless Sensor Network}.
-	\item Mengetahui cara menampilkan data-data yang didapat dari setiap {\it wireless sensor}.
+	\item Membangun aplikasi transfer data yang {\it reliable} pada {\it Wireless Sensor Network}.
 \end{itemize}
 
 \section{Deskripsi Perangkat Lunak}
-Pada skripsi ini akan dibuat dua perangkat lunak. Perangkat lunak pertama adalah aplikasi transfer data pada {\it Wireless Sensor Network}. Perangkat lunak kedua memiliki tujuan untuk analisis data hasil transfer data dari {\it wireless sensor}. Perangkat lunak pertama memiliki fitur minimal sebagai berikut:
+Pada skripsi ini perangkat lunak ini memiliki fitur minimal sebagai berikut:
 \begin{itemize}
-	\item Pengguna dapat melakukan deteksi ... dengan {\it wireless sensor}.		
-\end{itemize}
-
-Perangkat kedua akan memiliki fitur minimal sebagai berikut:
-\begin{itemize}
-	\item Merekam data dari setiap {\it wireless sensor} untuk hasil deteksi ... yang berbentuk x/....
+	\item Setiap {\it wireless sensor node} dapat melakukan deteksi({\it sensing}) pada suatu tempat.
+	\item Setiap {\it wireless sensor node} dapat melakukan transfer data ke {\it base station} dengan sifat yang {\it reliable}.
+	\item Menampilkan data-data yang didapat dari setiap {\it sensor node}. 
 \end{itemize}
 
 \section{Detail Pengerjaan Skripsi}
 Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
 	\begin{enumerate}
-		\item Mempelajari 
-		\item 
-		\item 
-		\item 
-		\item 
-		\item 
-		\item Mengimplementasi 
+		\item Mempelajari permasalahan dari topik skripsi ini.
+		\item Melakukan studi literatur mengenai {\it Wireless Sensor Network}.
+		\item Mempelajari protokol transfer data yang biasa pada {\it Wireless Sensor Network}.
+		\item Mempelajari library {\it Wireless Sensor Network} pada pemrograman Java.
+		\item Melakukan perancangan perangkat lunak.
+		\item Mengimplementasi rancangan perangkat lunak.
 		\item Melakukan pengujian fitur-fitur yang sudah dibuat.
-		\item Menulis dokumen skripsi.
+		\item Menulis dokumen skripsi 1 dan 2.
 	\end{enumerate}
 
 \section{Rencana Kerja}
 Rincian capaian yang direncanakan di Skripsi 1 adalah sebagai berikut:
 \begin{enumerate}
-\item 
-\item 
-\item 
+\item Mempelajari permasalahan dari topik skripsi ini.
+\item Melakukan studi literartur mengenai {\it Wireless Sensor Network}.
+\item Mempelajari protokol transfer data yang biasa pada {\it Wireless Sensor Network}.
+\item Mempelajari library {\it Wireless Sensor Network} pada pemrograman Java.
+\item Menulis dokumen skripsi 1.
 \end{enumerate}
 
 Sedangkan yang akan diselesaikan di Skripsi 2 adalah sebagai berikut:
 \begin{enumerate}
-\item Mengimplementasi..
+\item Melakukan perancangan perangkat lunak.
+\item Mengimplementasikan keseluruhan teknik yang dirancang.
 \item Melakukan pengujian fitur-fitur yang sudah dibuat.
-\item Menulis dokumen skripsi.
+\item Menulis dokumen skripsi 2.
 \end{enumerate}
 
+\newpage
 \vspace{1cm}
 \centering Bandung, \tanggal\\
 \vspace{2cm} \nama \\ 
