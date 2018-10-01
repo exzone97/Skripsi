@@ -1,0 +1,63 @@
+%versi 2 (8-10-2016) 
+\chapter{Pendahuluan}
+\label{chap:intro}
+   
+\section{Latar Belakang}
+\label{sec:label}
+
+\textit{Wireless Sensor Network} (WSN) adalah suatu jaringan nirkabel yang terdiri dari kumpulan \textit{sensor node} dengan kemampuan deteksi (\textit{sensing}), komputasi, dan komunikasi yang tersebar pada suatu tempat. Setiap sensor akan mengumpulkan data dari area yang dideteksi seperti temperatur, suara, getaran, tekanan, gerakan, kelembaban udara dan deteksi lainnya tergantung kemampuan sensor tersebut. Data yang diterima ini kemudian akan diteruskan ke \textit{base station} untuk diolah sehingga memberikan suatu informasi. \textit{Wireless Sensor Network} dapat diimplementasikan pada berbagai bidang kehidupan manusia diantaranya bidang militer untuk deteksi musuh, bidang pertanian untuk pemantauan pertumbuhan tanaman, bidang kesehatan, deteksi bahaya dan bencana alam, bidang pembangunan dan tata kota, dan bidang pendidikan.
+
+Terdapat dua macam arsitektur \textit{Wireless Sensor Network}, yaitu kluster dan flat. Pada arsitektur kluster, \textit{node-node} akan disusun secara hierarki dan memiliki peran sebagai \textit{cluster head}, \textit{child node}, atau \textit{parent node}. \textit{Cluster head} berfungsi sebagai pengatur beberapa \textit{child node}. Sedangkan pada arsitektur flat hanya terdapat dua macam \textit{node} secara fungsional, yaitu \textit{source node} dan \textit{sink node}. Semua \textit{sensor node} (\textit{source node}) akan mengirim data ke satu tujuan akhir yaitu \textit{sink node}.
+
+Dalam praktiknya pengiriman data merupakan suatu hal yang penting pada \textit{Wireless Sensor Network}. Data yang didapat dari sensor harus dapat sampai ke \textit{base station} dengan utuh dan akurat (\textit{reliable}). Data yang \textit{reliable} ini sangat penting karena hasil pengukuran dan tindakan selanjutnya yang akan diambil akan bergantung pada data-data tersebut. Terdapat beberapa cara untuk memastikan transfer data \textit{reliable} yaitu dengan \textit{Link-Layer Retransmission}, \textit{End-to-End Retransmission}, dan \textit{Erasure Code}.
+
+Pada skripsi ini dibangun aplikasi untuk transfer data pada \textit{Wireless Sensor Network}. \textit{Wireless Sensor Network} yang dibuat juga dapat melakukan transfer data ke \textit{sensor node} tetangganya hingga sampai ke \textit{sensor node} yang berperan sebagai \textit{base station}. Karena \textit{sensor node} memiliki kapasitas penyimpanan yang kecil dan data yang \textit{reliable} sangat dibutuhkan untuk menentukan tindakan selanjutnya, maka akan dibangun juga \textit{Wireless Sensor Network} yang memiliki sifat \textit{reliable} tersebut.
+
+
+\section{Rumusan Masalah}
+\label{sec:rumusan}
+\begin{itemize}
+	\item Bagaimana cara membangun aplikasi transfer data dari setiap \textit{wireless sensor node} pada \textit{Wireless Sensor Network}?
+	\item Bagaimana cara membangun aplikasi transfer data yang \textit{reliable} pada \textit{Wireless Sensor Network}?
+\end{itemize}
+
+\section{Tujuan}
+\label{sec:tujuan}
+\begin{itemize}
+ \item Membangun aplikasi transfer data yang \textit{reliable} pada \textit{Wireless Sensor Network}.
+\end{itemize}
+
+\section{Batasan Masalah}
+\label{sec:batasan}
+Penelitian ini dibuat berdasarkan batasan-batasan sebagai berikut:
+\begin{enumerate}
+	\item Sensor yang digunakan sebagai penelitian hanya sensor untuk mengukur temperatur, kelembapan, getaran, dan tekanan udara.
+	\item Arsitektur yang digunakan untuk membangun \textit{Wireless Sensor Network} ini adalah flat dan kluster.
+\end{enumerate}
+
+\section{Metodologi}
+\label{sec:metlit}
+Berikut adalah metode penelitian yang digunakan dalam penelitan ini:
+\begin{enumerate}
+	\item Melakukan studi literatur mengenai \textit{Wireless Sensor Network}.
+	\item Mempelajari protokol transfer data yang biasa pada \textit{Wireless Sensor Network}.
+	\item Mempelajari prinsip \textit{Reliable Data Transfer} pada \textit{Wireless Sensor Network}.	
+	\item Mempelajari pemrograman pada \textit{Wireless Sensor Network} dengan Bahasa Pemrograman JAVA.
+	\item Melakukan perancangan perangkat lunak.
+	\item Mengimplementasi rancangan perangkat lunak pada \textit{Wireless Sensor Network}.
+\end{enumerate}
+
+
+\section{Sistematika Pembahasan}
+\label{sec:sispem}
+Setiap bab dalam penelitian ini memiliki sistematika penulisan yang dijelaskan ke dalam poin-poin sebagai berikut:
+
+\begin{enumerate}
+	\item Bab 1: Pendahuluan yaitu membahas mengenai gambaran umum penelitian ini. Berisi tentang latar belakang, rumusan masalah, tujuan, batasan masalah, metode penelitian, dan sistematika penulisan
+	\item Bab 2: Dasar Teori, yaitu membahas teori-teori yang mendukung berjalannya penelitian ini. Berisi tentang \textit{Wireless Sensor Network},
+	\item Bab 3: Analisis,
+	\item Bab 4: Perancangan,
+	\item Bab 5: Implementasi dan Pengujian,
+	\item Bab 6: Kesimpulan,
+\end{enumerate}
+	
