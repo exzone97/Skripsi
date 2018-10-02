@@ -11,13 +11,13 @@ Pada bab ini dijelaskan dasar-dasar teori mengenai \textit{Wireless Sensor Netwo
 Pada awalnya \textit{sensor network} (jaringan sensor) digunakan dalam teknologi militer untuk mendeteksi musuh di laut dan di darat. Semakin lama sensor node ini banyak dikembangkan untuk membantu berbagai bidang kehidupan manusia. Pemanfaatan Wireless Sensor Network pada kehidupan manusia dapat dilihat pada ilustrasi Gambar~\ref{fig:smartworld}. Berikut adalah beberapa penerapan wireless sensor network pada berbagai bidang kehidupan manusia:
 \begin{itemize}
 \item Bidang militer\\
-Wireless Sensor Network digunakan sebagai bagian dari komunikasi pada bidang militer dan deteksi target atau musuh.
+\textit{Wireless Sensor Network} digunakan sebagai bagian dari komunikasi pada bidang militer dan deteksi target atau musuh.
 
 \item Monitoring area\\
-Pada monitoring area, sensor node akan disebar pada suatu tempat yang akan di monitoring. Saat sensor node mendeteksi suatu kejadian(panas, tekanan, dan lain-lain) pada tempat, data akan dikirimkan ke base station untuk ditentukan tindakan selanjutnya.
+Pada \textit{monitoring area}, \textit{sensor node} akan disebar pada suatu tempat yang akan di monitoring. Saat \textit{sensor node} mendeteksi kejadian(panas, tekanan, dan lain-lain) pada suatu tempat, data akan dikirimkan ke \textit{base station} untuk ditentukan tindakan selanjutnya.
 
 \item Transportasi\\
-Pada bidang transportasi wireless sensor network digunakan untuk mendeteksi lalu lintas secara aktual yang nantikan akan disampaikan kepada pengendara tentang kejadian di depan mereka seperti kemacetan lalu lintas. 
+Pada bidang transportasi \textit{Wireless Sensor Network} digunakan untuk mendeteksi lalu lintas secara aktual yang nantinya akan disampaikan kepada pengendara tentang kejadian di depan mereka seperti kemacetan lalu lintas. 
 
 \item Kesehatan\\
 Beberapa aplikasi kesehatan seperti membantu pada disabilitas, monitoring pasien, diagnosis, pengaturan penggunaan obat, dan pelacakan dokter dan pasien di rumah sakit.
@@ -26,10 +26,10 @@ Beberapa aplikasi kesehatan seperti membantu pada disabilitas, monitoring pasien
 Deteksi lingkungan yang dapat dilakuan antara lain deteksi gunung berapi, polusi udara, kebakaran hutan, efek rumah kaca, dan deteksi longsor.
 
 \item Monitoring struktur\\
-Wireless Sensor Network dapat melakukan deteksi pergerakan bangunan dan infrastruktur seperti jembatan, flyover, terowongan dan fasilitas lain tanpa mengeluarkan biaya untuk melakukan dektesi manual dengan mendatangi tempatnya secara langsung.
+\textit{Wireless Sensor Network} dapat melakukan deteksi pergerakan bangunan dan infrastruktur seperti jembatan, \textit{flyover}, terowongan dan fasilitas lain tanpa mengeluarkan biaya untuk melakukan dektesi manual dengan mendatangi tempatnya secara langsung.
 
 \item Bidang pertanian\\
-Pada bidang pertanian dapat membantu pengelola pertanian untuk mengelola penggunaan air dalam irigasi dan menghasilkan lebih sedikit hasil buangan dari pertanian mereka.
+Pada bidang pertanian dapat membantu pengelola pertanian untuk melihat penggunaan air dalam irigasi dan mengelola buangan pertanian mereka.
 \end{itemize}
 
 \begin{figure} [H]
@@ -39,78 +39,71 @@ Pada bidang pertanian dapat membantu pengelola pertanian untuk mengelola penggun
 	\label{fig:smartworld} 
 \end{figure} 
 
-\subsection{Struktur Wireless Sensor Network}
+\subsection{Struktur Sensor Node}
+Sensor node memiliki empat komponen utama yaitu \textit{sensing unit}, \textit{processing unit}, \textit{communication unit}, dan \textit{power unit}, Gambar~\ref{fig:structure_sensor_node}. Setiap sensor node memiliki kemampuan deteksi, komputasi dan komunikasi. \textit{Sensing unit} adalah sensor yang terdapat pada sensor node, sensor unit akan melakukan \textit{analog-to-digital converter}. Sensing unit akan melakukan deteksi lingkungan dan data yang didapat merupakan sinyal analog, sinyal ini akan diubah menjadi sinyal digital dan dikirimkan ke \textit{processing unit}. \textit{Processing unit} biasanya berupa microcontroller atau microprocessor yang mengatur dan melakukan komputasi data dari sensor node. Pada \textit{processing unit} juga terdapat memory yang membantu komputasi data. \textit{Communication unit} terdiri dari radio dengan jangkauan pendek sebagai media untuk melakukan transmisi dan menerima data (komunikasi). \textit{Power unit} pada sensor node biasanya adalah baterai sebagai sumber daya. 
+
+\begin{figure} [H]
+	\centering  
+	\includegraphics[scale=1]{structure_sensor_node}  
+	\caption[Struktur Sensor Node]{Struktur Sensor Node} 
+	\label{fig:structure_sensor_node} 
+\end{figure} 
 
 \subsection{Arsitektur Wireless Sensor Network}
-Pada \textit{Wireless Sensor Network} biasanya akan terdapat banyak \textit{sensor node} yang disebar pada suatu tempat atau daerah, dan terdapat satu atau lebih \textit{sink node} atau \textit{base station} dalam area sensing tersebut (Gambar~\ref{fig:libelium_smart_world}). Dalam membuat \textit{Wireless Sensor Network} perlu diperhatikan arsitektur yang akan digunakan. Arsitektur jaringan yang biasanya dipakai pada \textit{Wireless Sensor Network} adalah \textbf{arsitektur flat} dan \textbf{arsitektur hierarki}. Selain itu dalam membangun \textit{Wireless Sensor Network} perlu juga diperhatikan jalur lintasan yang menghubungkan antar \textit{sensor node} saat transfer data. Untuk area \textit{sensing} yang tidak terlalu luas dan hanya menggunakan sedikit \textit{sensor node} dapat menggunakan protokol routing \textbf{\textit{single hop}}. Sedangkan untuk daerah yang luas dan memerlukan banyak \textit{sensor node} dapat menggunakan protokol routing \textbf{\textit{multi hop}}. 
+Pada \textit{Wireless Sensor Network} biasanya akan terdapat banyak \textit{sensor node} yang disebar pada suatu tempat. Terdapat satu atau lebih \textit{sink node} atau \textit{base station} dalam area sensing tersebut (Gambar~\ref{fig:arsitektur}). \textit{sink node} atau \textit{base station} adalah sensor node yang bertugas untuk mendapatkan data dari \textit{sensor node} lain. Dalam membuat \textit{Wireless Sensor Network} perlu diperhatikan arsitektur yang akan digunakan. Arsitektur jaringan yang biasanya dipakai pada \textit{Wireless Sensor Network} adalah \textbf{arsitektur flat} dan \textbf{arsitektur hierarki}. Selain itu dalam membangun \textit{Wireless Sensor Network} perlu juga diperhatikan jalur komunikasi yang digunakan untuk menghubungkan antar \textit{sensor node} saat transfer data. Untuk area \textit{sensing} yang tidak terlalu luas dan hanya menggunakan sedikit \textit{sensor node} dapat menggunakan protokol routing \textbf{\textit{single hop}}. Sedangkan untuk daerah yang luas dan memerlukan banyak \textit{sensor node} dapat menggunakan protokol routing \textbf{\textit{multi hop}}. 
+
+\begin{figure} [H]
+	\centering  
+	\includegraphics[scale=1]{arsitektur}  
+	\caption[Arsitektur Wireless Sensor Network]{Arsitektur Wireless Sensor Network} 
+	\label{fig:arsitektur} 
+\end{figure} 
 
 \subsubsection{Single-Hop dan Multi-Hop}
 Untuk mengirim data ke sink node setiap sensor node dapat menggunakan single-hop long-distance transmission. Single-hop long-distance ini berarti setiap sensor node akan mengirimkan data ke sink node hanya satu kali lompatan walaupun jarak antara sink node dengan sensor node itu sangat jauh. Dalam jaringan sensor, pengguanaan daya paling besar adalah saat melakukan komunikasi dibandingan saat sensing. Penggunaan daya akan semakin bertambah jika jarak sink dan sensor node semakin jauh. Untuk menangani masalah tersebut muncul protokol multi-hop.
 
 Pada protokol multi-hop sensor node akan disusun saling berdekatan dan terhubung dengan yang lain. Jadi saat akan berkomunikasi dengan sink node, sensor node harus mengirimkan data tersebut ke sensor node tetangganya dan diteruskan hingga sampai ke sink node. Karena jarak yang saling berdekatan maka penggunaan daya dapat efektif. Single-hop dan multi-hop ini dapat digunakan dengan arsitektur flat maupun hierarki sesuai dengan kebutuhan sistem.
 
-
 \subsubsection{Arsitektur Flat}
-Pada jaringan flat, setiap \textit{sensor node} memiliki peran / \textit{role} yang sama dalam melakukan \textit{sensing}. Secara fungsional hanya terdapat dua macam \textit{sensor node} pada jaringan flat, yaitu \textit{source node} dan \textit{sink node}. Karena jumlah \textit{sensor node} yang banyak maka tidak mungkin menentukan \textit{global identified} untuk setiap \textit{sensor node} pada jaringan ini. Untuk mendapatkan data dilakukan dengan cara \textit{sink node} melakukan transmit ke semua \textit{sensor node} pada area \textit{sensing} dengan cara \textit{flooding} dan hanya \textit{sensor node} yang sesuai yang akan merespon \textit{sink node}. Setiap \textit{sensor node} mengirimkan data ke \textit{sink node} dengan \textit{multi hop} dan melalui node tetangganya yang terhubung dengannya untuk meneruskan data (Gambar~\ref{fig:libelium_smart_world}). Arsitektur flat juga dapat dilakukan dengan \textit{single hop} seperti pada Gambar~\ref{fig:libelium_smart_world}.
+Pada jaringan flat, setiap \textit{sensor node} memiliki peran atau \textit{role} yang sama dalam melakukan \textit{sensing}. Secara fungsional hanya terdapat dua macam \textit{sensor node} pada jaringan flat, yaitu \textit{source node} dan \textit{sink node}. Karena jumlah \textit{sensor node} yang banyak maka tidak mungkin menentukan \textit{global identified} untuk setiap \textit{sensor node} pada jaringan ini. Untuk mendapatkan data dilakukan dengan cara \textit{sink node} melakukan transmit ke semua \textit{sensor node} pada area \textit{sensing} dengan cara \textit{flooding} dan hanya \textit{sensor node} yang sesuai yang akan merespon \textit{sink node}. Setiap \textit{sensor node} mengirimkan data ke \textit{sink node} dengan \textit{multi hop} dan melalui node tetangganya yang terhubung dengannya untuk meneruskan data (Gambar~\ref{fig:flat}).
 % gambar flat multihop
 \begin{figure} [H]
 	\centering  
-	\includegraphics[scale=0.2]{libelium_smart_world}  
-	\caption[Ilustrasi arsitektur flat pada \textit{Wireless Sensor Network} dengan \textit{multi hop}]{Ilustrasi arsitektur flat pada \textit{Wireless Sensor Network} dengan \textit{multi hop}} 
-	\label{fig:libelium_smart_world} 
-\end{figure} 
-% gambar flat singlehop
-\begin{figure} [H]
-	\centering  
-	\includegraphics[scale=0.2]{libelium_smart_world}  
-	\caption[Ilustrasi arsitektur flat pada \textit{Wireless Sensor Network} dengan \textit{single hop}]{Ilustrasi arsitektur flat pada \textit{Wireless Sensor Network} dengan \textit{single hop}} 
-	\label{fig:libelium_smart_world} 
+	\includegraphics[scale=1]{flat}  
+	\caption[Ilustrasi arsitektur flat pada \textit{Wireless Sensor Network}]{Ilustrasi arsitektur flat pada \textit{Wireless Sensor Network}} 
+	\label{fig:flat} 
 \end{figure} 
 
 \subsubsection{Arsitektur Hierarki}
 Pada arsitektur hierarki, semua sensor node dikelompokan ke dalam cluster-cluster. Terdapat cluster head pada setiap cluster. Cluster head ini yang mengumpulkan data dari setiap sensor node di bawahnya dan meneruskan data yang telah diterima ke base station atau sink. Hal yang perlu diperhatikan pada arsitektur hierarki adalah pemilihan sensor node sebagai cluster head dan sensor node yang melakukan sensing. Penggunaan daya yang paling besar dalam Wireless Sensor Network ini adalah saat melakukan komunikasi yaitu saat mengirimkan data ke sensor node lain. Maka untuk sensor node yang memiliki daya kecil dapat digunakan untuk sensing, karena sensor node sensing ini hanya melakukan komunikasi ke cluster head. Cluster head harus memiliki daya yang lebih banyak, karena cluster head akan bertugas menerima hasil sensing sensor node di bawahnya dan meneruskan data ke sink node. 
 
-Masalah yang utama pada clustering ini adalah pemilihan cluster head dan bagaimana cara mengatur setiap cluster. Terdapat beberapa cara untuk membuat clustering ini. Bedasarkan jarak antara cluster head dengan cluster member, dapat dibuat clustering dengan single hop atau multi hop seperti pada Gambar~\ref{fig:libelium_smart_world} dan Gambar~\ref{fig:libelium_smart_world}. Sedangkan jika berdasarkan jumlah tier dapat dibangun clustering single tier atau multi tier seperti pada Gambar~\ref{fig:libelium_smart_world} dan Gambar~\ref{fig:libelium_smart_world}.
-
-% gambar cluster multihop
-\begin{figure} 
-	\centering  
-	\includegraphics[scale=0.1]{libelium_smart_world}  
-	\caption[Ilustrasi arsitektur flat pada \textit{Wireless Sensor Network} dengan \textit{multi hop}]{Ilustrasi arsitektur flat pada \textit{Wireless Sensor Network} dengan \textit{multi hop}} 
-	\label{fig:libelium_smart_world} 
-\end{figure} 
-% gambar cluster singlehop
-\begin{figure} 
-	\centering  
-	\includegraphics[scale=0.1]{libelium_smart_world}  
-	\caption[Ilustrasi arsitektur flat pada \textit{Wireless Sensor Network} dengan \textit{single hop}]{Ilustrasi arsitektur flat pada \textit{Wireless Sensor Network} dengan \textit{single hop}} 
-	\label{fig:libelium_smart_world} 
-\end{figure} 
-
-% gambar clustering single tier
+Masalah yang utama pada clustering ini adalah pemilihan cluster head dan bagaimana cara mengatur setiap cluster. Terdapat beberapa cara untuk membuat clustering ini. Bedasarkan jarak antara cluster head dengan cluster member, dapat dibuat clustering dengan single hop atau multi hop seperti pada Gambar~\ref{fig:cluster_single} dan Gambar~\ref{fig:cluster_multi}. Sedangkan jika berdasarkan jumlah tier dapat dibangun clustering single tier atau multi tier (Gambar~\ref{fig:cluster_multitier}).
 \begin{figure} [H]
 	\centering  
-	\includegraphics[scale=0.1]{libelium_smart_world}  
-	\caption[Ilustrasi clsutering dengan single tier]{Ilustrasi clsutering dengan single tier} 
-	\label{fig:libelium_smart_world} 
+	\includegraphics[scale=0.9]{cluster_single}  
+	\caption[Arsitektur hierarki pada \textit{Wireless Sensor Network} dengan \textit{single hop}]{Arsitektur hierarki pada \textit{Wireless Sensor Network} dengan \textit{single hop}} 
+	\label{fig:cluster_single} 
 \end{figure} 
-% gambar clustering multi tier
 \begin{figure} [H]
 	\centering  
-	\includegraphics[scale=0.1]{libelium_smart_world}  
-	\caption[Ilustrasi clsutering dengan multi tier]{Ilustrasi clsutering dengan multi tier} 
-	\label{fig:libelium_smart_world} 
+	\includegraphics[scale=0.8]{cluster_multi}  
+	\caption[Arsitektur hierarki pada \textit{Wireless Sensor Network} dengan \textit{multi hop}]{Arsitektur hierarki pada \textit{Wireless Sensor Network} dengan \textit{multi hop}} 
+	\label{fig:cluster_multi} 
+\end{figure} 
+\begin{figure} [H]
+	\centering  
+	\includegraphics[scale=0.8]{cluster_multitier}  
+	\caption[Clsutering dengan multi tier]{Clsutering dengan multi tier} 
+	\label{fig:cluster_multitier} 
 \end{figure}
 
 \subsection{Layer pada Wireless Sensor Network}
-Wireless Sensor Network memiliki lima layer protokol: physical layer, data link layer, network layer, transport layer, dan application layer, seperti pada Gambar~\ref{fig:libelium_smart_world}. 
-
-
-\begin{figure} 
+Wireless Sensor Network memiliki lima layer protokol: physical layer, data link layer, network layer, transport layer, dan application layer, seperti pada Gambar~\ref{fig:layer}. 
+\begin{figure} [H]
 	\centering  
-	\includegraphics[scale=0.1]{libelium_smart_world}  
+	\includegraphics[scale=0.5]{layer}  
 	\caption[Layer pada \textit{Wireless Sensor Network}]{Layer pada \textit{Wireless Sensor Network}} 
-	\label{fig:libelium_smart_world} 
+	\label{fig:layer} 
 \end{figure} 
 
 \section{Data Transfer pada Wireless Sensor Network} 
