@@ -120,6 +120,8 @@ Actuator jumlahnya beragam seperti sensor. Actuator adalah penerima sinyal dan y
 \subsubsection{Power Supply}
 Power supply atau sumber energi pada Wireless Sensor Network bisa berasal dari dua cara yaitu \textbf{\textit{storing energy}} dan \textbf{\textit{energy scavenging}}. \textit{Storing energy} adalah dengan menggunakan baterai sebagai sumber energinya. Baterai yang digunakan dapat diisi ulang maupun yang tidak dapat diisi ulang. \textit{Energy scavenging} digunakan saat membuat Wireless Sensor Network yang akan digunakan dalam waktu yang lama. Dibutuhkan energi yang bisa dikatakan tidak terbatas. Salah satu cara \textit{energy scavenging} adalah \textit{Photovoltaics}. \textit{photovoltaics} dapat disebut juga \textit{solar cell} yang memanfaatkan cahaya matahari dan mengubahnya menjadi energi sebagai pembangkit daya. Cara lain yang bisa digunakan adalah pemanfaatan angin dan air untuk mengerakan kincir atau turbin yang akan menghasilkan listrik dan digunakan sebagai sumber energi pada sensor node.
 
+\subsubsection{Macam - Macam Node Sensor pada WSN}
+
 \subsection{Arsitektur dan Topologi Wireless Sensor Network}
 Pada \textit{Wireless Sensor Network} biasanya akan terdapat banyak \textit{sensor node} yang disebar pada suatu tempat. Terdapat satu atau lebih \textit{sink node} atau \textit{base station} dalam area sensing tersebut (Gambar~\ref{fig:arsitektur}). \textit{sink node} atau \textit{base station} adalah sensor node yang bertugas untuk mendapatkan data dari \textit{sensor node} lain. Dalam membuat \textit{Wireless Sensor Network} perlu diperhatikan arsitektur dan topologi yang akan digunakan. Tidak semua topologi jaringan komputer dapat digunakan untuk \textit{Wireless Sensor Network}. 
 
@@ -223,7 +225,7 @@ Masalah yang utama pada clustering ini adalah pemilihan cluster head dan bagaima
 	\label{fig:cluster_multitier} 
 \end{figure}
 
-
+%
 \subsection{Layer pada Wireless Sensor Network}
 Wireless Sensor Network memiliki lima layer protokol: physical layer, data link layer, network layer, transport layer, dan application layer, seperti pada Gambar~\ref{fig:layer}. 
 \begin{figure} [H]
@@ -233,7 +235,33 @@ Wireless Sensor Network memiliki lima layer protokol: physical layer, data link 
 	\label{fig:layer} 
 \end{figure} 
 
+%00 wireless sensor network hal 293
 \subsection{Sistem Operasi}
+Setiap node sensor memerlukan sistem operasi (OS) untuk mengontrol perangkat keras dan perangkat lunak. Sistem operasi tradisional tidak dapat digunakan pada WSN. Pada sistem operasi tradisional digunakan untuk mengatur proses, memory, CPU time, dan file system. Terdapat beberapa hal yang harus ditangani oleh sistem operasi dalam WSN yaitu:
+\begin{enumerate}
+	\item WSN memerlukan real-time scheduler. Data yang didapat harus segera dikirim atau diproses.
+	\item Pengaturan memori karena memory pada WSN sangat kecil.
+	\item Pengaturan data yang efisien terkait dengan microprocessor dan memori yang terbatas
+	\item Mendukung kode pemrograman yang efisien dan reliable karena dapat terjadi perubahan kode saat implementasi.
+	\item Mendukung pengaturan sumber daya untuk menambah waktu hidup dari sensor node dan meningkatkan performa dengan sleep time atau wake up time saat terdapat interupsi dari lingkungan.
+	\item Mendukung antarmuka untuk pemrograman dan antarmuka perangkat lunak. 
+\end{enumerate}
+
+Beberapa sistem operasi yang umum digunakan pada WSN antara lain :
+\begin{enumerate}
+	\item TinyOS
+	\item Contiki
+	\item LiteOS
+\end{enumerate}
+
+%Operating SYstem for WSN a survey - hal 7
+\subsubsection{TinyOS}
+
+%Operating SYstem for WSN a survey - hal 11
+\subsubsection{Contiki}
+
+%Operating SYstem for WSN a survey - hal 23
+\subsubsection{LiteOS}
 
 
 
