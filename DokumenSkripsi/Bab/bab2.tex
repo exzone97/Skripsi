@@ -300,10 +300,7 @@ Perbandingan dari TinyOS, Contiki, dan LiteOS dapat dilihat pada Tabel~\ref{tab:
 	\end{tabular} 
 \end{table}
 
-%\section{Preon 32 Virtenio}
-
 %data transfer 
-
 \subsection{Protokol Stack pada Wireless Sensor Network}
 Wireless Sensor Network memiliki lima layer protokol: physical layer, data link layer, network layer, transport layer, dan application layer, seperti pada Gambar~\ref{fig:layer}. 
 \begin{figure} [H]
@@ -314,7 +311,7 @@ Wireless Sensor Network memiliki lima layer protokol: physical layer, data link 
 \end{figure} 
 
 \subsubsection{Physical Layer}
-Physical layer bertanggung jawab untuk mengubah bit stream dari data link layer menjadi sinyal agar bisa dilakukan transmisi melalui media komunikasi yang ada (transceiver). Pemilihan media dan frekuensi adalah hal yang penting dalam komunikasi antar node sensor. Salah satu cara yang bisa digunakan adalah dengan menggunakan radio frekuensi (RF). Jaringan sensor memerlukan biaya yang kecil, ukuran yang kecil, dan penggunaan daya yang kecil untuk tranceivernya. Karena itu banyak yang menggunakan Radio Frequency (RF) untuk desain perangkat keras node sensornya.
+Physical layer bertanggung jawab untuk mengubah bit stream dari data link layer menjadi sinyal agar bisa dilakukan transmisi melalui media komunikasi yang terdapat (transceiver). Pemilihan media dan frekuensi adalah hal yang penting dalam komunikasi antar node sensor. Salah satu cara yang bisa digunakan adalah dengan menggunakan radio frekuensi (RF). Jaringan sensor memerlukan biaya yang kecil, ukuran yang kecil, dan penggunaan daya yang kecil untuk tranceivernya. Karena itu banyak yang menggunakan Radio Frequency (RF) untuk desain perangkat keras node sensornya.
 
 \subsubsection{Data Link Layer}
 Data link layer bertanggung jawab untuk aliran data multiplexing, membentuk data frame, mendeteksi data frame, medium access, dan mengatur kesalahan saat transmisi data. Fungsi paling penting data link layer adalah Medium Access Control (MAC). Protokol MAC menentukan kapan node sensor mengakses media untuk mengirim data, melakukan kontrol dan mengatur paket ke node sensor lain. Hal itu dilakukan agar tidak terjadi paket yang bertabrakan. 
@@ -333,7 +330,90 @@ Application layer meliputi berbagai macam protokol yang ada pada layer ini untuk
 	\item Sensor query and tasking language (SQTL) adalah protokol yang mendukung bahasa pemrograman pada WSN.
 \end{enumerate}
 
+
+% http://profsite.um.ac.ir/~hyaghmae/WSN/transport.pdf
 \section{Protokol Transport}
+WSN terdiri dari sink node dan banyak node sensor. Setiap node sensor akan mengirimkan data hasil sensing ke sink node. Fungsi protokol transport antara lain:
+\begin{enumerate}
+	\item Mengatasi kemacetan jaringan (Congestion Control)
+	\item Mengurangi paket yang hilang
+	\item Memastikan alokasi bandwidth yang adil
+	\item Menjamin reliabilitas
+\end{enumerate}
+
+Pada protokol transport tradisional dikenal istilah TCP dan UDP, namun keduanya tidak bisa diimplementasikan pada WSN. UDP sendiri tidak mendukung pengiriman data yang reliable. Dalam mengirimkan data TCP menggunakan proses three-handshake. Proses ini memerlukan penggunaan data yang besar sedangkan pada WSN sangat terbatas untuk memorinya. 
+
+Protokol transport pada WSN harus mendukung pengiriman data yang reliable. Performa dari sebuah protokol transfer dapat dinilai dari empat ukuran yaitu: energi yang efisien, keandalan (reliability), Quality of Service, dan keadilan (fairness).
+
+\subparagraph{Energi Efisien} setiap node sensor memiliki keterbatasan energi atau daya yang dimiliki. Membuat protokol untuk menghemat penggunaan energi adalah yang dibutuhkan dalam WSN.
+\subparagraph{Keandalan (Reliability)} pada WSN reliability dibutuhkan untuk mendapatkan data yang lengkap dan sehingga dapat dilakukan tindakan yang tepat terhadap suatu kejadian.
+\subparagraph{Quality of Service} digunakan untuk melihat rasio dari paket yang hilang, paket yang berhasil dikirim, dan jeda waktu pengiriman data.
+\subparagraph{Keadilan (Fairness)} protokol pada WSN ini harus adil dalam hal pembagian bandwidth untuk setiap node sensor sehingga setiap node sensor dapat mengirimkan data ke sink node dengan jumlah yang sama.
+
+\subsection{Protokol Pada Layer Transport}
+Protokol pada WSN dikategorikan menjadi tiga tipe. Tipe yang pertama adalah protokol untuk mengontrol kemacetan jaringan (congestion control). Tipe kedua adalah protokol untuk memastikan keandalan (reliability). Tipe ketiga adalah protokol untuk memastikan keandalan dan mengontrol kemacetan.
+
+\subsubsection{Protocol Congestion Control}
+Protokol pada Congestion Control antara lain:
+\begin{itemize}
+	\item Congestion Detection and Avoidance (CODA)
+	\item Congestion Control and Fairness (CCF)
+	\item Priority-Based Congestion Control Protocol (PCCP)
+\end{itemize}
+
+\subsubsection{Protocol Reliability}
+Protokol pada Reliability antara lain:
+\begin{itemize}
+	\item Pump Slowly, Fetch Quickly (PSFQ)
+	\item GARUDA
+\end{itemize}
+
+\subsubsection{Protocol Congestion Control and Reliability}
+Protokol pada Congestion Control and Reliability antara lain:
+\begin{itemize}
+	\item Sensor Transmission Control Protocol (STCP)
+	\item Event-to-Sink Reliable Transport (ESRT)
+\end{itemize}
+
+
+%\begin{itemize}
+%	\item Sensor Transmission Control Protocol (STCP)
+%	\item Price-Oriented Reliable Transport Protocol (PORT)
+%	\item GARUDA
+%	\item Delay Sensitive Transport (DST)
+%	\item Pump Slowly, Fetch Quickly (PSFQ)
+%	\item Event-to-Sink Reliable Transport (ESRT)
+%	\item Congestion Detection and Avoidance (CODA)
+%\end{itemize}
+
+%11.4.3.1 hal 397 book wireless sensor network - a network perspective
+%\subsubsection{Sensor Transmission Control Protocol (STCP)}
+%STCP adalah protokol transport End-to-End upstream transport untuk WSN yang mendukung kontrol kemacetan jaringan (congestion control) dan reliability. Pada STCP, node sensor menggunakan RED (Random Early Detection) yaitu algoritma untuk mendeteksi kemacetan berdasarkan panjang antrian. Jika terjadi kemacetan jaringan node sensor akan menambahkan 1 bit pada paket yang akan dikirim tersebut. Sink node akan menerima 1 bit tersebut dan memberitahu node sensor untuk mengirimkan paket data dengan menggunakan ACK atau NACK. Node sensor dapat memilih rute lain atau mengurangi jumlah data yang dikirim untuk mengurangi kemacetan jaringan. 
+
+%Salah satu yang ditawarkan oleh STCP adalah kontrol keandalan (reliability) melalui End-to-End Retransmission. Dengan kata lain STCP menggabungkan berbagai macam fungsi transfer dengan protokol transfer. Pada STCP terdapat proses awal dimana node sensor menginformasikan sink node fitur aplikasinya seperti jenis aliran data, tingkat transmisi, dan reliabilitas yang dibutuhkan.
+
+%\subsubsection{Price-Oriented Reliable Transport Protocol (PORT)}
+
+
+%11.4.2.4 hal 396 book wireless sensor network - a network perspective
+%\subsubsection{GARUDA}
+%GARUDA adalah protokol yang memastikan reliabilitas downstream pada WSN. GARUDA membuat dua tier arsitektur untuk pengiriman ulang (retransmission) data. 
+
+%\subsubsection{Delay Sensitive Transport (DST)}
+
+%11.4.2.3 hal 395 book wireless sensor network - a network perspective
+%\subsubsection{Pump Slowly, Fetch Quickly (PSFQ)}
+%Pump Slowly, Fetch Quickly (PSFQ) adalah protokol transport pada downstream pada WSN yang memiliki tujuan untuk mendistribusikan data dari sink node secara reliable. Cara yang dilakukan oleh PSFQ adalah dengan meminimalkan biaya untuk pemulihan data yang hilang 
+
+%11.4.3.2 hal 397 book wireless sensor network - a network perspective
+%\subsubsection{Event-to-Sink Reliable Transport (ESRT)}
+%Event-to-Sink Reliable Transport adalah protokol transport End-to-End upstream yang mendukung reliabilitas. Pada ESRT tingkat pengiriman pada setiap node sensor bergantung pada tingkat reliabilitas di sink node begitu juga dengan status jaringan tersebut (terdapat kemacetan atau tidak). ESRT adalah protokol pertama yang membahas kontrol kongesti (congestion control) dan keandalan (reliability) sekaligus. Pada ESRT setiap node sensor mendeteksi kongesti berdasarkan peningkatan buffer lalu mengatur CN bit pada header sebuah paket dan meneruskannya ke sink node. Berdasarkan paket yang diterima oleh sink node, sink node dapat mengetahui keadaan dari jaringan dan juga keandalan paket untuk menentukan jumlah paket yang telah berhasil diterima pada periode tertentu. 
+
+%ESRT bergantung pada tingkat pengaturan pada node sensor untuk memastikan data yang reliable. Terdapat dua masalah yang dapat terjadi yaitu: energi yang tidak efisien jika dibandingkan dengan retransmission dan tidak dapat menjamin reliabilitas jika terjadi kongesti. Namun, untuk meningkatkan reliabilitas dapat dilakukan recovery loss (pemulihan dari data yang hilang). ESRT masih membutuhkan jalur yang khusus dengan daya yang besar untuk mengirimkan notifikasi kepada node sensor yang akan mempengaruhi proses pengiriman data. 
+
+%11.4.1.2 hal 391 book wireless sensor network - a network perspective
+%\subsubsection{Congestion Detection and Avoidance (CODA)}
+%CODA adalah protokol untuk mengatur kemacetan (congestion control). CODA akan mendeteksi kemacetan berdasarkan buffer dan media jaringan wireless tersebut. CODA menggunakan penekanan pesan untuk memberitahu apakah terdapat kemacetan kepada node sensor. Saat node mendapatkan pesan tersebut, node akan memperkecil tingkat pengiriman. Dilain sisi node tetangganya akan meningkatkan tingkat pengiriman jika tidak menerima pesan tersebut. Pesan dan ACK pada CODA akan menggunakan lebih banyak daya.
 
 
 \section{Prinsip Reliable Data Transfer pada Wireless Sensor Network}
@@ -355,9 +435,12 @@ Waktu pengiriman bergantung pada berapa jumlah retransmission dan Round trip tim
 End-to-End Retransmission adalah salah satu metode yang digunakan di Internet. Cara ini dapat memastikan reliable data tanpa harus mengetahui apa yang terjadi di tengah jaringan. Pada End-to-End Retransmission diperlukan handshake seperti pada komunikasi jaringan komputer. Pada awalnya data dikirim sebagai permintaan transfer. Jika penerima (receiver) memiliki cukup RAM, dan layer aplikasi dapat menerima data tersebut, maka receiver mengirimkan acknowledge untuk permintaan data tersebut. Saat koneksi sudah terbentuk, data yang sebenarnya dapat dikirim. Data tersusun dari beberapa round. Setiap round, pengirim (sender) mengirim paket yang hilang pada round sebelumnya. Diakhir setiap  round receiver mengirimkan acknowledge kepada sender yang berisi informasi paket yang hilang. Sender menerima acknowledge tersebut dan mengirim paket yang hilang tersebut. Untuk round pertama terdapat pengecualian karena semua pake pada round sebelumnya tidak ada (belum dikirim). 
 
 \subsection{Erasure Code}
+Erasure code adalah kode dimana kita dapat membuat ulang $m$ dari $n$ buah pesan ($n$ > $m$). Jika $n$ lebih besar dibanding tingkat data yang hilang, maka akan didapat reliabilitas yang tinggi tanpa transmisi ulang atau pengiriman ulang. 
 
 \subsection{Alternate Route}
 Menambahkan rute alternatif untuk menangani kegagalan pada link atau jalur komunikasi adalah cara lain untuk meningkatkan keandalan. Saat link antara dua node sensor terjadi kerusakan maka data yang sedang dikirim akan dibuang (drop) sampai terdapat rute baru untuk mengirim data.
+
+
 
 \section{Pengembangan Pemrograman pada Wireless Sensor Network}
 \label{sec:pemrograman_wsn}
