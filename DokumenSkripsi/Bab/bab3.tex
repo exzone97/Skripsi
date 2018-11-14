@@ -1,0 +1,126 @@
+\chapter{Analisis}
+\label{chap:analisis}
+
+Pada bab ini dijelaskan mengenai analisis pengiriman data dari node sensor ke base station pada WSN, analisis protokol yang reliable saat melakukan pengiriman data dari node sensor ke base station pada WSN, dan analisis aplikasi pengiriman data pada WSN.
+
+\section{Analisis Proses Pengiriman Data Dari Node Sensor Ke Base Station Pada WSN}
+Pengiriman data pada WSN dibagi menjadi dua yaitu pengiriman data dari base station ke setiap node sensor (downstream) dan pengiriman data dari setiap node sensor ke base station (upstream). Pengiriman downstream biasanya adalah perintah yang diberikan oleh base station kepada node sensor, sedangkan pengiriman upstream adalah pengiriman data hasil sensing setiap node sensor kepada base station. Dalam melakukan pengiriman ini dapat dilakukan dengan single hop atau multi hop tergantung pada komunikasi yang digunakan. 
+
+Pengiriman data hasil sensing dari node sensor ke base station sendiri dapat dilakukan dengan dua cara yaitu setiap data hasil sensing langsung dikirimkan ke base station tanpa melalui proses apapun pada node sensor dan data hasil sensing diproses dahulu pada node sensor lalu dikirimkan. Kedua cara ini sebenarnya dapat digunakan sesuai dengan kebutuhkan dan kapasitas penyimpanan pada node sensor. Node sensor memiliki tempat penyimpanan yang kecil, sehingga kode program yang dibuat juga tidak dapat terlalu besar. 
+
+Pada skripsi ini digunakan cara dengan mengirim langsung data mentah yang didapat dari node sensor tersebut. Penulis memilih cara ini karena penyimpanan node sensor yang kecil. Selain itu untuk diimplementasi cara ini lebih mudah dibandingkan dengan melakukan memprosesan terlebih dahulu. Karena tujuan utama pada skripsi ini adalah membangun aplikasi untuk transfer data maka pada base station hanya memerlukan data mentah.
+
+\section{Analisis Protokol Yang Reliable Saat Pengiriman Data Dari Node Sensor Ke Base Station Pada WSN}
+Pada WSN terdapat beberapa protokol yang mendukung pengiriman data reliable. Untuk memastikan data yang reliable ini dilakukanlah pengiriman ulang (retransmission) data yang hilang atau loss. Data yang dikirim ulang ini dapat berasal dari hasil sensing node sensor atau data dari base station seperti perintah atau method tertentu. Pada skripsi ini data yang dikirim ulang adalah data hasil sensing dan protokol yang digunakan adalah protokol dengan arah pengiriman upstream. Setiap protokol memiliki spesifikasi yang berbeda-beda pada arah retransmission, data yang dikirim, mekanisme dan acknowledge yang digunakan. 
+
+Pada skripsi ini akan digunakan protokol Reliable Multi Segment Transport. Protokol ini 
+
+%Dibandingkan .. milih yg hop-by-hop, terdapat ack, ditambah timer
+
+\subsection{Reliable Multi Segment Transport (RMST)}
+.....
+
+\section{Analisis Aplikasi Pengiriman Data Pada WSN}
+Pada skripsi ini dibuat aplikasi yang dapat melakukan transfer data dari node sensor ke base station. Aplikasi ini digunakan untuk mengetahui keadaan suatu tempat atau daerah dengan bantuan node sensor untuk melakukan mendapatkan data (sensing). Aplikasi ini memiliki beberapa fungsi. Fungsi utama pada aplikasi ini adalah untuk melakukan transfer data dari setiap node sensor. Fungsi lain pada aplikasi ini dijelaskan menggunakan diagram \textit{use case} pada Gambar~\ref{fig:usecase} dan skenario pada Tabel~\ref{tab:skenario1} sampai Tabel~\ref{tab:skenario3}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.6]{usecase}
+	\caption{Diagram \textit{use case} aplikasi data transfer pada WSN}
+	\label{fig:usecase}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{3cm}|p{10cm}|}
+    \hline
+        Nama & Melakukan sinkronisasi waktu\\
+    \hline
+    \hline
+        Deskripsi & Melakukan sinkronisasi waktu untuk mengetahui kapan data dikirim dari node sensor dan diterima oleh base station. \\
+    \hline
+        Aktor & Pengguna \\
+    \hline
+        Pre-kondisi & Aplikasi dimulai \\
+    \hline
+        Alur Skenario Utama & 
+        \begin{enumerate}
+            \item Sistem memuat aplikasi.
+            \item Sistem menampilkan menu untuk dipilih pengguna.
+            \item Pengguna memilih menu sinkronisasi waktu.
+            \item Sistem melakukan sinkronisasi waktu pada setiap node sensor.
+            \item Sistem menampilkan menu.
+        \end{enumerate}\\
+    \hline
+    \end{tabular}
+    \caption{Tabel skenario melakukan sinkronisasi waktu.}
+    \label{tab:skenario1}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{3cm}|p{10cm}|}
+    \hline
+        Nama & Menjalankan fungsi untuk \textit{sensing}\\
+    \hline
+    \hline
+        Deskripsi & Pengguna menjalankan fungsi ini untuk membuat node sensor melakukan sensing dan mengirimkan data.\\
+    \hline
+        Aktor & Pengguna \\
+    \hline
+        Pre-kondisi & Sudah dilakukan sinkronisasi waktu pada setiap node sensor\\
+    \hline
+        Alur Skenario Utama & 
+        \begin{enumerate}
+            \item Sistem memuat aplikasi.
+            \item Sistem menampilkan menu untuk dipilih pengguna.
+            \item Pengguna memilih menu untuk \textit{sensing}.
+            \item Sistem memerintahkan node sensor untuk melakukan \textit{sensing}.
+            \item Sistem mendapatkan data dari setiap node sensor.
+        \end{enumerate}\\
+    \hline
+    \end{tabular}
+    \caption{Tabel skenario Menjalankan fungsi untuk \textit{sensing}.}
+    \label{tab:skenario2}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{3cm}|p{10cm}|}
+    \hline
+        Nama & Mendapatkan Data\\
+    \hline
+    \hline
+        Deskripsi & Pengguna mendapatkan data hasil \textit{sensing} dari setiap node sensor\\
+    \hline
+        Aktor & Pengguna \\
+    \hline
+        Pre-kondisi & Sistem sudah melakukan \textit{sensing} dan data hasil \textit{sensing} sudah didapatkan \\
+    \hline
+        Alur Skenario Utama & 
+        \begin{enumerate}
+            \item Sistem memuat aplikasi.
+            \item Sistem menampilkan menu untuk dipilih pengguna.
+            \item Pengguna memilih menu untuk mendapatkan data.
+            \item Sistem mengirimkan data hasil \textit{sensing} kepada pengguna.
+        \end{enumerate}\\
+    \hline
+    \end{tabular}
+    \caption{Tabel skenario mendapatkan data.}
+    \label{tab:skenario3}
+\end{table}
+
+\subsection{Diagram Sequence}
+Untuk aplikasi transfer data ini, aliran data dapat dilihat dengan diagram sequence. Diagram sequence dibuat menjadi dua macam sesuai dengan arsitektur yang digunakan yaitu arsitektur flat dengan multi-hop dan arsitektur hierarkikal.
+
+------- Gambar Diagram Seq 1 -------
+Keterangan...
+
+------- Gambar Diagram Seq 2 -------
+Keterangan...
+
+\subsection{Fitur dan Kebutuhkan Sistem}
+Pada skripsi ini aplikasi yang dibangun memiliki fitur utama untuk mengirim data hasil sensing. Sesuai dengan diagram sequence yang dibuat, untuk arsitektur flat dan hierarki terdapat sedikit perbedaan untuk aplikasi yang dibuat. Pada arsitektur flat tidak terdapat cluster head jadi node sensor hanya mengirimkan data ke node tetangganya hingga sampai ke base station, sedangkan pada arsitektur hierarkikal data dikirimkan dahulu ke cluster head sebelum diteruskan ke base station.
+...... 
+%analisis aplikasinya (fitur) dan kebutuhan sistem (Sistem requirement)
+% tentukan untuk yg flat dan hierarki (masing-masing)
