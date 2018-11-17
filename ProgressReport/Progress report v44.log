@@ -1,0 +1,470 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.29)  18 NOV 2018 00:55
+entering extended mode
+**"./Progress report v44.tex"
+("Progress report v44.tex"
+LaTeX2e <2018-04-01> patch level 5
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cl
+s"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo
+"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.st
+y"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.s
+ty"
+Package: babel 2018/06/05 3.22 The Babel package
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\switch.
+def"
+File: switch.def 2018/06/05 3.22 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\arabi\bblopts.c
+fg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-indonesia
+n\bahasa.ldf"
+Language: bahasa 2017/02/15 v1.0m Bahasa Indonesia support from the babel syste
+m
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-indonesia
+n\indonesian.ldf"
+Language: indonesian 2017/02/15 v1.0m Bahasa Indonesia support from the babel s
+ystem
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.d
+ef"
+File: babel.def 2018/06/05 3.22 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabe
+l.def")
+\bbl@dirlevel=\count89
+))))
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphi
+cx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval
+.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphi
+cs.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.s
+ty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\gr
+aphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pd
+ftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count90
+\float@exts=\toks15
+\float@box=\box26
+\@float@everytoks=\toks16
+\@floatcapt=\box27
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\preprint\fullpa
+ge.sty"
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip43
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolb
+ox.sty"
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count91
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\setspace\setspa
+ce.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lipsum\lipsum.s
+ty"
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count92
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geomet
+ry.sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpd
+f.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifvt
+ex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxet
+ex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count93
+\Gm@cntv=\count94
+\c@Gm@tempcnt=\count95
+\Gm@bindingoffset=\dimen106
+\Gm@wd@mp=\dimen107
+\Gm@odd@mp=\dimen108
+\Gm@even@mp=\dimen109
+\Gm@layoutwidth=\dimen110
+\Gm@layoutheight=\dimen111
+\Gm@layouthoffset=\dimen112
+\Gm@layoutvoffset=\dimen113
+\Gm@dimlist=\toks17
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geomet
+ry.cfg"))
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\booktabs\bookta
+bs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen114
+\lightrulewidth=\dimen115
+\cmidrulewidth=\dimen116
+\belowrulesep=\dimen117
+\belowbottomsep=\dimen118
+\aboverulesep=\dimen119
+\abovetopsep=\dimen120
+\cmidrulesep=\dimen121
+\cmidrulekern=\dimen122
+\defaultaddspace=\dimen123
+\@cmidla=\count96
+\@cmidlb=\count97
+\@aboverulesep=\dimen124
+\@belowrulesep=\dimen125
+\@thisruleclass=\count98
+\@lastruleclass=\count99
+\@thisrulewidth=\dimen126
+) ("Progress report v44.aux")
+\openout1 = `"Progress report v44.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf
+.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count100
+\scratchdimen=\dimen127
+\scratchbox=\box28
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen128
+\MPnumerator=\count104
+\makeMPintoPDFobject=\count105
+\everyMPtoPDFconversion=\toks19
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstop
+df-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infw
+arerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext
+.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvde
+finekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxc
+mds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvopti
+ons.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvse
+tkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etex
+cmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\iflu
+atex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdft
+excmds.sty"
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(56.9055pt, 469.47049pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 717.00946pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=469.47049pt
+* \textheight=717.00946pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-31.1381pt
+* \headheight=0.0pt
+* \headsep=30.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=111.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 79.
+("C:\Users\Jonathan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
+
+Overfull \vbox (7.49817pt too high) has occurred while \output is active []
+
+
+[1{C:/Users/Jonathan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+]
+Overfull \vbox (6.4151pt too high) has occurred while \output is active []
+
+
+[2]
+<Gambar/smartworld.png, id=17, 1027.84pt x 730.73pt>
+File: Gambar/smartworld.png Graphic file (type png)
+<use Gambar/smartworld.png>
+Package pdftex.def Info: Gambar/smartworld.png  used on input line 135.
+(pdftex.def)             Requested size: 308.35437pt x 219.22069pt.
+<Gambar/structure_sensor_node.png, id=19, 614.295pt x 312.16624pt>
+File: Gambar/structure_sensor_node.png Graphic file (type png)
+<use Gambar/structure_sensor_node.png>
+Package pdftex.def Info: Gambar/structure_sensor_node.png  used on input line 1
+49.
+(pdftex.def)             Requested size: 184.28992pt x 93.65059pt.
+
+Overfull \vbox (7.49817pt too high) has occurred while \output is active []
+
+
+[3 <./Gambar/smartworld.png> <./Gambar/structure_sensor_node.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 196.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 196.
+
+Overfull \vbox (6.4151pt too high) has occurred while \output is active []
+
+
+[4]
+<Gambar/point2point.png, id=28, 148.555pt x 82.3075pt>
+File: Gambar/point2point.png Graphic file (type png)
+<use Gambar/point2point.png>
+Package pdftex.def Info: Gambar/point2point.png  used on input line 251.
+(pdftex.def)             Requested size: 89.13368pt x 49.38486pt.
+
+Overfull \vbox (7.49817pt too high) has occurred while \output is active []
+
+
+[5]
+<Gambar/bus.png, id=32, 525.965pt x 309.155pt>
+File: Gambar/bus.png Graphic file (type png)
+<use Gambar/bus.png>
+Package pdftex.def Info: Gambar/bus.png  used on input line 261.
+(pdftex.def)             Requested size: 105.19113pt x 61.8299pt.
+<Gambar/ring.png, id=33, 220.825pt x 204.765pt>
+File: Gambar/ring.png Graphic file (type png)
+<use Gambar/ring.png>
+Package pdftex.def Info: Gambar/ring.png  used on input line 271.
+(pdftex.def)             Requested size: 66.248pt x 61.42996pt.
+<Gambar/star.png, id=34, 220.825pt x 214.8025pt>
+File: Gambar/star.png Graphic file (type png)
+<use Gambar/star.png>
+Package pdftex.def Info: Gambar/star.png  used on input line 281.
+(pdftex.def)             Requested size: 66.248pt x 64.44124pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (6.4151pt too high) has occurred while \output is active []
+
+
+[6 <./Gambar/point2point.png> <./Gambar/bus.png> <./Gambar/ring.png>]
+<Gambar/tree.png, id=41, 250.9375pt x 162.6075pt>
+File: Gambar/tree.png Graphic file (type png)
+<use Gambar/tree.png>
+Package pdftex.def Info: Gambar/tree.png  used on input line 291.
+(pdftex.def)             Requested size: 75.28181pt x 48.78262pt.
+<Gambar/mesh_partial.png, id=42, 1204.5pt x 917.4275pt>
+File: Gambar/mesh_partial.png Graphic file (type png)
+<use Gambar/mesh_partial.png>
+Package pdftex.def Info: Gambar/mesh_partial.png  used on input line 301.
+(pdftex.def)             Requested size: 84.32361pt x 64.22649pt.
+<Gambar/mesh_fully.png, id=43, 1003.75pt x 971.63pt>
+File: Gambar/mesh_fully.png Graphic file (type png)
+<use Gambar/mesh_fully.png>
+Package pdftex.def Info: Gambar/mesh_fully.png  used on input line 307.
+(pdftex.def)             Requested size: 70.26967pt x 68.02104pt.
+<Gambar/arsitektur.png, id=44, 365.11406pt x 151.3153pt>
+File: Gambar/arsitektur.png Graphic file (type png)
+<use Gambar/arsitektur.png>
+Package pdftex.def Info: Gambar/arsitektur.png  used on input line 316.
+(pdftex.def)             Requested size: 255.5781pt x 105.91998pt.
+
+Overfull \vbox (7.49817pt too high) has occurred while \output is active []
+
+
+[7 <./Gambar/star.png> <./Gambar/tree.png> <./Gambar/mesh_partial.png> <./Gamba
+r/mesh_fully.png>]
+<Gambar/flat.png, id=53, 226.59656pt x 190.46156pt>
+File: Gambar/flat.png Graphic file (type png)
+<use Gambar/flat.png>
+Package pdftex.def Info: Gambar/flat.png  used on input line 333.
+(pdftex.def)             Requested size: 135.95897pt x 114.2778pt.
+
+Overfull \vbox (6.4151pt too high) has occurred while \output is active []
+
+
+[8 <./Gambar/arsitektur.png> <./Gambar/flat.png>]
+<Gambar/cluster_single.png, id=57, 226.59656pt x 221.32687pt>
+File: Gambar/cluster_single.png Graphic file (type png)
+<use Gambar/cluster_single.png>
+Package pdftex.def Info: Gambar/cluster_single.png  used on input line 345.
+(pdftex.def)             Requested size: 158.6165pt x 154.92773pt.
+<Gambar/cluster_multi.png, id=58, 227.34938pt x 216.81pt>
+File: Gambar/cluster_multi.png Graphic file (type png)
+<use Gambar/cluster_multi.png>
+Package pdftex.def Info: Gambar/cluster_multi.png  used on input line 351.
+(pdftex.def)             Requested size: 159.14346pt x 151.76596pt.
+<Gambar/cluster_multitier.png, id=59, 226.59656pt x 219.82124pt>
+File: Gambar/cluster_multitier.png Graphic file (type png)
+<use Gambar/cluster_multitier.png>
+Package pdftex.def Info: Gambar/cluster_multitier.png  used on input line 357.
+(pdftex.def)             Requested size: 158.6165pt x 153.87381pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (7.49817pt too high) has occurred while \output is active []
+
+
+[9 <./Gambar/cluster_single.png> <./Gambar/cluster_multi.png>]
+Overfull \vbox (6.4151pt too high) has occurred while \output is active []
+
+
+[10 <./Gambar/cluster_multitier.png>]
+Overfull \vbox (7.49817pt too high) has occurred while \output is active []
+
+
+[11] ("Progress report v44.aux") ) 
+Here is how much of TeX's memory you used:
+ 3450 strings out of 492973
+ 49539 string characters out of 3125363
+ 234075 words of memory out of 3000000
+ 7246 multiletter control sequences out of 15000+200000
+ 14911 words of font info for 29 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,9n,25p,1010b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Jonathan\AppData\Local\MiKTeX\2.9\
+fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1000.pk> <C:\Users\Jonathan\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Jonathan
+\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\U
+sers\Jonathan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1
+440.pk> <C:\Users\Jonathan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\ecxc1200.pk> <C:\Users\Jonathan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\jknappen\ec\dpi600\ecxc1728.pk> <C:\Users\Jonathan\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Jonathan\AppData\Local
+\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1000.pk><C:/Users/Jonathan/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on "Progress report v44.pdf" (11 pages, 1124274 bytes).
+PDF statistics:
+ 386 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+

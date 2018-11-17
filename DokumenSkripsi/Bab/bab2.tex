@@ -5,7 +5,7 @@ Pada bab ini dijelaskan dasar-dasar teori mengenai \textit{Wireless Sensor Netwo
 
 \section{Wireless Sensor Network}
 \label{sec:wsn}
-\textit{Wireless Sensor Network} (WSN) merupakan jaringan nirkabel yang terdiri dari sekumpulan node sensor yang diletakan pada suatu tempat dan memiliki kemampuan untuk mengukur kondisi lingkungan sekitar(\textit{sensing}), melakukan komputasi dan dilengkapi dengan alat komunikasi \textit{wireless} untuk komunikasi antara node sensor. Sensor ini akan mengumpulkan data dari kondisi lingkungannya, seperti: cahaya, suara, kelembapan, getaran, gerakan, temperatur, tekanan udara, kualitas air, komposisi tanah, dan lain-lain. Data ini kemudian dapat dikirimkan langsung ke \textit{base station} atau melalui node sensor tetangganya hingga sampai ke \textit{base station} sebagai pusat untuk dikelola.
+\textit{Wireless Sensor Network} (WSN) merupakan jaringan nirkabel yang terdiri dari sekumpulan node sensor yang diletakan pada suatu tempat dan memiliki kemampuan untuk mengukur kondisi lingkungan sekitar(\textit{sensing}), melakukan komputasi dan dilengkapi dengan alat komunikasi \textit{wireless} untuk komunikasi antara node sensor. Sensor ini akan mengumpulkan data dari kondisi lingkungannya, seperti: cahaya, suara, kelembapan, getaran, gerakan, temperatur, tekanan udara, kualitas air, komposisi tanah, dan lain-lain. Data ini kemudian dapat dikirimkan langsung ke \textit{base station} atau diteruskan melalui node sensor tetangganya hingga sampai ke \textit{base station} sebagai pusat untuk dikelola.
 
 \subsection{Penerapan Wireless Sensor Network}
 Pada awalnya \textit{sensor network} (jaringan sensor) digunakan dalam teknologi militer untuk mendeteksi musuh di laut dan di darat. Semakin lama node sensor ini banyak dikembangkan untuk membantu berbagai bidang kehidupan manusia. Pemanfaatan WSN pada kehidupan manusia dapat dilihat pada ilustrasi Gambar~\ref{fig:smartworld}. Berikut adalah beberapa penerapan WSN:
@@ -184,7 +184,7 @@ Topologi \textit{Mesh} dibagi menjadi dua yaitu \textit{partially connected mesh
 	\label{fig:mesh_fully} 
 \end{figure} 
 
-Arsitektur yang biasanya dipakai pada WSN adalah \textbf{arsitektur flat / peer-to-peer} dan \textbf{arsitektur hirarkikal}. Selain itu dalam membangun WSN perlu juga diperhatikan jalur komunikasi yang digunakan untuk menghubungkan antar node sensor saat transfer data. Untuk area \textit{sensing} yang tidak terlalu luas dan hanya menggunakan sedikit node sensor dapat menggunakan cara komunikasi \textbf{\textit{single hop}}. Sedangkan untuk daerah yang luas dan memerlukan banyak node sensor dapat menggunakan cara komunikasi \textbf{\textit{multi hop}}. 
+Arsitektur yang biasanya dipakai pada WSN adalah \textbf{arsitektur flat / peer-to-peer} dan \textbf{arsitektur hierarki}. Selain itu dalam membangun WSN perlu juga diperhatikan jalur komunikasi yang digunakan untuk menghubungkan antar node sensor saat transfer data. Untuk area \textit{sensing} yang tidak terlalu luas dan hanya menggunakan sedikit node sensor dapat menggunakan cara komunikasi \textbf{\textit{single hop}}. Sedangkan untuk daerah yang luas dan memerlukan banyak node sensor dapat menggunakan cara komunikasi \textbf{\textit{multi hop}}. 
 
 \begin{figure} [H]
 	\centering  
@@ -196,7 +196,7 @@ Arsitektur yang biasanya dipakai pada WSN adalah \textbf{arsitektur flat / peer-
 \subsubsection{Single-Hop dan Multi-Hop}
 Untuk mengirim data ke \textit{sink node} setiap node sensor dapat menggunakan \textit{single-hop long-distance transmission}. \textit{Single-hop long-distance} ini berarti setiap node sensor akan mengirimkan data ke sink node hanya satu kali lompatan walaupun jarak antara sink node dengan node sensor itu sangat jauh. Dalam jaringan sensor, penggunaan energi paling besar adalah saat melakukan komunikasi dibandingan saat sensing. Penggunaan energi akan semakin bertambah jika jarak sink dan node sensor semakin jauh. Untuk menangani masalah tersebut muncul protokol \textit{multi-hop}.
 
-Pada protokol \textit{multi-hop}, node sensor akan disusun saling berdekatan dan terhubung dengan yang lain. Jadi saat akan berkomunikasi dengan \textit{sink node}, node sensor harus mengirimkan data tersebut ke node sensor tetangganya dan diteruskan hingga sampai ke \textit{sink node}. Karena jarak yang saling berdekatan maka penggunaan energi dapat efektif. \textit{Single-hop} dan \textit{multi-hop} ini dapat digunakan pada topologi flat maupun hirarkikal sesuai dengan kebutuhan sistem.
+Pada protokol \textit{multi-hop}, node sensor akan disusun saling berdekatan dan terhubung dengan yang lain. Jadi saat akan berkomunikasi dengan \textit{sink node}, node sensor harus mengirimkan data tersebut ke node sensor tetangganya dan diteruskan hingga sampai ke \textit{sink node}. Karena jarak yang saling berdekatan maka penggunaan energi dapat efektif. \textit{Single-hop} dan \textit{multi-hop} ini dapat digunakan pada topologi flat maupun hierarki sesuai dengan kebutuhan sistem.
 
 \subsubsection{Arsitektur Flat / Peer-to-Peer}
 Pada arsitektur flat, setiap node sensor memiliki peran atau \textit{role} yang sama dalam melakukan \textit{sensing}. Secara fungsional hanya terdapat dua macam node sensor pada arsitektur flat, yaitu \textit{source node} dan \textit{sink node}. Untuk mendapatkan data dilakukan dengan cara \textit{sink node} melakukan pengiriman data ke semua node sensor pada area \textit{sensing} dengan cara \textit{flooding} dan hanya node sensor yang sesuai yang akan merespon \textit{sink node}. Setiap node sensor mengirimkan data ke \textit{sink node} dengan \textit{multi hop} dan melalui node tetangganya yang terhubung dengannya untuk meneruskan data (Gambar~\ref{fig:flat}).
@@ -208,8 +208,8 @@ Pada arsitektur flat, setiap node sensor memiliki peran atau \textit{role} yang 
 	\label{fig:flat} 
 \end{figure} 
 
-\subsubsection{Arsitektur Hirarkikal}
-Pada arsitektur hirarkikal, semua node sensor dikelompokan ke dalam cluster-cluster. Terdapat \textit{cluster head} pada setiap cluster. \textit{Cluster head} ini yang mengumpulkan data dari setiap node sensor di bawahnya dan meneruskan data yang telah diterima ke \textit{base station} atau \textit{sink node}. Hal yang perlu diperhatikan pada arsitektur hirarkikal adalah pemilihan node sensor sebagai \textit{cluster head} dan node sensor yang melakukan sensing. Penggunaan energi yang paling besar dalam WSN ini adalah saat melakukan komunikasi yaitu saat mengirimkan data ke node sensor lain. Maka untuk node sensor yang memiliki energi kecil dapat digunakan untuk \textit{sensing}, karena node sensor ini hanya melakukan komunikasi ke \textit{cluster head}. \textit{Cluster head} harus memiliki energi atau daya yang lebih banyak, karena \textit{cluster head} akan bertugas menerima hasil sensing node sensor di bawahnya dan meneruskan data ke \textit{sink node}. 
+\subsubsection{Arsitektur Hierarki}
+Pada arsitektur hierarki, semua node sensor dikelompokan ke dalam cluster-cluster. Terdapat \textit{cluster head} pada setiap cluster. \textit{Cluster head} ini yang mengumpulkan data dari setiap node sensor di bawahnya dan meneruskan data yang telah diterima ke \textit{base station} atau \textit{sink node}. Hal yang perlu diperhatikan pada arsitektur hierarki adalah pemilihan node sensor sebagai \textit{cluster head} dan node sensor yang melakukan sensing. Penggunaan energi yang paling besar dalam WSN ini adalah saat melakukan komunikasi yaitu saat mengirimkan data ke node sensor lain. Maka untuk node sensor yang memiliki energi kecil dapat digunakan untuk \textit{sensing}, karena node sensor ini hanya melakukan komunikasi ke \textit{cluster head}. \textit{Cluster head} harus memiliki energi atau daya yang lebih banyak, karena \textit{cluster head} akan bertugas menerima hasil sensing node sensor di bawahnya dan meneruskan data ke \textit{sink node}. 
 
 Masalah yang utama pada clustering ini adalah pemilihan \textit{cluster head} dan bagaimana cara mengatur setiap cluster. Terdapat beberapa cara untuk membuat clustering ini. Bedasarkan jarak antara \textit{cluster head} dengan cluster member, dapat dibuat clustering dengan \textit{single-hop} atau \textit{multi-hop} seperti pada Gambar~\ref{fig:cluster_single} dan Gambar~\ref{fig:cluster_multi}. Sedangkan jika berdasarkan jumlah \textit{tier} atau tingkat dapat dibangun \textit{clustering single tier} atau \textit{multi tier} (Gambar~\ref{fig:cluster_multitier}).
 \begin{figure} [H]
@@ -227,7 +227,7 @@ Masalah yang utama pada clustering ini adalah pemilihan \textit{cluster head} da
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=0.8]{cluster_multitier}  
-	\caption[Clsutering dengan multi tier]{Clsutering dengan multi tier} 
+	\caption[Clsutering dengan multi tier]{Clustering dengan multi tier} 
 	\label{fig:cluster_multitier} 
 \end{figure}
 
