@@ -1,7 +1,7 @@
 \chapter{Analisis}
 \label{chap:analisis}
 
-Pada bab ini dijelaskan mengenai analisis pengiriman data dari node sensor ke base station pada WSN, analisis protokol yang reliable saat melakukan pengiriman data dari node sensor ke base station pada WSN, dan analisis aplikasi pengiriman data pada WSN.
+Pada bab ini dijelaskan mengenai analisis pengiriman data dari node sensor ke base station pada WSN, analisis terhadap protokol transfer yang \textit{reliable} pada \textit{Wireless Sensor Network} untuk digunakan dalam membangun aplikasi transfer data, dan analisis aplikasi pengiriman data pada WSN.
 
 \section{Analisis Proses Pengiriman Data Dari Node Sensor Ke Base Station Pada WSN}
 Pengiriman data pada WSN dibagi menjadi dua yaitu pengiriman data dari base station ke setiap node sensor (downstream) dan pengiriman data dari setiap node sensor ke base station (upstream). Pengiriman downstream biasanya adalah perintah yang diberikan oleh base station kepada node sensor, sedangkan pengiriman upstream adalah pengiriman data hasil sensing setiap node sensor kepada base station. Dalam melakukan pengiriman ini dapat dilakukan dengan single hop atau multi hop tergantung pada komunikasi yang digunakan. 
@@ -10,15 +10,14 @@ Pengiriman data hasil sensing dari node sensor ke base station sendiri dapat dil
 
 Pada skripsi ini digunakan cara dengan mengirim langsung data mentah yang didapat dari node sensor tersebut. Penulis memilih cara ini karena penyimpanan node sensor yang kecil. Selain itu untuk diimplementasi cara ini lebih mudah dibandingkan dengan melakukan memprosesan terlebih dahulu. Karena tujuan utama pada skripsi ini adalah membangun aplikasi untuk transfer data maka pada base station hanya memerlukan data mentah.
 
-\section{Analisis Protokol Yang Reliable Saat Pengiriman Data Dari Node Sensor Ke Base Station Pada WSN}
-Pada WSN terdapat beberapa protokol yang mendukung pengiriman data reliable. Untuk memastikan data yang reliable ini dilakukanlah pengiriman ulang (retransmission) data yang hilang atau loss. Data yang dikirim ulang ini dapat berasal dari hasil sensing node sensor atau data dari base station seperti perintah atau method tertentu. Pada skripsi ini data yang dikirim ulang adalah data hasil sensing dan protokol yang digunakan adalah protokol dengan arah pengiriman upstream. Setiap protokol memiliki spesifikasi yang berbeda-beda pada arah retransmission, data yang dikirim, mekanisme dan acknowledge yang digunakan. 
+\section{Analisis Terhadap Protokol Transfer Yang Reliable Pada WSN Untuk Digunakan Dalam Membangun Aplikasi Transfer Data}
+Tidak semua protokol pengiriman data pada WSN mendukung pengiriman data yang \textit{reliable}. Pada WSN terdapat beberapa protokol yang mendukung pengiriman data reliable. Untuk memastikan data yang reliable ini dilakukanlah pengiriman ulang (retransmission) data yang hilang atau \textit{loss}. Data yang dikirim ulang ini dapat berasal dari hasil \textit{sensing} node sensor atau data dari base station seperti perintah atau \textit{method} untuk melakukan sesuatu. Pada skripsi ini data yang dikirim ulang adalah data hasil \textit{sensing} sehingga protokol yang digunakan adalah protokol dengan arah pengiriman \textit{upstream}. Setiap protokol memiliki spesifikasi yang berbeda-beda pada arah \textit{retransmission}, data yang dikirim, mekanisme dan \textit{acknowledge} yang digunakan. 
 
-Pada skripsi ini akan digunakan protokol Reliable Multi Segment Transport. Protokol ini 
+Pada skripsi ini dibangun aplikasi transfer data pada WSN. Aplikasi yang dibangun ini juga menangani pengiriman data yang \textit{reliable}. Pengiriman data yang terjadi adalah pengiriman data dari setiap node sensor hingga sampai ke base station (\textit{upstream}). Data yang didapat oleh node sensor ini dapat diteruskan ke node tetangganya dahulu sebelu sampai ke tujuan akhir yaitu \textit{base station}. Berdasarkan Tabel~\ref{tab:protokol_reliable} terdapat beberapa protokol yang diadaptasi untuk membuat aplikasi transfer data ini. 
 
-%Dibandingkan .. milih yg hop-by-hop, terdapat ack, ditambah timer
+Aplikasi transfer data yang dibuat ini akan menangani data yang loss menggunakan mekanisme hop-by-hop dengan bantuan ACK dalam memastikan data sampai ke node tetangganya. Dengan mekanisme hop-by-hop akan lebih cepat untuk mengirimkan ulang data yang loss. Jika dibandingkan dengan mekanisme end-to-end retransmission maka reliabilitas data akan diperiksa oleh base station. Jika base station menemukan ada data yang loss, maka base station akan meminta node sensor untuk mengirimkan ulang data yang loss tersebut. Namum permasalahan pada mekanisme end-to-end adalah jika arsitektur yang dibangun adalah multi hop maka base station akan meminta node yang terhubung dengan base station meneruskan pesan ke node sensor tetangganya hingga ke node sensor yang melakukan \textit{sensing} untuk mengirim ulang data. 
 
-\subsection{Reliable Multi Segment Transport (RMST)}
-.....
+Dengan mekanisme hop-by-hop, saat salah satu node mengirimkan data ke node tetangganya, node pengirim akan menunggu ACK dari node penerima. Saat menunggu ACK dari node tetangganya ini digunakan juga mekanisme \textit{timer-driven}. Dengan menggunakan mekanisme \textit{timer-driven} ini, waktu menunggu ACK dapat dibatasi. Jika sudah melewati batas waktu menunggu ACK tersebut, maka data akan dianggap tidak diterima oleh penerima dan pengirim akan mengirimkan ulang data. Saat melakukan pengiriman ulang data ini bisa saja terjadi pengulangan data yang diterima. Jika ini terjadi maka digunakan \textit{sequence number} untuk memastikan urutan data.
 
 %class diagram
 \section{Analisis Aplikasi Pengiriman Data Pada WSN}
