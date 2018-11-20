@@ -117,10 +117,10 @@ Sensor dan Actuator adalah hal yang penting pada WSN. Tanpa sensor dan actuator 
 \end{table}
 
 \subsubsection{Power Supply}
-\textit{Power supply} atau sumber energi pada WSN bisa berasal dari dua cara yaitu \textbf{\textit{storing energy}} dan \textbf{\textit{energy scavenging}}. \textit{Storing energy} adalah dengan menggunakan baterai sebagai sumber energinya. Baterai yang digunakan dapat diisi ulang maupun tidak dapat diisi ulang. \textit{Energy scavenging} digunakan saat membuat WSN yang akan digunakan dalam waktu yang lama. Dibutuhkan energi yang bisa dikatakan tidak terbatas. Salah satu cara \textit{energy scavenging} adalah \textit{photovoltaics}. \textit{Photovoltaics} dapat disebut juga \textit{solar cell} yang memanfaatkan cahaya matahari dan mengubahnya menjadi energi sebagai pembangkit daya. Cara lain yang bisa digunakan adalah pemanfaatan angin dan air untuk mengerakan kincir atau turbin yang akan menghasilkan listrik dan digunakan sebagai sumber energi pada node sensor.
+\textit{Power supply} atau sumber energi pada WSN dapat berasal dari dua cara yaitu \textbf{\textit{storing energy}} dan \textbf{\textit{energy scavenging}}. \textit{Storing energy} adalah dengan menggunakan baterai sebagai sumber energinya. Baterai yang digunakan dapat diisi ulang maupun tidak dapat diisi ulang. \textit{Energy scavenging} digunakan saat membuat WSN yang akan digunakan dalam waktu yang lama. Dibutuhkan energi yang bisa dikatakan tidak terbatas. Salah satu cara \textit{energy scavenging} adalah \textit{photovoltaics}. \textit{Photovoltaics} dapat disebut juga \textit{solar cell} yang memanfaatkan cahaya matahari dan mengubahnya menjadi energi sebagai pembangkit daya. Cara lain yang dapat digunakan adalah pemanfaatan angin dan air untuk mengerakan kincir atau turbin yang akan menghasilkan listrik dan digunakan sebagai sumber energi pada node sensor.
 
 \subsection{Arsitektur dan Topologi Wireless Sensor Network}
-Pada WSN biasanya akan terdapat banyak node sensor yang disebar pada suatu tempat. Terdapat satu atau lebih \textit{sink node} atau \textit{base station} dalam area sensing tersebut (Gambar~\ref{fig:arsitektur}). \textit{sink node} atau \textit{base station} adalah node sensor yang bertugas untuk mendapatkan data dari node sensor lain. Dalam membuat WSN perlu diperhatikan arsitektur dan topologi yang akan digunakan. Tidak semua topologi jaringan komputer dapat digunakan untuk \textit{Wireless Sensor Network}. 
+Pada WSN biasanya akan terdapat banyak node sensor yang disebar pada suatu tempat. Terdapat satu atau lebih \textit{sink node} atau \textit{base station} dalam area sensing tersebut (Gambar~\ref{fig:arsitektur}). \textit{Sink node} atau \textit{base station} adalah node sensor yang bertugas untuk mendapatkan data dari node sensor lain. Dalam membuat WSN perlu diperhatikan arsitektur dan topologi yang akan digunakan. Tidak semua topologi jaringan komputer dapat digunakan untuk \textit{Wireless Sensor Network}. 
 
 Ada banyak topologi pada jaringan sensor (\textit{sensor network}). Pada jaringan sensor dengan menggunakan kabel, topologi yang sering digunakan adalah topologi \textit{star}, \textit{line}, atau \textit{bus}. Sedangkan pada jaringan sensor tanpa kabel (WSN), topologi yang biasa digunakan adalah \textit{star}, \textit{tree}, atau \textit{mesh}. 
 
@@ -184,7 +184,7 @@ Topologi \textit{Mesh} dibagi menjadi dua yaitu \textit{partially connected mesh
 	\label{fig:mesh_fully} 
 \end{figure} 
 
-Arsitektur yang biasanya dipakai pada WSN adalah \textbf{arsitektur flat / peer-to-peer} dan \textbf{arsitektur hierarki}. Selain itu dalam membangun WSN perlu juga diperhatikan jalur komunikasi yang digunakan untuk menghubungkan antar node sensor saat transfer data. Untuk area \textit{sensing} yang tidak terlalu luas dan hanya menggunakan sedikit node sensor dapat menggunakan cara komunikasi \textbf{\textit{single hop}}. Sedangkan untuk daerah yang luas dan memerlukan banyak node sensor dapat menggunakan cara komunikasi \textbf{\textit{multi hop}}. 
+Arsitektur yang biasanya dipakai pada WSN adalah \textbf{arsitektur flat atau peer-to-peer} dan \textbf{arsitektur hierarki}. Selain itu dalam membangun WSN perlu juga diperhatikan jalur komunikasi yang digunakan untuk menghubungkan antar node sensor saat transfer data. Untuk area \textit{sensing} yang tidak terlalu luas dan hanya menggunakan sedikit node sensor dapat menggunakan cara komunikasi \textbf{\textit{single hop}}. Sedangkan untuk daerah yang luas dan memerlukan banyak node sensor dapat menggunakan cara komunikasi \textbf{\textit{multi hop}}. 
 
 \begin{figure} [H]
 	\centering  
@@ -311,7 +311,7 @@ WSN memiliki lima layer protokol: physical layer, data link layer, network layer
 	\label{fig:layer} 
 \end{figure} 
 
-Selain itu protokol stack pada WSN dibagi kedalam 3 grup manajemen yaitu \textit{power management plane}, \textit{connection management plane}, dan \textit{task management plane}. \textbf{\textit{Power Management Plane}} bertanggung jawab untuk melakukan manajemen sumber daya atau energi pada setiap node sensor saat melakukan sensing, processing, transfer data dan menerima data. Contohnya pada layer MAC node sensor dapat mematikan transceiver saat tidak ada data untuk dikirim dan diterima. Pada \textit{network layer}, node sensor dapat memilih node sensor tetangga saat akan melakukan transfer data agar penggunaan energi yang minimal. \textbf{\textit{Connection Management Plane}} bertanggung jawab untuk melakukan pengaturan terhadap node sensor terkait dengan koneksi antar node sensor. \textbf{\textit{Task Management Plane}} bertanggung jawab untuk mengatur distribusi tugas atau \textit{task} pada node sensor dalam melakukan \textit{sensing} agar tercapai penggunaan energi yang efisien.
+Selain itu protokol stack pada WSN dibagi kedalam 3 grup manajemen yaitu \textit{power management plane}, \textit{connection management plane}, dan \textit{task management plane}. \textbf{\textit{Power Management Plane}} bertanggung jawab untuk melakukan manajemen sumber daya atau energi pada setiap node sensor saat melakukan sensing, processing, transfer data dan menerima data. Contohnya pada layer MAC, node sensor dapat mematikan transceiver saat tidak ada data untuk dikirim dan diterima. Pada \textit{network layer}, node sensor dapat memilih node sensor tetangga saat akan melakukan transfer data agar penggunaan energi yang minimal. \textbf{\textit{Connection Management Plane}} bertanggung jawab untuk melakukan pengaturan terhadap node sensor terkait dengan koneksi antar node sensor. \textbf{\textit{Task Management Plane}} bertanggung jawab untuk mengatur distribusi tugas atau \textit{task} pada node sensor dalam melakukan \textit{sensing} agar tercapai penggunaan energi yang efisien.
 
 \subsubsection{Physical Layer}
 \textit{Physical layer} bertanggung jawab untuk mengubah bit stream dari data link layer menjadi sinyal agar bisa dilakukan transmisi melalui media komunikasi yang terdapat (transceiver). Pemilihan media dan frekuensi adalah hal yang penting dalam komunikasi antar node sensor. Salah satu cara yang bisa digunakan adalah dengan menggunakan \textit{Radio frequency} (RF). Jaringan sensor memerlukan biaya yang kecil, ukuran yang kecil, dan penggunaan daya yang kecil untuk tranceivernya. Karena itu banyak yang menggunakan Radio Frequency (RF) untuk desain perangkat keras node sensornya.
@@ -338,14 +338,14 @@ Secara umum \textit{transport layer} bertanggung jawab untuk pengiriman data yan
 
 % http://profsite.um.ac.ir/~hyaghmae/WSN/transport.pdf
 \section{Reliable Data Transfer di WSN}
-WSN terdiri dari \textit{sink node} dan banyak node sensor. Saat melakukan sensing dan mengirim data ke \textit{sink node}, semua node sensor akan mengirimkan data melalui media yang sama. Hal ini dapat membanjiri jaringan dengan data tersebut dan menyebabkan \textit{congestion} atau kemacetan pada jaringan yang berakibat \textit{data loss} atau hilang. Untuk menangani \textit{data loss}, maka dalam membangun WSN adalah salah satu yang diperlukan adalah protokol yang menangani \textit{Reliability}. \textit{Reliability} berarti memastikan data yang dikirim dari setiap node sensor diterima oleh \textit{base station} secara lengkap dan sesuai dengan urutan pengiriman.
+WSN terdiri dari \textit{sink node} dan banyak node sensor. Saat melakukan sensing dan mengirim data ke \textit{sink node}, semua node sensor akan mengirimkan data melalui media yang sama. Hal ini dapat membanjiri jaringan dengan data tersebut dan menyebabkan \textit{congestion} atau kemacetan pada jaringan yang berakibat \textit{data loss} atau hilang. Untuk menangani \textit{data loss}, maka salah satu yang diperlukan dalam membangun WSN adalah protokol yang menangani \textit{Reliability}. \textit{Reliability} berarti memastikan data yang dikirim dari setiap node sensor diterima oleh \textit{base station} secara lengkap dan sesuai dengan urutan pengiriman.
 
 \subsection{Jenis Reliability}
 Berdasarkan tingkat, reliability ada dua macam yaitu:
-\begin{enumerate}
+\begin{itemize}
 	\item Packet Reliability
 	\item Event Reliability
-\end{enumerate}  
+\end{itemize}  
 \subparagraph{Packet Reliability} berarti paket yang dikirim harus sampai kepada tujuan (\textit{base station}) secara utuh. \textit{Packet reliability} ini membutuhkan \textit{acknowledge} dari node sensor. Tantangan yang harus dihadapi dari \textit{packet reliability} adalah dalam mengirim ulang paket yang hilang akan menghabiskan energi atau daya.
 \subparagraph{Event Reliability} berarti hanya data hasil \textit{sensing} yang akan dikirim ke \textit{base station}. Pada \textit{Event reliability} tidak membutuhkan \textit{acknowledge}. Karena data yang hilang itu tidak banyak berpengaruh sehingga tidak dibutuhkan pengiriman ulang (\textit{retransmission}) data.
 
@@ -379,7 +379,7 @@ Dalam mencapai reliability dapat digunakan acknowledge saat melakukan pengiriman
 \end{enumerate}
 
 \subsection{Protokol Transport yang Reliable}
-Ada banyak protokol untuk memastikan \textit{reliability} pada WSN. Beberapa protokol mendukung \textit{upstream,} dan beberapa protokol mendukung \textit{downstream}. Hanya ada sedikit protokol yang dapat mendukung keduanya. Selain itu ada protokol yang memiliki fokus utama untuk menangani \textit{reliability} saja dan ada yang menangani \textit{congestion} sekaligus \textit{reliability}. 
+Ada banyak protokol untuk memastikan \textit{reliability} pada WSN. Beberapa protokol mendukung \textit{upstream} dan beberapa protokol mendukung \textit{downstream}. Hanya ada sedikit protokol yang dapat mendukung keduanya. Selain itu ada protokol yang memiliki fokus utama untuk menangani \textit{reliability} saja dan ada yang menangani \textit{congestion} sekaligus \textit{reliability}. 
 
 Beberapa protokol transport yang sering digunakan antara lain:
 \begin{itemize}
