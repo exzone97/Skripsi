@@ -403,7 +403,7 @@ Pada WSN terdapat \textit{event detection}, yaitu saat node sensor mendeteksi se
 
 \begin{figure} [H]
 	\centering  
-	\includegraphics[scale=0.6]{Gambar/event_detection}  
+	\includegraphics[scale=0.6]{event_detection}  
 	\caption[Event Detection pada WSN]{Event Detection pada WSN} 
 	\label{fig:event_detection} 
 \end{figure}
@@ -416,7 +416,7 @@ Reliable Multi Segment Transport (RMST) adalah protokol \textit{upstream} yang m
 RMST dibuat untuk dapat berjalan diatas directed diffusion (Gambar~\ref{fig:directed_diffusion}). \textit{Directed diffusion} berarti protokol routing untuk memastikan reliability untuk diaplikasikan. Pada RMST terdapat dua mekanisme yang dapat dilakukan yaitu mode \textit{caching} dan mode \textit{non caching}. Mode \textit{Caching} berarti node sensor yang berada di tengah dapat mendeteksi celah atau loss dan membuat request (NACK) ke node sebelumnya untuk memulihkan bagian yang hilang. Sedangkan pada mode \textit{non caching} berarti \textit{sink node} yang melakukan deteksi terhadap data yang hilang. Jadi sebenarnya RMST ini dapat dilakukan dengan mekanisme hop-by-hop dan end-to-end. Masalah dari RMST ini adalah tidak menangani \textit{congestion control}, penggunaan energi yang efisien, dan reliable pada aplication layer.
 \begin{figure} [H]
 	\centering  
-	\includegraphics[scale=1]{Gambar/directed_diffusion}  
+	\includegraphics[scale=1]{directed_diffusion}  
 	\caption[Hubungan antara RMST dengan Directed Diffusion]{Hubungan antara RMST dengan Directed Diffusion} 
 	\label{fig:directed_diffusion} 
 \end{figure} 
