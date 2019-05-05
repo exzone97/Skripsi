@@ -31,8 +31,8 @@
 % Isilah dengan 0 atau 1 (e.g. \daftarIsiError{1}). 
 % Pemilihan 0 atau 1 silahkan disesuaikan dengan hasil PDF yang dihasilkan.
 %=============================================================================
-%\daftarIsiError{0}   
-\daftarIsiError{1}   
+\daftarIsiError{0}   
+%\daftarIsiError{1}   
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -73,9 +73,9 @@
 % Mode default adalah 'template' yang menghasilkan isian berwarna merah, 
 % aktifkan salah satu mode di bawah ini :
 %=============================================================================
-\mode{bimbingan} 		% untuk keperluan bimbingan
+% \mode{bimbingan} 		% untuk keperluan bimbingan
 %\mode{sidang} 			% untuk sidang 1
-%\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
+\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
 %\mode{final} 			% untuk mencetak buku skripsi 
 %=============================================================================
 
@@ -94,8 +94,8 @@
 %   dokumen latex anda
 % - bagian ini hanya bisa diatur di mode bimbingan
 %=============================================================================
-%\linenumber{no} 
-\linenumber{yes}
+\linenumber{no} 
+%\linenumber{yes}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -111,8 +111,8 @@
 %             catatan yg banyak di antara baris (dianjurkan untuk bimbingan)
 % Catatan: bagian ini hanya bisa diatur di mode bimbingan
 %=============================================================================
-\linespacing{single}
-%\linespacing{onehalf}
+%\linespacing{single}
+\linespacing{onehalf}
 %\linespacing{double}
 %=============================================================================
 
@@ -196,7 +196,7 @@
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda
 %=============================================================================
 \namanpm{Jonathan Alva}{2015730047}
-\tanggal{<<tanggal>>}{<<bulan>>}{<<tahun>>}
+\tanggal{7}{5}{2019}
 \pembimbing{\ELH}{<<pembimbing pendamping/2>>}    
 \penguji{<<penguji 1>>}{<<penguji 2>>} 
 %=============================================================================
@@ -214,8 +214,8 @@
 % - gunakan \texorpdfstring{\\}{} untuk pindah ke baris baru
 % - judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
 %=============================================================================
-\judulINA{Pengembangan Aplikasi Transfer Pada WSN}
-\judulENG{<<Judul Bahasa Inggris>>}
+\judulINA{Pengembangan Aplikasi Transfer Data Di WSN}
+\judulENG{Development Of Data Transfer Application In WSN}
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN X
@@ -227,8 +227,32 @@
 % - hilangkan tanda << & >>, dan isi sesuai dengan data anda
 % - langsung mulai setelah '{' awal, jangan mulai menulis di baris bawahnya
 %=============================================================================
-\abstrakINA{<<Tuliskan abstrak anda di sini, dalam bahasa Indonesia>>}
-\abstrakENG{<<Tuliskan abstrak anda di sini, dalam bahasa Inggris>>} 
+\abstrakINA{
+Wireless Sensor Network (WSN) adalah jaringan nirkabel yang terdiri dari sekumpulan node sensor dengan kemampuan \textit{sensing}, komputasi, dan komunikasi.
+Setiap node sensor akan mengumpulkan data seperti suhu, tekanan, dan kelembaban. 
+WSN dapat dibangun menggunakan arsitektur flat dan hierarki.
+Setiap arsitektur dapat menggunakan jalur komunikasi \textit{single-hop} atau \textit{multi-hop}.
+Pada komunikasi \textit{single-hop}, data dari node sensor langsung dikirim ke \textit{base station} dalam 1 kali lompatan (hop).
+Sedangkan pada komunikasi \textit{multi-hop}, data dari node sensor akan diteruskan kepada node sensor lain hingga sampai ke \textit{base station}.
+
+Dalam melakukan pengiriman data atau pesan dapat terjadi \textit{loss}. 
+Untuk melakukan monitoring suatu area, data harus dapat diterima secara utuh.
+Dalam monitoring area, data yang \textit{loss} dapat berpengaruh pada tingkat akurasi data. Semakin banyak data \textit{loss}, tingkat akurasi akan semakin rendah.
+
+Ada beberapa protokol yang sudah ada untuk menangani \textit{loss} pada transfer data. Salah satu protokol transport yang ada adalah RMST (Reliable Multi Segment Transport). RMST menggunakan beberapa mekanisme antara lain \textit{retransmission}, \textit{end-to-end},  ACK, \textit{sequence number} dan \textit{timer} untuk melakukan transfer data yang \textit{reliable}. Aplikasi yang dikembangkan akan menggunakan kelima mekanisme ini untuk menangani transfer data yang \textit{reliable} pada WSN.
+
+Pengembangan aplikasi ini berhasil dibangun dan transfer data dapat dilakukan secara \textit{reliable} dimana tidak ada data yang \textit{loss}. Tetapi transfer data yang \textit{reliable} ini membutuhkan waktu yang lebih lama, energi yang lebih besar dan memerlukan tempat penyimpanan yang besar pada setiap node sensor.
+
+}
+\abstrakENG{
+Wireless Sensor Network (WSN) is a wireless network consists of a set sensor nodes with sensing, computing, and communication. Each sensor node will collect data such as temperature, pressure, and humidity. WSN can be built using flat and hierarchy architecture. Each architecture can use single-hop or multi-hop communication. In single-hop communication, data from sensor node is sent directly to the base station with 1 hop. Whereas in multi-hop communication, data from the sensor node will be forwared to the sensor node until it reach the base station.
+
+In monitoring area, data must be received in its entirety.  Data loss can affect to the level of data accuracy. The more data loss, the lower accuracy will be.
+
+There are several protocols that can handle loss data transfer. One of the existing transport protocols is RMST (Reliable Multi Segment Transport). RMST uses mechanisms such as retransmission, end-to-end, ACK, sequence number, and timer for reliable data transfer. The application developed will use these five machanisms to handle the reliable data transfer in WSN.
+
+This application development was successfully built and data transfer can be done reliable with no data loss. But the reliable data transfer need more time, more energy, and large storage on each sensor node
+} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -240,8 +264,8 @@
 % - kunciENG: keywords in english
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\kunciINA{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Indonesia>>}
-\kunciENG{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Inggris>>}
+\kunciINA{Wireless Sensor Network, Arsitektur Flat, Single-hop, Reliable, RMST, ACK, Sequence Number, Timeout, End-to-End}
+\kunciENG{Wireless Sensor Network, Arsitektur Flat, Single-hop, Reliable, RMST, ACK, Sequence Number, Timeout, End-to-End}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -282,6 +306,18 @@
 % 								BAGIAN XV
 %=============================================================================
 % Tambahkan perintah yang anda buat sendiri di sini 
+\algblock[TryCatchFinally]{try}{endtry}
+\algcblock[TryCatchFinally]{TryCatchFinally}{finally}{endtry}
+\algcblockdefx[TryCatchFinally]{TryCatchFinally}{catch}{endtry}
+[1]{\textbf{catch} #1}
+{\textbf{end try}}
+
+\algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}
+
+\algdef{SE}[SUBALG]{Indent}{EndIndent}{}{\algorithmicend\ }
+\algtext*{Indent}
+\algtext*{EndIndent}
+
 %=============================================================================
 \renewcommand{\vtemplateauthor}{lionov}
 \pgfplotsset{compat=newest}

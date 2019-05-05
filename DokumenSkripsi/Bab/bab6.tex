@@ -1,0 +1,23 @@
+\chapter{Kesimpulan dan Saran}
+\label{chap:kesimpulan_dan_saran}
+
+\section{Kesimpulan}
+\label{sec:kesimpulan}
+Berdasarkan hasil penelitian yang dilakukan, diperoleh kesimpulan-kesimpulan sebagai berikut:
+
+\begin{enumerate}
+    \item Aplikasi transfer data yang \textit{reliable} berhasil dibangun dengan menggunakan mekanisme \textit{end-to-end retransmission}. Setelah melakukan pengujian didapatkan hasil bahwa aplikasi transfer data \textit{reliable} berhasil melakukan transfer data dengan tidak ada data yang \textit{loss}. 
+    \item \textit{Wireless Sensor Network} dapat dibangun dengan memastikan \textit{reliability} data dari setiap node sensor, tetapi terdapat beberapa konsekuensi yang harus diterima jika membangun aplikasi transfer data yang \textit{reliable} pada WSN diantaranya:
+    \begin{enumerate}
+        \item Waktu menerima data cenderung lebih lama dibanding aplikasi transfer data biasa. Hal ini diakibatkan aplikasi transfer data yang \textit{reliable} menggunakan \textit{timeout} dan ACK untuk memastikan data sampai ke \textit{base station}.
+        \item Penggunaan energi yang lebih banyak dibandingkan aplikasi transfer data biasa. Aplikasi transfer data \textit{reliable} banyak sekali melakukan transfer ulang data. Pada WSN transfer data menggunakan lebih banyak energi dibandingkan memproses data.
+        \item Karena node sensor memiliki penyimpanan yang kecil, maka perlu diperhatikan berapa banyak data yang akan disimpan pada sebuah node sensor saat menunggu ACK. Data yang terlalu banyak akan menyebabkan \textit{error} pada aplikasi karena kehabisan ruang memori.
+    \end{enumerate}
+\end{enumerate}
+\section{Saran}
+\label{sec:saran}
+Berdasarkan hasil penelitian yang dilakukan, berikut adalah beberapa saran untuk pengembangan:
+\begin{enumerate}
+    \item Perlu diperhatikan penggunaan energi jika menggunakan aplikasi transfer data \textit{reliable} ini. Dapat digunakan cara seperti membatasi jumlah pengiriman ulang data yang \textit{loss}. Namun hal ini akan mengakibatkan data yang tidak 100\% \textit{reliable}.
+    \item Aplikasi yang telah dibuat ini menggunakan mekanisme \textit{end-to-end} dalam memastikan \textit{reliability} data. Dengan adaptasi protokol RMST sebenarnya dapat juga dibangun aplikasi dengan mekanisme \textit{hop-by-hop} dalam memastikan pengiriman data yang \textit{reliable}.
+\end{enumerate}

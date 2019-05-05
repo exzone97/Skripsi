@@ -1,32 +1,32 @@
 %versi 2 (8-10-2016)
 \chapter{Landasan Teori}
 \label{chap:teori}
-Pada bab ini dijelaskan dasar-dasar teori mengenai \textit{Wireless Sensor Network}, Reliable Data Transfer di WSN, dan pemrograman pada WSN.
+Pada bab ini dijelaskan dasar-dasar teori mengenai \textit{Wireless Sensor Network}, Reliable Data Transfer di WSN, PreonVM, dan Format Struktur Frame.
 
 \section{Wireless Sensor Network}
 \label{sec:wsn}
-\textit{Wireless Sensor Network} (WSN) merupakan jaringan nirkabel yang terdiri dari sekumpulan node sensor yang diletakan pada suatu tempat dan memiliki kemampuan untuk mengukur kondisi lingkungan sekitar(\textit{sensing}), melakukan komputasi dan dilengkapi dengan alat komunikasi \textit{wireless} untuk komunikasi antara node sensor. Sensor ini akan mengumpulkan data dari kondisi lingkungannya, seperti: cahaya, suara, kelembapan, getaran, gerakan, temperatur, tekanan udara, kualitas air, komposisi tanah, dan lain-lain. Data ini kemudian dapat dikirimkan langsung ke \textit{base station} atau diteruskan melalui node sensor tetangganya hingga sampai ke \textit{base station} sebagai pusat untuk dikelola.
+\textit{Wireless Sensor Network} (WSN) merupakan jaringan nirkabel yang terdiri dari sekumpulan node sensor yang diletakan pada suatu tempat dan memiliki kemampuan untuk mengukur kondisi lingkungan sekitar (\textit{sensing}), melakukan komputasi dan dilengkapi dengan alat komunikasi \textit{wireless} untuk komunikasi antara node sensor \cite{fundamentals:0:fundamental} \cite{a_wireless_sensor}. Sensor ini akan mengumpulkan data dari kondisi lingkungannya, seperti: cahaya, suara, kelembaban, getaran, gerakan, temperatur, tekanan udara, kualitas air, komposisi tanah, dan lain-lain. Data ini kemudian dapat dikirimkan langsung ke \textit{base station} atau diteruskan melalui node sensor tetangganya hingga sampai ke \textit{base station} sebagai pusat untuk dikelola. 
 
-\subsection{Penerapan Wireless Sensor Network}
-Pada awalnya \textit{sensor network} (jaringan sensor) digunakan dalam teknologi militer untuk mendeteksi musuh di laut dan di darat. Semakin lama node sensor ini banyak dikembangkan untuk membantu berbagai bidang kehidupan manusia. Pemanfaatan WSN pada kehidupan manusia dapat dilihat pada ilustrasi Gambar~\ref{fig:smartworld}. Berikut adalah beberapa penerapan WSN:
+\subsection{Penerapan Wireless Sensor Network \cite{handbook}}
+Pada awalnya jaringan sensor digunakan dalam teknologi militer untuk mendeteksi musuh di laut dan di darat. Semakin lama node sensor ini banyak dikembangkan untuk membantu berbagai bidang kehidupan manusia. Pemanfaatan WSN pada kehidupan manusia dapat dilihat pada ilustrasi Gambar~\ref{fig:smartworld}\footnote{http://www.libelium.com/resources/top\_50\_iot\_sensor\_applications\_ranking/\#show\_infographic}. Berikut adalah beberapa penerapan WSN:
 \begin{itemize}
 \item Bidang Militer\\
-Pada bidang militer WSN digunakan untuk melakukan pemantauan musuh dan melindungi wilayah. WSN juga dapat digunakan untuk mendeteksi serangan dari musuh.
+Pada bidang militer WSN digunakan untuk melakukan pemantauan gerakan musuh dan melindungi wilayah. WSN juga dapat digunakan untuk mendeteksi serangan dari musuh.
 
 \item Monitoring area\\
-Pada \textit{monitoring area}, node sensor akan disebar pada suatu tempat yang akan di monitoring. Saat node sensor mendeteksi kejadian(panas, tekanan, dan lain-lain) pada suatu tempat, data akan dikirimkan ke \textit{base station} untuk ditentukan tindakan selanjutnya.
+Pada \textit{monitoring area}, node sensor akan disebar pada suatu tempat yang akan di \textit{monitoring}. Saat node sensor mendeteksi kejadian(panas, tekanan, dan lain-lain) pada suatu tempat, data akan dikirimkan ke \textit{base station} untuk ditentukan tindakan selanjutnya.
 
 \item Bidang Transportasi\\
 Pada bidang transportasi, WSN digunakan untuk mendeteksi arus lalu lintas secara aktual yang nantinya akan disampaikan kepada pengendara seperti kemacetan lalu lintas. 
 
 \item Bidang Kesehatan\\
-WSN dapat digunakan pada aplikasi kesehatan seperti membantu pada disabilitas, monitoring pasien, diagnosis, pengaturan penggunaan obat, dan pelacakan dokter dan pasien di rumah sakit.
+WSN dapat digunakan pada aplikasi kesehatan seperti membantu pada disabilitas, \textit{monitoring} pasien, diagnosis, pengaturan penggunaan obat, dan pelacakan dokter dan pasien di rumah sakit.
 
 \item Deteksi Lingkungan\\
-Deteksi lingkungan yang dapat dilakuan antara lain deteksi gunung berapi, polusi udara, kebakaran hutan, efek rumah kaca, dan deteksi longsor.
+Deteksi lingkungan yang dapat dilakukan antara lain deteksi gunung berapi, polusi udara, kebakaran hutan, efek rumah kaca, dan deteksi longsor.
 
 \item Monitoring Struktur\\
-WSN dapat melakukan deteksi pergerakan bangunan dan infrastruktur seperti jembatan, \textit{flyover}, terowongan dan fasilitas lain tanpa mengeluarkan biaya untuk melakukan dektesi manual dengan mendatangi tempatnya secara langsung.
+WSN dapat melakukan deteksi pergerakan bangunan dan infrastruktur seperti jembatan, \textit{flyover}, terowongan dan fasilitas lain tanpa mengeluarkan biaya untuk melakukan deteksi manual dengan mendatangi tempatnya secara langsung.
 
 \item Bidang Pertanian\\
 Pada bidang pertanian dapat membantu pengelola pertanian untuk pemantauan penggunaan air dalam irigasi dan mengelola buangan pertanian mereka.
@@ -39,9 +39,10 @@ Pada bidang pertanian dapat membantu pengelola pertanian untuk pemantauan penggu
 	\label{fig:smartworld} 
 \end{figure} 
 
+
 \subsection{Node Sensor}
 \subsubsection{Struktur Node Sensor}
-Setiap node sensor memiliki kemampuan deteksi, komputasi dan komunikasi. Node sensor memiliki lima komponen utama yaitu \textit{controller}, \textit{memory}, \textit{sensor and actuator}, \textit{communication device}, dan \textit{power supply}, (Gambar~\ref{fig:structure_sensor_node}). Semua komponen akan bekerja secara seimbang dalam melakukan \textit{sensing}, komputasi, komunikasi, dan menjaga penggunaan energi seminimal mungkin. 
+Setiap node sensor memiliki kemampuan \textit{sensing}, komputasi dan komunikasi. Node sensor memiliki lima komponen utama yaitu \textit{controller}, \textit{memory}, \textit{sensor dan actuator}, \textit{communication device}, dan \textit{power supply}, (Gambar~\ref{fig:structure_sensor_node}) \cite{protocol:0:protocol}. Semua komponen akan bekerja secara seimbang dalam melakukan \textit{sensing}, komputasi, komunikasi, dan menjaga penggunaan energi seminimal mungkin. 
 
 \begin{figure} [H]
 	\centering  
@@ -51,7 +52,7 @@ Setiap node sensor memiliki kemampuan deteksi, komputasi dan komunikasi. Node se
 \end{figure} 
 
 \subsubsection{Controller}
-\textit{Controller} adalah inti utama pada node sensor. \textit{Controller} mengumpulkan data dari sensor dan memproses data tersebut hingga menentukan kapan dan kemana data tersebut dikirim. \textit{Controller} menerima data dari node sensor lain. Pada \textit{controller} biasanya terdapat \textit{microcontroller} atau \textit{microprocessor} yang mengatur dan melakukan komputasi data dari node sensor. \textit{Microcontroller} ini juga dapat mengurangi penggunaan energi dengan adanya \textit{sleep states} yang berarti hanya bagian dari controller saja yang aktif.
+\textit{Controller} adalah inti utama pada node sensor. \textit{Controller} mengumpulkan data dari sensor dan memproses data tersebut hingga menentukan kapan dan kemana data tersebut dikirim. \textit{Controller} juga dapat menerima data dari node sensor lain. Pada \textit{controller} biasanya terdapat \textit{microcontroller} atau \textit{microprocessor} yang mengatur dan melakukan komputasi data. \textit{Microcontroller} ini juga dapat mengurangi penggunaan energi dengan adanya \textit{sleep states} yang berarti hanya bagian dari controller saja yang aktif.
 
 Beberapa \textit{microcontroller} yang digunakan dalam \textit{Wireless Sensor Node}:
 \begin{itemize}
@@ -61,7 +62,7 @@ Beberapa \textit{microcontroller} yang digunakan dalam \textit{Wireless Sensor N
 \end{itemize}
 
 \subsubsection{Memory}
-\textit{Random Access Memory} (RAM) digunakan untuk menyimpan sementara hasil yang didapat dari sensor. RAM juga menyimpan sementara paket dari node sensor lain. Jika node sensor mati atau energi habis maka data pada RAM ini akan hilang. Data yang hilang saat node sensor mati merupakan salah satu kekurangan dari penggunaan RAM. Untuk itu dalam menyimpan kode program digunakanlah \textit{Read Only Memory} (ROM). ROM ini biasa disebut \textit{Electrically Erasable Programmable Read-Only Memory} (EEPROM) atau \textit{Flash Memory}.
+\textit{Random Access Memory} (RAM) digunakan untuk menyimpan sementara hasil yang didapat dari sensor. RAM juga menyimpan sementara paket dari node sensor lain. Jika node sensor mati atau energi habis maka data pada RAM ini akan hilang (\textit{volatile}). Data yang hilang saat node sensor mati merupakan salah satu kekurangan dari penggunaan RAM. Untuk itu dalam menyimpan kode program digunakanlah \textit{Read Only Memory} (ROM). ROM ini biasa disebut \textit{Electrically Erasable Programmable Read-Only Memory} (EEPROM) atau \textit{Flash Memory}.
 
 \subsubsection{Communication Device}
 \textit{Communication Device} digunakan untuk bertukar data antar node sensor. Pada aplikasi WSN, \textit{Radio Frequency(RF)} adalah media komunikasi yang paling relevan untuk saat ini. RF-based mendukung jangkauan yang jauh, memiliki data rate yang tinggi dan tidak perlu saling mengetahui posisi antara penerima dan pengirim.
@@ -69,24 +70,25 @@ Beberapa \textit{microcontroller} yang digunakan dalam \textit{Wireless Sensor N
 Pada node sensor dibutuhkan \textit{transmitter} untuk mengirim data dan \textit{receiver} untuk menerima data. Kedua hal ini dapat digabung dan disebut dengan \textit{transceiver}. Tugas \textit{transceiver} adalah mengubah aliran \textit{bit} menjadi gelombang radio. Selain itu \textit{transceiver} juga dapat mengubah gelombang radio menjadi aliran \textit{bit}.
 
 \subsubsection{Sensor dan Actuator}
-Sensor dan Actuator adalah hal yang penting pada WSN. Tanpa sensor dan actuator maka node sensor tidak berguna dan tidak dapat digunakan. Tabel~\ref{tab:sensor} adalah jenis - jenis sensor yang dapat dimiliki node sensor. Sensor dikategorikan menjadi tiga:
+Sensor dan Aktuator adalah hal yang penting pada WSN. Tanpa sensor dan aktuator maka node sensor tidak berguna dan tidak dapat digunakan. Tabel~\ref{tab:sensor} adalah jenis - jenis sensor yang dapat dimiliki node sensor. Sensor dikategorikan menjadi tiga:
 \begin{enumerate}
-	\item \textbf{Passive, omnidirectional sensors} Sensor ini dapat mengukur kualitas dari lingkungan fisik tempat node sensor tersebut tanpa mengubah lingkungannya. Beberapa sensor dikategori ini \textit{self-powered} yaitu sensor mendapatkan energi yang mereka butuhkan dari lingkungannya. \textit{Omnidirectional} berarti tidak ada arah pada sensor ini. Sensor akan memancarkan sinyalnya ke segala arah. Contoh sensor ini adalah termometer, sensor cahaya, sensor getaran, mikrofon, sensor kelembapan, sensor tekanan udara, sensor deteksi asap, dan lain-lain.
-	\item \textbf{Passive, narrow-beam sensors} Sensor ini memiliki sifat yang sama dengan sensor \textit{Passive, omnidirectional sensors} yaitu tidak mengubah lingkungannya. Sensor ini dapat melakukan gerakan dan memiliki arah atau daerah pengukuran. Contoh dari sensor ini adalah kamera yang bisa mengukur sesuai dengan arah yang dituju.
-	\item \textbf{Active Sensor} Sensor ini aktif dalam memeriksa lingkungannya. Contoh dari sensor ini adalah sonar, radar atau sensor seismik. Sensor ini menghasilkan gelombang untuk melakukan deteksi.
+	\item \textbf{Passive, omnidirectional sensors}. Sensor ini dapat mengukur kualitas dari lingkungan fisik tempat node sensor tersebut tanpa mengubah lingkungannya. Beberapa sensor dikategori ini \textit{self-powered} yaitu sensor mendapatkan energi yang mereka butuhkan dari lingkungannya. \textit{Omnidirectional} berarti tidak ada arah pada sensor ini. Sensor akan memancarkan sinyalnya ke segala arah. Contoh sensor ini adalah termometer, sensor cahaya, sensor getaran, mikrofon, sensor kelembaban, sensor tekanan udara, dan sensor deteksi asap.
+	\item \textbf{Passive, narrow-beam sensors}. Sensor ini memiliki sifat yang sama dengan sensor \textit{Passive, omnidirectional sensors} yaitu tidak mengubah lingkungannya. Sensor ini dapat melakukan gerakan dan memiliki arah atau daerah pengukuran. Contoh dari sensor ini adalah kamera yang bisa mengukur sesuai dengan arah yang dituju.
+	\item \textbf{Active Sensor}. Sensor ini aktif dalam memeriksa lingkungannya. Contoh dari sensor ini adalah sonar, radar atau sensor seismik. Sensor ini menghasilkan gelombang untuk melakukan deteksi.
 \end{enumerate}
 
-\textit{Actuator} adalah penerima sinyal dan yang mengubahnya menjadi aksi fisik. \textit{Actuator} jumlahnya beragam seperti sensor.  Contoh aktuator adalah LED, yang mengubah listrik menjadi cahaya dan motor (motor elektrik) juga mengubah listrik menjadi gerakan.
+Aktuator adalah penerima sinyal dan yang mengubahnya menjadi aksi fisik. Aktuator jumlahnya beragam seperti sensor.  Contoh aktuator adalah LED, yang mengubah listrik menjadi cahaya dan motor (motor elektrik) juga mengubah listrik menjadi gerakan.
 
 \begin{table} [H]
 	\centering 
 	\caption{Jenis - jenis sensor yang dapat dimiliki node sensor}
 	\label{tab:sensor}
 	\begin{tabular}{|p{6cm}|p{9cm}|}
-		\toprule
+% 		\toprule
+        \hline
 		Sensor & Penggunaan\\
-
-		\midrule
+        \hline
+% 		\midrule
 		Accelerometer & Pergerakan 2D \& 3D untuk objek dan manusia  \\
 		Acoustic emission sensor & Elastic Waves Generation\\
 		Acoustic sensor   & Acoustic pressure vibration\\
@@ -110,19 +112,19 @@ Sensor dan Actuator adalah hal yang penting pada WSN. Tanpa sensor dan actuator 
 		Seismic sensor   & Pergerakan Seismik (Gempa) \\
 		Oxygen sensor  & Oksigen pada darah \\
 		Blood flow sensor  & Gelombang ultrasonik pada darah \\
-
-		\bottomrule
+        \hline
+% 		\bottomrule
 		
 	\end{tabular} 
 \end{table}
 
 \subsubsection{Power Supply}
-\textit{Power supply} atau sumber energi pada WSN dapat berasal dari dua cara yaitu \textbf{\textit{storing energy}} dan \textbf{\textit{energy scavenging}}. \textit{Storing energy} adalah dengan menggunakan baterai sebagai sumber energinya. Baterai yang digunakan dapat diisi ulang maupun tidak dapat diisi ulang. \textit{Energy scavenging} digunakan saat membuat WSN yang akan digunakan dalam waktu yang lama. Dibutuhkan energi yang bisa dikatakan tidak terbatas. Salah satu cara \textit{energy scavenging} adalah \textit{photovoltaics}. \textit{Photovoltaics} dapat disebut juga \textit{solar cell} yang memanfaatkan cahaya matahari dan mengubahnya menjadi energi sebagai pembangkit daya. Cara lain yang dapat digunakan adalah pemanfaatan angin dan air untuk mengerakan kincir atau turbin yang akan menghasilkan listrik dan digunakan sebagai sumber energi pada node sensor.
+\textit{Power supply} atau sumber energi pada WSN dapat berasal dari dua cara yaitu \textbf{\textit{storing energy}} dan \textbf{\textit{energy scavenging}}. \textit{Storing energy} adalah penggunaan baterai sebagai sumber energinya. Baterai yang digunakan dapat diisi ulang maupun tidak dapat diisi ulang. \textit{Energy scavenging} digunakan saat membuat WSN yang akan digunakan dalam waktu yang lama. Dibutuhkan energi yang bisa dikatakan tidak terbatas. Salah satu cara \textit{energy scavenging} adalah \textit{photovoltaics}. \textit{Photovoltaics} dapat disebut juga \textit{solar cell} yang memanfaatkan cahaya matahari dan mengubahnya menjadi energi sebagai pembangkit daya. Cara lain yang dapat digunakan adalah pemanfaatan angin dan air untuk mengerakan kincir atau turbin yang akan menghasilkan listrik dan digunakan sebagai sumber energi pada node sensor.
+%book sensor techonlogies
+\subsection{Arsitektur dan Topologi Wireless Sensor Network \cite{sensor_technologies:0:sensor_technologies} \cite{overview:0:wireless}}
+Pada WSN biasanya akan terdapat banyak node sensor yang disebar pada suatu tempat. Terdapat satu atau lebih \textit{sink node} atau \textit{base station} dalam area \textit{sensing} tersebut (Gambar~\ref{fig:arsitektur}). \textit{Sink node} atau \textit{base station} adalah node sensor yang bertugas untuk mendapatkan data dari node sensor lain. Dalam membuat WSN perlu diperhatikan arsitektur dan topologi yang akan digunakan. Tidak semua topologi jaringan komputer biasa dapat digunakan untuk \textit{Wireless Sensor Network}. 
 
-\subsection{Arsitektur dan Topologi Wireless Sensor Network}
-Pada WSN biasanya akan terdapat banyak node sensor yang disebar pada suatu tempat. Terdapat satu atau lebih \textit{sink node} atau \textit{base station} dalam area sensing tersebut (Gambar~\ref{fig:arsitektur}). \textit{Sink node} atau \textit{base station} adalah node sensor yang bertugas untuk mendapatkan data dari node sensor lain. Dalam membuat WSN perlu diperhatikan arsitektur dan topologi yang akan digunakan. Tidak semua topologi jaringan komputer dapat digunakan untuk \textit{Wireless Sensor Network}. 
-
-Ada banyak topologi pada jaringan sensor (\textit{sensor network}). Pada jaringan sensor dengan menggunakan kabel, topologi yang sering digunakan adalah topologi \textit{star}, \textit{line}, atau \textit{bus}. Sedangkan pada jaringan sensor tanpa kabel (WSN), topologi yang biasa digunakan adalah \textit{star}, \textit{tree}, atau \textit{mesh}. 
+Ada banyak topologi pada jaringan sensor (\textit{sensor network}). Pada jaringan sensor dengan menggunakan kabel, topologi yang biasa digunakan adalah topologi \textit{star}, \textit{line}, atau \textit{bus}. Sedangkan pada jaringan sensor tanpa kabel (WSN), topologi yang biasa digunakan adalah \textit{star}, \textit{tree}, atau \textit{mesh}. 
 
 \subsubsection{Topologi Point-to-Point}
 Topologi \textit{Point-to-Point} adalah topologi yang menghubungkan dua titik (Gambar~\ref{fig:point2point}). Topologi \textit{Point-to-Point} dibagi menjadi dua yaitu \textit{permanent point-to-point} dan \textit{switched point-to-point}. \textit{Permanent point-to-point} adalah koneksi perangkat keras antara dua titik dan tidak dapat diubah. \textit{Switched point-to-point} adalah koneksi \textit{point-to-point} yang dapat berpindah antara node yang berbeda. 
@@ -134,7 +136,7 @@ Topologi \textit{Point-to-Point} adalah topologi yang menghubungkan dua titik (G
 \end{figure} 
 
 \subsubsection{Topologi Bus}
-Topologi Bus seperti pada Gambar~\ref{fig:bus} akan terdiri dari node-node dan sebuah jalur. Setiap node akan terhubung dengan saatu jalur yang sama. Untuk mengirim data atau komunikasi akan dilakukan bergantian antar node. Kekurangan dari topologi bus ini adalah jika suatu saat jalur atau bus ini mengalami kerusakan maka setiap node tidak dapat saling berkomunikasi lagi.
+Topologi Bus seperti pada Gambar~\ref{fig:bus} akan terdiri dari node-node dan sebuah jalur. Setiap node akan terhubung dengan satu jalur yang sama. Untuk mengirim data atau komunikasi akan dilakukan bergantian antar node. Kekurangan dari topologi bus ini adalah jika suatu saat jalur atau bus ini mengalami kerusakan maka setiap node tidak dapat saling berkomunikasi lagi.
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=0.2]{bus}  
@@ -143,7 +145,7 @@ Topologi Bus seperti pada Gambar~\ref{fig:bus} akan terdiri dari node-node dan s
 \end{figure} 
 
 \subsubsection{Topologi Ring}
-Pada Topologi \textit{Ring} node akan disusun dengan bentuk melingkar (Gambar~\ref{fig:ring}). Setiap node akan terkoneksi dengan dua node lain. Transfer data terjadi dengan cara data akan berjalan dari satu node ke node lain mengikuti jalur melingkar tersebut hingga menemukan node tujuan yang tepat. Topologi ini mudah untuk diimplementasikan tapi kekurangan dari topologi ring adalah saat ada node yang rusak maka perlu biaya lebih untuk memperbaikinya. Biasanya untuk menangani kegagalan komunikasi akibat node yang rusak, akan di atur komunikasi node tidak hanya satu arah tetapi dapat ke arah sebaliknya.
+Pada Topologi \textit{Ring} node akan disusun dengan bentuk melingkar (Gambar~\ref{fig:ring}). Setiap node akan terhubung dengan dua node lain. Transfer data terjadi dengan cara data akan berjalan dari satu node ke node lain mengikuti jalur melingkar tersebut hingga menemukan node tujuan yang tepat. Topologi ini mudah untuk diimplementasikan tapi kekurangan dari topologi ring adalah saat ada node yang rusak maka perlu biaya lebih untuk memperbaikinya. Biasanya untuk menangani kegagalan komunikasi akibat node yang rusak, akan diatur komunikasi node tidak hanya satu arah tetapi dapat ke arah sebaliknya.
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=0.4]{ring}  
@@ -152,7 +154,7 @@ Pada Topologi \textit{Ring} node akan disusun dengan bentuk melingkar (Gambar~\r
 \end{figure} 
 
 \subsubsection{Topologi Star}
-Topologi \textit{Star} terdiri dari satu node yang berada di tengah biasanya berupa \textit{hub} atau \textit{switch} seperti pada Gambar~\ref{fig:star}. Setiap node akan terkoneksi dengan node yang berada di tengah ini. Saat node akan berkomunikasi dengan node lain, node tersebut harus mengirimkan data tersebut ke node yang ada ditengah dahulu dan node yang berada ditengah ini akan meneruskan data tersebut ke node tujuan. Yang paling penting pada topologi ini adalah node yang berada di tengah, karena semua komunikasi harus melalui node tersebut. Jika node tengah mengalami kerusakan maka tidak akan terjadi komunikasi antar node pada jaringan tersebut.
+Topologi \textit{Star} terdiri dari satu node yang berada di tengah biasanya berupa \textit{hub} atau \textit{switch} seperti pada Gambar~\ref{fig:star}. Setiap node akan terhubung dengan node yang berada di tengah ini. Saat node akan berkomunikasi dengan node lain, node tersebut harus mengirimkan data tersebut ke node yang ada di tengah. Setelah itu node yang berada di tengah ini akan meneruskan data tersebut ke node tujuan. Hal yang paling penting pada topologi ini adalah node yang berada di tengah, karena semua komunikasi harus melalui node tersebut. Jika node tengah mengalami kerusakan maka tidak akan terjadi komunikasi antar node pada jaringan tersebut.
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=0.4]{star}  
@@ -161,7 +163,7 @@ Topologi \textit{Star} terdiri dari satu node yang berada di tengah biasanya ber
 \end{figure} 
 
 \subsubsection{Topologi Tree}
-Pada Topologi \textit{Tree} node-node akan disusun secara hierarki dengan satu node yang berada pada level paling atas sebagai \textit{root node} (Gambar~\ref{fig:tree}). \textit{Root node} akan terhubung dengan satu atau lebih node level dibawahnya. Dengan Topologi \textit{Tree} lebih mudah untuk melakukan identifikasi dan meminimalisir kesalahan, namun jika \textit{tree} sudah sangat besar atau \textit{level tree} sudah sangat banyak maka akan sulit untuk melakukan konfigurasi.
+Pada Topologi \textit{Tree} node-node akan disusun secara hierarki dengan satu node yang berada pada level paling atas sebagai \textit{root node} (Gambar~\ref{fig:tree}). \textit{Root node} akan terhubung dengan satu atau lebih node level di bawahnya. Dengan Topologi \textit{Tree} lebih mudah untuk melakukan identifikasi dan meminimalisir kesalahan, namun jika \textit{tree} sudah sangat besar atau \textit{level tree} sudah sangat banyak maka akan sulit untuk melakukan konfigurasi.
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=0.5]{tree}  
@@ -184,7 +186,7 @@ Topologi \textit{Mesh} dibagi menjadi dua yaitu \textit{partially connected mesh
 	\label{fig:mesh_fully} 
 \end{figure} 
 
-Arsitektur yang biasanya dipakai pada WSN adalah \textbf{arsitektur flat atau peer-to-peer} dan \textbf{arsitektur hierarki}. Selain itu dalam membangun WSN perlu juga diperhatikan jalur komunikasi yang digunakan untuk menghubungkan antar node sensor saat transfer data. Untuk area \textit{sensing} yang tidak terlalu luas dan hanya menggunakan sedikit node sensor dapat menggunakan cara komunikasi \textbf{\textit{single hop}}. Sedangkan untuk daerah yang luas dan memerlukan banyak node sensor dapat menggunakan cara komunikasi \textbf{\textit{multi hop}}. 
+Arsitektur yang biasanya dipakai pada WSN adalah \textbf{arsitektur flat atau peer-to-peer} dan \textbf{arsitektur hierarki}. Selain itu dalam membangun WSN perlu juga diperhatikan jalur komunikasi yang digunakan untuk menghubungkan antar node sensor saat transfer data. Untuk area \textit{sensing} yang tidak terlalu luas dan hanya menggunakan sedikit node sensor dapat menggunakan cara komunikasi \textbf{\textit{single-hop}}. Sedangkan untuk daerah yang luas dan memerlukan banyak node sensor dapat menggunakan cara komunikasi \textbf{\textit{multi-hop}}. 
 
 \begin{figure} [H]
 	\centering  
@@ -193,13 +195,13 @@ Arsitektur yang biasanya dipakai pada WSN adalah \textbf{arsitektur flat atau pe
 	\label{fig:arsitektur} 
 \end{figure} 
 
-\subsubsection{Single-Hop dan Multi-Hop}
-Untuk mengirim data ke \textit{sink node} setiap node sensor dapat menggunakan \textit{single-hop long-distance transmission}. \textit{Single-hop long-distance} ini berarti setiap node sensor akan mengirimkan data ke sink node hanya satu kali lompatan walaupun jarak antara sink node dengan node sensor itu sangat jauh. Dalam jaringan sensor, penggunaan energi paling besar adalah saat melakukan komunikasi dibandingan saat sensing. Penggunaan energi akan semakin bertambah jika jarak sink dan node sensor semakin jauh. Untuk menangani masalah tersebut muncul protokol \textit{multi-hop}.
+\subsubsection{Single-Hop dan Multi-Hop \cite{protocol:0:protocol}}
+Untuk mengirim data ke \textit{sink node} setiap node sensor dapat menggunakan \textbf{\textit{single-hop long-distance transmission}}. \textit{Single-hop long-distance} ini berarti setiap node sensor akan mengirimkan data ke sink node hanya satu kali lompatan walaupun jarak antara \textit{sink node} dengan node sensor itu sangat jauh. Dalam jaringan sensor, penggunaan energi paling besar adalah saat melakukan komunikasi dibandingan saat \textit{sensing}. Penggunaan energi akan semakin bertambah jika jarak \textit{sink node} dengan node sensor semakin jauh. Untuk menangani masalah tersebut muncul protokol \textit{multi-hop}.
 
-Pada protokol \textit{multi-hop}, node sensor akan disusun saling berdekatan dan terhubung dengan yang lain. Jadi saat akan berkomunikasi dengan \textit{sink node}, node sensor harus mengirimkan data tersebut ke node sensor tetangganya dan diteruskan hingga sampai ke \textit{sink node}. Karena jarak yang saling berdekatan maka penggunaan energi dapat efektif. \textit{Single-hop} dan \textit{multi-hop} ini dapat digunakan pada topologi flat maupun hierarki sesuai dengan kebutuhan sistem.
+Pada protokol \textbf{\textit{multi-hop}}, node sensor akan disusun saling berdekatan dan terhubung dengan yang lain. Jadi saat akan mengirimkan data ke \textit{sink node}, node sensor harus mengirimkan data tersebut ke node sensor tetangganya dan diteruskan hingga sampai ke \textit{sink node}. Karena jarak yang saling berdekatan maka penggunaan energi dapat efektif. \textit{Single-hop} dan \textit{multi-hop} ini dapat digunakan pada topologi flat maupun hierarki sesuai dengan kebutuhan.
 
-\subsubsection{Arsitektur Flat / Peer-to-Peer}
-Pada arsitektur flat, setiap node sensor memiliki peran atau \textit{role} yang sama dalam melakukan \textit{sensing}. Secara fungsional hanya terdapat dua macam node sensor pada arsitektur flat, yaitu \textit{source node} dan \textit{sink node}. Untuk mendapatkan data dilakukan dengan cara \textit{sink node} melakukan pengiriman data ke semua node sensor pada area \textit{sensing} dengan cara \textit{flooding} dan hanya node sensor yang sesuai yang akan merespon \textit{sink node}. Setiap node sensor mengirimkan data ke \textit{sink node} dengan \textit{multi hop} dan melalui node tetangganya yang terhubung dengannya untuk meneruskan data (Gambar~\ref{fig:flat}).
+\subsubsection{Arsitektur Flat / Peer-to-Peer \cite{a_wireless_sensor}}
+Pada arsitektur flat, setiap node sensor memiliki peran atau \textit{role} yang sama dalam melakukan \textit{sensing}. Secara fungsional hanya terdapat dua macam node sensor pada arsitektur flat, yaitu \textit{source node} dan \textit{sink node}. Untuk mendapatkan data dilakukan dengan cara \textit{sink node} melakukan pengiriman data ke semua node sensor pada area \textit{sensing} dengan cara \textit{flooding} dan hanya node sensor yang sesuai yang akan merespon \textit{sink node}. Gambar~\ref{fig:flat} adalah ilustrasi dari arsitektur flat. Setiap node sensor mengirimkan data ke \textit{sink node} dengan \textit{multi-hop} dan melalui node tetangganya yang terhubung dengannya untuk meneruskan data.
 % gambar flat
 \begin{figure} [H]
 	\centering  
@@ -208,10 +210,10 @@ Pada arsitektur flat, setiap node sensor memiliki peran atau \textit{role} yang 
 	\label{fig:flat} 
 \end{figure} 
 
-\subsubsection{Arsitektur Hierarki}
-Pada arsitektur hierarki, semua node sensor dikelompokan ke dalam cluster-cluster. Terdapat \textit{cluster head} pada setiap cluster. \textit{Cluster head} ini yang mengumpulkan data dari setiap node sensor di bawahnya dan meneruskan data yang telah diterima ke \textit{base station} atau \textit{sink node}. Hal yang perlu diperhatikan pada arsitektur hierarki adalah pemilihan node sensor sebagai \textit{cluster head} dan node sensor yang melakukan sensing. Penggunaan energi yang paling besar dalam WSN ini adalah saat melakukan komunikasi yaitu saat mengirimkan data ke node sensor lain. Maka untuk node sensor yang memiliki energi kecil dapat digunakan untuk \textit{sensing}, karena node sensor ini hanya melakukan komunikasi ke \textit{cluster head}. \textit{Cluster head} harus memiliki energi atau daya yang lebih banyak, karena \textit{cluster head} akan bertugas menerima hasil sensing node sensor di bawahnya dan meneruskan data ke \textit{sink node}. 
+\subsubsection{Arsitektur Hierarki \cite{a_wireless_sensor}}
+Pada arsitektur hierarki, semua node sensor dikelompokan ke dalam \textit{cluster}. Terdapat \textit{cluster head} pada setiap \textit{cluster}. \textit{Cluster head} ini yang mengumpulkan data dari setiap node sensor yang berada pada \textit{cluster} tersebut dan meneruskan data yang telah diterima ke \textit{base station} atau \textit{sink node}. Hal yang perlu diperhatikan pada arsitektur hierarki adalah pemilihan node sensor sebagai \textit{cluster head} dan node sensor yang melakukan \textit{sensing}. Penggunaan energi yang paling besar dalam WSN ini adalah saat melakukan komunikasi yaitu saat mengirimkan data ke node sensor lain. Maka untuk node sensor yang memiliki energi kecil dapat digunakan untuk \textit{sensing}, karena node sensor ini hanya melakukan komunikasi ke \textit{cluster head}. \textit{Cluster head} harus memiliki energi atau daya yang lebih banyak, karena \textit{cluster head} akan bertugas menerima hasil \textit{sensing} node sensor di \textit{cluster} tersebut dan meneruskan data ke \textit{sink node}. 
 
-Masalah yang utama pada clustering ini adalah pemilihan \textit{cluster head} dan bagaimana cara mengatur setiap cluster. Terdapat beberapa cara untuk membuat clustering ini. Bedasarkan jarak antara \textit{cluster head} dengan cluster member, dapat dibuat clustering dengan \textit{single-hop} atau \textit{multi-hop} seperti pada Gambar~\ref{fig:cluster_single} dan Gambar~\ref{fig:cluster_multi}. Sedangkan jika berdasarkan jumlah \textit{tier} atau tingkat dapat dibangun \textit{clustering single tier} atau \textit{multi tier} (Gambar~\ref{fig:cluster_multitier}).
+Masalah yang utama pada \textit{clustering} ini adalah pemilihan \textit{cluster head} dan bagaimana cara mengatur setiap cluster. Terdapat beberapa cara untuk membuat \textit{clustering} ini. Bedasarkan jarak antara \textit{cluster head} dengan \textit{cluster member}, dapat dibuat clustering dengan \textit{single-hop} atau \textit{multi-hop} seperti pada Gambar~\ref{fig:cluster_single} dan Gambar~\ref{fig:cluster_multi}. Sedangkan jika berdasarkan jumlah \textit{tier} atau tingkat dapat dibangun \textit{clustering single tier} atau \textit{multi tier} (Gambar~\ref{fig:cluster_multitier}).
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=0.8]{cluster_single}  
@@ -233,13 +235,13 @@ Masalah yang utama pada clustering ini adalah pemilihan \textit{cluster head} da
 
 %00 wireless sensor network hal 293
 \subsection{Sistem Operasi}
-Setiap node sensor memerlukan sistem operasi (OS) untuk mengontrol perangkat keras dan perangkat lunak. Sistem operasi tradisional tidak dapat digunakan pada WSN. Pada sistem operasi tradisional digunakan untuk mengatur proses, memori, CPU, dan sistem berkas. Terdapat beberapa hal yang harus ditangani oleh sistem operasi dalam WSN yaitu:
+Setiap node sensor memerlukan sistem operasi (OS) untuk mengontrol perangkat keras dan perangkat lunak. Sistem operasi tradisional tidak dapat digunakan pada WSN. Pada sistem operasi tradisional digunakan untuk mengatur proses, memori, CPU, dan sistem berkas.\cite{fundamentals:0:fundamental} Terdapat beberapa hal yang harus ditangani oleh sistem operasi dalam WSN yaitu:
 \begin{enumerate}
 	\item WSN memerlukan \textit{real-time scheduler}. Data yang didapat harus segera dikirim atau diproses.
 	\item Pengaturan memori karena memori pada WSN sangat kecil.
 	\item Pengaturan data yang efisien terkait dengan \textit{microprocessor} dan memori yang terbatas
 	\item Mendukung kode pemrograman yang efisien dan \textit{reliable} karena dapat terjadi perubahan kode saat implementasi.
-	\item Mendukung pengaturan sumber daya untuk menambah waktu hidup dari node sensor dan meningkatkan performa dengan \textit{sleep time} saat tidak ada kegiatan atau \textit{wake up time} saat terdapat interupsi dari lingkungan.
+	\item Mendukung pengaturan sumber energi untuk menambah waktu hidup dari node sensor dan meningkatkan performa dengan \textit{sleep time} saat tidak ada kegiatan atau \textit{wake up time} saat terdapat interupsi dari lingkungan.
 	\item Mendukung antarmuka untuk pemrograman dan antarmuka perangkat lunak. 
 \end{enumerate}
 
@@ -252,8 +254,8 @@ Beberapa sistem operasi yang umum digunakan pada WSN antara lain :
 \end{enumerate}
 
 %Operating SYstem for WSN a survey - hal 7
-\subsubsection{TinyOS}
-TinyOS adalah sistem operasi \textit{open-source} yang digunakan pada WSN. TinyOS dapat menjalankan program dengan memori yang sangat kecil. Ukurannya hanya 400 Byte. Komponen \textit{library} TinyOS terdiri dari protokol jaringan, layanan distribusi sensor, \textit{driver sensor}, dan perangkat lunak pengamatan data sensor yang dapat digunakan untuk melakukan monitoring jaringan sensor. Gambar~\ref{fig:tinyOS} adalah arsitektur pada TinyOS. 
+\subsubsection{TinyOS \cite{DBLP:journals/sensors/FarooqK11}}
+TinyOS adalah sistem operasi \textit{open-source} yang digunakan pada WSN. TinyOS dapat menjalankan program dengan memori yang sangat kecil. Ukurannya hanya 400 Byte. Komponen \textit{library} TinyOS terdiri dari protokol jaringan, layanan distribusi sensor, \textit{driver sensor}, dan perangkat lunak pengamatan data sensor yang dapat digunakan untuk melakukan monitoring jaringan sensor. Gambar~\ref{fig:tinyOS} adalah arsitektur pada TinyOS.  
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=0.5]{tinyOS}  
@@ -262,8 +264,8 @@ TinyOS adalah sistem operasi \textit{open-source} yang digunakan pada WSN. TinyO
 \end{figure}
 
 %Operating SYstem for WSN a survey - hal 11
-\subsubsection{Contiki}
-Contiki adalah sistem operasi \textit{open-source} dengan Bahasa Pemrograman C yang digunakan pada WSN. Pengaturan Contiki hanya memerlukan 2KB dari RAM dan 40KB dari ROM. Fitur yang dimiliki oleh Contiki antara lain: \textit{multitasking}, \textit{multithreading}, jaringan TCP/IP, IPv6, GUI, \textit{Web Browser}, \textit{Web Server}, telnet, dan komputasi jaringan virtual. Gambar~\ref{fig:contiki} adalah arsitektur pada Contiki
+\subsubsection{Contiki \cite{DBLP:journals/sensors/FarooqK11} }
+Contiki adalah sistem operasi \textit{open-source} dengan Bahasa Pemrograman C yang digunakan pada WSN. Pengaturan Contiki hanya memerlukan 2KB dari RAM dan 40KB dari ROM. Fitur yang dimiliki oleh Contiki antara lain: \textit{multitasking}, \textit{multithreading}, jaringan TCP/IP, IPv6, GUI, \textit{Web Browser}, \textit{Web Server}, telnet, dan komputasi jaringan virtual. Gambar~\ref{fig:contiki} adalah arsitektur pada Contiki 
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=3]{contiki}  
@@ -272,8 +274,8 @@ Contiki adalah sistem operasi \textit{open-source} dengan Bahasa Pemrograman C y
 \end{figure}
 
 %Operating SYstem for WSN a survey - hal 23
-\subsubsection{LiteOS}
-LiteOS adalah sistem operasi mirip UNIX yang didisain untuk WSN. Tujuan dibuat LiteOS adalah membuat sistem operasi yang mirip dengan UNIX agar lebih lebih familiar dengan paradigma pemrograman UNIX. Pada LiteOS terdapat sistem berkas yang hiearki, dan mendukung Bahasa Pemrograman LiteC++ dan UNIX Shell. LiteOS dapat digunakan untuk MicaZ yang memiliki 8 Mhz CPU, 128 byte flash, dan 4KB RAM. LiteOS memiliki tiga komponen utama yaitu: LiteShell, LiteFS, dan Kernel. Gambar~\ref{fig:contiki} adalah arsitektur pada LiteOS
+\subsubsection{LiteOS \cite{DBLP:journals/sensors/FarooqK11} }
+LiteOS adalah sistem operasi mirip UNIX yang didisain untuk WSN. Tujuan dibuat LiteOS adalah membuat sistem operasi yang mirip dengan UNIX agar lebih lebih familiar dengan paradigma pemrograman UNIX. Pada LiteOS terdapat sistem berkas yang hiearki, dan mendukung Bahasa Pemrograman LiteC++ dan UNIX Shell. LiteOS dapat digunakan untuk MicaZ yang memiliki 8 Mhz CPU, 128 byte flash, dan 4KB RAM. LiteOS memiliki tiga komponen utama yaitu: LiteShell, LiteFS, dan Kernel. Gambar~\ref{fig:contiki} adalah arsitektur pada LiteOS. 
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=0.4]{liteOS}  
@@ -287,22 +289,22 @@ Perbandingan dari TinyOS, Contiki, dan LiteOS dapat dilihat pada Tabel~\ref{tab:
 	\caption{Tabel Perbandingan Sistem Operasi}
 	\label{tab:perbandinganOS}
 	\begin{tabular}{| p{1.6cm} | p{3.8cm} | p{2.5cm} | p{3cm} | p{4cm} |}
-		\toprule
+	    \hline
 		OS & Programming Paradigm & Scheduling & Memory Allocation & System Call\\ 
 		
-		\midrule
+		\hline
 		TinyOS & Event-based & FIFO & Static & Not Available\\
 		Contiki & Predominant event-based & FIFO & Dynamic & Runtime libraries\\ 
 		LiteOS & Thread-based & Priority-based scheduling with optional round-robin support & Dynamic & A host of system calls available to the user (file, process, environment, debugging, and device command) 	\\ 
 
-		\bottomrule
+		\hline
 		
 	\end{tabular} 
 \end{table}
 
 %data transfer 
-\subsection{Protokol Stack pada Wireless Sensor Network}
-WSN memiliki lima layer protokol: physical layer, data link layer, network layer, transport layer, dan application layer, seperti pada Gambar~\ref{fig:layer}. 
+\subsection{Protokol Stack pada Wireless Sensor Network \cite{a_wireless_sensor} \cite{handbook} \cite{overview:0:wireless}} 
+WSN memiliki lima layer protokol: \textit{physical layer}, \textit{data link layer}, \textit{network layer}, \textit{transport layer}, dan \textit{application layer}, seperti pada Gambar~\ref{fig:layer}. 
 
 \begin{figure} [H]
 	\centering  
@@ -311,53 +313,53 @@ WSN memiliki lima layer protokol: physical layer, data link layer, network layer
 	\label{fig:layer} 
 \end{figure} 
 
-Selain itu protokol stack pada WSN dibagi kedalam 3 grup manajemen yaitu \textit{power management plane}, \textit{connection management plane}, dan \textit{task management plane}. \textbf{\textit{Power Management Plane}} bertanggung jawab untuk melakukan manajemen sumber daya atau energi pada setiap node sensor saat melakukan sensing, processing, transfer data dan menerima data. Contohnya pada layer MAC, node sensor dapat mematikan transceiver saat tidak ada data untuk dikirim dan diterima. Pada \textit{network layer}, node sensor dapat memilih node sensor tetangga saat akan melakukan transfer data agar penggunaan energi yang minimal. \textbf{\textit{Connection Management Plane}} bertanggung jawab untuk melakukan pengaturan terhadap node sensor terkait dengan koneksi antar node sensor. \textbf{\textit{Task Management Plane}} bertanggung jawab untuk mengatur distribusi tugas atau \textit{task} pada node sensor dalam melakukan \textit{sensing} agar tercapai penggunaan energi yang efisien.
+Selain itu protokol stack pada WSN dibagi kedalam 3 grup manajemen yaitu \textit{power management plane}, \textit{connection management plane}, dan \textit{task management plane}. \textbf{\textit{Power Management Plane}} bertanggung jawab untuk melakukan manajemen sumber daya atau energi pada setiap node sensor saat melakukan \textit{sensing}, komputasi, mengirim dan menerima data.\cite{overview:0:wireless} Contohnya pada layer MAC, node sensor dapat mematikan transceiver saat tidak ada data untuk dikirim dan diterima. Pada \textit{network layer}, node sensor dapat memilih node sensor tetangga saat akan melakukan transfer data agar penggunaan energi yang minimal. \textbf{\textit{Connection Management Plane}} bertanggung jawab untuk melakukan pengaturan terhadap node sensor terkait dengan koneksi antar node sensor. \textbf{\textit{Task Management Plane}} bertanggung jawab untuk mengatur distribusi tugas atau \textit{task} pada node sensor dalam melakukan \textit{sensing} agar tercapai penggunaan energi yang efisien. 
 
 \subsubsection{Physical Layer}
-\textit{Physical layer} bertanggung jawab untuk mengubah bit stream dari data link layer menjadi sinyal agar bisa dilakukan transmisi melalui media komunikasi yang terdapat (transceiver). Pemilihan media dan frekuensi adalah hal yang penting dalam komunikasi antar node sensor. Salah satu cara yang bisa digunakan adalah dengan menggunakan \textit{Radio frequency} (RF). Jaringan sensor memerlukan biaya yang kecil, ukuran yang kecil, dan penggunaan daya yang kecil untuk tranceivernya. Karena itu banyak yang menggunakan Radio Frequency (RF) untuk desain perangkat keras node sensornya.
+\textit{Physical layer} bertanggung jawab untuk mengubah \textit{bit stream} dari \textit{data link layer} menjadi sinyal agar bisa dilakukan transmisi melalui media komunikasi yang terdapat (transceiver). Pemilihan media dan frekuensi adalah hal yang penting dalam komunikasi antar node sensor. Salah satu cara yang bisa digunakan adalah dengan menggunakan \textit{Radio frequency} (RF). Jaringan sensor memerlukan biaya yang kecil, ukuran yang kecil, dan penggunaan daya yang kecil untuk tranceivernya. Karena itu banyak yang menggunakan Radio Frequency (RF) untuk desain perangkat keras node sensornya.
 
 %pengertian multiplexing
 \subsubsection{Data Link Layer}
-\textit{Data link layer} bertanggung jawab untuk melakukan \textit{multiplexing} pada aliran data, membentuk data frame, mendeteksi data frame, \textit{medium access}, dan mengatur kesalahan saat transmisi data. Fungsi paling penting data link layer adalah \textit{Medium Access Control} (MAC). Protokol MAC menentukan kapan node sensor mengakses media untuk mengirim data, melakukan kontrol dan mengatur paket ke node sensor lain. Hal itu dilakukan agar tidak terjadi paket yang bertabrakan. 
+\textit{Data link layer} bertanggung jawab untuk melakukan \textit{multiplexing} pada aliran data, membentuk \textit{data frame}, mendeteksi \textit{data frame}, \textit{medium access}, dan mengatur kesalahan saat melakukan transfer data. Fungsi paling penting \textit{data link layer} adalah \textit{Medium Access Control} (MAC). Protokol MAC menentukan kapan node sensor mengakses media untuk mengirim data, melakukan kontrol dan mengatur paket ke node sensor lain. Hal itu dilakukan agar tidak terjadi paket yang bertabrakan. 
 
 \subsubsection{Network Layer}
 \textit{Network layer} bertanggung jawab untuk \textit{routing} dari node sensor ke \textit{sink node}. Pada WSN node sensor tersebar pada suatu tempat untuk melakukan \textit{sensing}. Data hasil \textit{sensing} tersebut harus dikirimkan ke \textit{sink node} untuk diolah. Dalam mengirimkan data tersebut dapat menggunakan \textit{single-hop} atau \textit{multi hop}. Dalam mengirim data diperlukan protokol routing yang tepat agar hemat energi.
 
 \subsubsection{Transport Layer}
-Secara umum \textit{transport layer} bertanggung jawab untuk pengiriman data yang \textit{reliable} antara node sensor dan \textit{sink node}. Protokol transpor yang biasa pada jaringan komputer tidak bisa diterapkan pada WSN tanpa modifikasi. Setiap jaringan sensor memiliki fungsi khusus. Untuk aplikasi yang berbeda memerlukan kebutuhkan reliabilitas yang berbeda. Pengiriman data pada WSN dibagi menjadi dua yaitu: \textbf{\textit{downstream}} dan \textbf{\textit{upstream}}. \textbf{\textit{Upstream}} berarti node sensor mengirimkan hasil sensing ke sink node. \textbf{\textit{Downstream}} berarti data berasal dari sink node contohnya, kueri, dan perintah-perintah yang dikirimkan ke setiap node sensor. Aliran data yang \textit{reliable} untuk kedua jenis pengiriman ini berbeda. Pada \textit{upstream}, \textit{reliable} data dapat ditoleransi karena sensor akan melakukan sensing terus menerus dan dapat terjadi pengulangan data sehingga data yang hilang tadi dapat dikoreksi. Sedangkan pada \textit{downstream} memerlukan 100\% pengiriman data yang \textit{reliable} karena aplikasi tidak dapat berjalan jika kode program tidak lengkap. 
+Secara umum \textit{transport layer} bertanggung jawab untuk pengiriman data yang \textit{reliable} antara node sensor dan \textit{sink node}. Protokol transpor yang biasa pada jaringan komputer tidak bisa diterapkan pada WSN tanpa modifikasi. Setiap jaringan sensor memiliki fungsi khusus. Untuk aplikasi yang berbeda memerlukan kebutuhkan reliabilitas yang berbeda. Pengiriman data pada WSN dibagi menjadi dua yaitu: \textbf{\textit{downstream}} dan \textbf{\textit{upstream}}. \textbf{\textit{Upstream}} berarti node sensor mengirimkan hasil \textit{sensing} ke \textit{sink node}. \textbf{\textit{Downstream}} berarti data berasal dari \textit{sink node} contohnya, kueri, dan perintah-perintah yang dikirimkan ke setiap node sensor. Aliran data yang \textit{reliable} untuk kedua jenis pengiriman ini berbeda. Pada \textit{upstream}, \textit{reliable} data dapat ditoleransi karena sensor akan melakukan sensing terus menerus dan dapat terjadi pengulangan data sehingga data yang hilang tadi dapat dikoreksi. Sedangkan pada \textit{downstream} memerlukan 100\% pengiriman data yang \textit{reliable} karena aplikasi tidak dapat berjalan jika kode program tidak lengkap. 
 
 %query dissemination GAK TAU APAAN
 \subsubsection{Application Layer}
 \textit{Application layer} meliputi berbagai macam protokol yang ada pada layer ini untuk menjalankan berbagai macam aplikasi seperti \textit{query dissemination}, \textit{node localization}, \textit{time synchronization}, dan \textit{network security}. Protokol yang ada pada layer ini antara lain:
 \begin{enumerate}
 	\item Sensor management protocol (SMP) adalah protokol untuk melakukan pertukaran lokasi data, sinkornisasi node sensor, mengatur ulang node sensor, dan menyimpan status dari node sensor.
-	\item Sensor query and data dissemination protocol (SQDDP) adalah protokol yang mendukung antarmuka aplikasi untuk memasukan query, merespon query, dan mengumpulkan respon.
+	\item Sensor query and data dissemination protocol (SQDDP) adalah protokol yang mendukung antarmuka aplikasi untuk memasukan kueri, merespon kueri, dan mengumpulkan respon.
 	\item Sensor query and tasking language (SQTL) adalah protokol untuk mendukung bahasa pemrograman pada WSN.
 \end{enumerate}
 
-
-% http://profsite.um.ac.ir/~hyaghmae/WSN/transport.pdf
-\section{Reliable Data Transfer di WSN}
-WSN terdiri dari \textit{sink node} dan banyak node sensor. Saat melakukan sensing dan mengirim data ke \textit{sink node}, semua node sensor akan mengirimkan data melalui media yang sama. Hal ini dapat membanjiri jaringan dengan data tersebut dan menyebabkan \textit{congestion} atau kemacetan pada jaringan yang berakibat \textit{data loss} atau hilang. Untuk menangani \textit{data loss}, maka salah satu yang diperlukan dalam membangun WSN adalah protokol yang menangani \textit{Reliability}. \textit{Reliability} berarti memastikan data yang dikirim dari setiap node sensor diterima oleh \textit{base station} secara lengkap dan sesuai dengan urutan pengiriman.
+\section{Reliable Data Transfer di WSN \cite{reliable}}
+WSN terdiri dari \textit{sink node} dan banyak node sensor. Saat melakukan \textit{sensing} dan mengirim data ke \textit{sink node}, semua node sensor akan mengirimkan data melalui media yang sama. Hal ini dapat membanjiri jaringan dengan data tersebut dan menyebabkan \textit{congestion} atau kemacetan pada jaringan yang berakibat \textit{data loss} atau hilang. Untuk menangani \textit{data loss}, maka salah satu yang diperlukan dalam membangun WSN adalah protokol yang menangani \textit{reliability}. \textit{Reliability} berarti memastikan data yang dikirim dari setiap node sensor diterima oleh \textit{base station} secara lengkap dan sesuai dengan urutan pengiriman.
 
 \subsection{Jenis Reliability}
-Berdasarkan tingkat, reliability ada dua macam yaitu:
+Berdasarkan tingkat, \textit{reliability} ada dua macam yaitu:
 \begin{itemize}
 	\item Packet Reliability
 	\item Event Reliability
 \end{itemize}  
-\subparagraph{Packet Reliability} berarti paket yang dikirim harus sampai kepada tujuan (\textit{base station}) secara utuh. \textit{Packet reliability} ini membutuhkan \textit{acknowledge} dari node sensor. Tantangan yang harus dihadapi dari \textit{packet reliability} adalah dalam mengirim ulang paket yang hilang akan menghabiskan energi atau daya.
-\subparagraph{Event Reliability} berarti hanya data hasil \textit{sensing} yang akan dikirim ke \textit{base station}. Pada \textit{Event reliability} tidak membutuhkan \textit{acknowledge}. Karena data yang hilang itu tidak banyak berpengaruh sehingga tidak dibutuhkan pengiriman ulang (\textit{retransmission}) data.
+\subparagraph{Packet Reliability} Paket yang dikirim harus sampai kepada tujuan (\textit{base station}) secara utuh. \textit{Packet reliability} ini membutuhkan \textit{acknowledge} dari node sensor. Tantangan yang harus dihadapi dari \textit{packet reliability} adalah dalam mengirim ulang paket yang hilang akan menghabiskan energi atau daya.
+\subparagraph{Event Reliability} Hanya data hasil \textit{sensing} yang akan dikirim ke \textit{base station}. Pada \textit{Event reliability} tidak membutuhkan \textit{acknowledge}. Karena data yang hilang itu tidak banyak berpengaruh sehingga tidak dibutuhkan pengiriman ulang (\textit{retransmission}) data.
+\newline
 
 Berdasarkan arah, \textit{reliability} ada dua macam yaitu:
 \begin{itemize}
 	\item Upstream Reliability
 	\item Downstream Reliability
 \end{itemize}
-\subparagraph{Upstream Reliability} adalah komunikasi dari node sensor ke \textit{sink node}. Banyak protokol yang mendukung \textit{upstream reliability}. Pengiriman data yang dilakukan adalah \textit{unicast} yang berarti hanya dari satu titik ke titik lain.
-\subparagraph{Downstream Reliability} adalah adalah komunikasi dari \textit{sink node} ke node sensor. Pengiriman data biasanya dilakukan dengan cara \textit{broadcast} ke semua node sensor. Data yang dikirim ini biasanya adalah kode program untuk melakukan \textit{sensing}. 
+\subparagraph{Upstream Reliability} Komunikasi dari node sensor ke \textit{sink node}. Banyak protokol yang mendukung \textit{upstream reliability}. Pengiriman data yang dilakukan adalah \textit{unicast} yang berarti hanya dari satu titik ke titik lain.
+\subparagraph{Downstream Reliability} Komunikasi dari \textit{sink node} ke node sensor. Pengiriman data biasanya dilakukan dengan cara \textit{broadcast} ke semua node sensor. Data yang dikirim ini biasanya adalah kode program untuk melakukan \textit{sensing}. 
+\newline
 
-Pada protokol transport tradisional dikenal istilah TCP dan UDP, namun keduanya tidak bisa diimplementasikan pada WSN. Namun, protokol transport tersebut bisa dibuat dengan beberapa pertimbangan seperti:
+Pada protokol transport tradisional dikenal istilah TCP dan UDP, namun keduanya tidak dapat diimplementasikan pada WSN. Protokol transport tersebut dapat dibuat, namun dengan beberapa pertimbangan seperti:
 \begin{itemize}
 	\item WSN membutuhkan mekanisme untuk mengembalikan paket yang hilang seperti \textit{acknowledge}.
 	\item Proses awal dalam membangun koneksi seperti \textit{handshake} harus disederhanakan karena akan membuang banyak daya atau energi.
@@ -365,12 +367,12 @@ Pada protokol transport tradisional dikenal istilah TCP dan UDP, namun keduanya 
 	\item Protokol harus dapat adil terhadap setiap node sensor seperti pembagian penggunaan jaringan. (\textit{bandwidth})
 \end{itemize} 
 
-\textit{Retransmission} dapat dilakukan dengan \textit{End-to-End Retransmission} dan \textit{Hop-by-Hop Retransmission (Link Level Retransmission)}. Pada \textbf{\textit{End-to-End transmission}} dan terjadi \textit{data loss}, maka pengirim harus mengirim ulang semua paket dan akan menghabiskan lebih banyak daya. \textit{End-to-End Retransmission} adalah salah satu metode yang digunakan di Internet. Cara ini dapat memastikan \textit{reliable} data tanpa harus mengetahui apa yang terjadi di tengah jaringan. Pada \textit{End-to-End Retransmission} diperlukan \textit{handshake} seperti pada komunikasi jaringan komputer. Pada awalnya data dikirim sebagai permintaan transfer. Jika penerima (\textit{receiver}) memiliki cukup RAM, dan layer aplikasi dapat menerima data tersebut, maka \textit{receiver} mengirimkan \textit{acknowledge} untuk permintaan data tersebut. Saat koneksi sudah terbentuk, data yang sebenarnya dapat dikirim. Data tersusun dari beberapa \textit{round}. Setiap \textit{round}, pengirim (\textit{sender}) mengirim paket yang hilang pada round sebelumnya. Diakhir setiap  round, \textit{receiver} mengirimkan \textit{acknowledge} kepada \textit{sender} yang berisi informasi paket yang hilang. \textit{Sender} menerima \textit{acknowledge} tersebut dan mengirim paket yang hilang tersebut. Untuk round pertama terdapat pengecualian karena semua pake pada round sebelumnya tidak ada (belum dikirim). 
+\textit{Retransmission} dapat dilakukan dengan \textit{End-to-End Retransmission} dan \textit{Hop-by-Hop Retransmission (Link Level Retransmission)} \cite{DBLP:conf/secon/KimFC04}. Pada \textbf{\textit{End-to-End Transmission}} dan terjadi \textit{data loss}, maka pengirim harus mengirim ulang semua paket dan akan menghabiskan lebih banyak daya. \textit{End-to-End Retransmission} adalah salah satu metode yang digunakan di Internet. Cara ini dapat memastikan \textit{reliable} data tanpa harus mengetahui apa yang terjadi di tengah jaringan. Pada \textit{End-to-End Retransmission} diperlukan \textit{handshake} seperti pada komunikasi jaringan komputer. Pada awalnya data dikirim sebagai permintaan transfer. Jika penerima (\textit{receiver}) memiliki cukup RAM, dan layer aplikasi dapat menerima data tersebut, maka \textit{receiver} mengirimkan \textit{acknowledge} untuk permintaan data tersebut. Saat koneksi sudah terbentuk, data yang sebenarnya dapat dikirim. Data tersusun dari beberapa \textit{round}. Setiap \textit{round}, pengirim (\textit{sender}) mengirim paket yang hilang pada round sebelumnya. Diakhir setiap  round, \textit{receiver} mengirimkan \textit{acknowledge} kepada \textit{sender} yang berisi informasi paket yang hilang. \textit{Sender} menerima \textit{acknowledge} tersebut dan mengirim paket yang hilang tersebut. Untuk round pertama terdapat pengecualian karena semua pake pada round sebelumnya tidak ada (belum dikirim). 
 
-Sedangkan pada \textbf{\textit{hop-by-hop transmission}} dilakukan antara node sensor dengan node sensor tetangganya. Jadi saat terjadi \textit{data loss} maka pengiriman ulang lebih sedikit dalam menghabiskan daya. \textit{Hop-by-hop} ini membutuhkan \textit{buffer} atau penyimpanan sementara pada setiap node sensor dan lebih efektif dilakukan pada topologi WSN \textit{multi-hop}. Buffer ini digunakan untuk menyimpan data sementara hingga mendapatkan \textit{acknowledge} dari hop berikutnya.
+Sedangkan pada \textbf{\textit{Hop-by-Hop Transmission}} dilakukan antara node sensor dengan node sensor tetangganya. Jadi saat terjadi \textit{data loss} maka pengiriman ulang lebih sedikit dalam menghabiskan daya. \textit{Hop-by-hop} ini membutuhkan \textit{buffer} atau penyimpanan sementara pada setiap node sensor dan lebih efektif dilakukan pada topologi WSN \textit{multi-hop}. \textit{Buffer} ini digunakan untuk menyimpan data sementara hingga mendapatkan \textit{acknowledge} dari hop berikutnya.
 
-\subsection{Jenis - jenis Acknowledge}
-Dalam mencapai reliability dapat digunakan acknowledge saat melakukan pengiriman data. Terdapat empat jenis acknowledge yang dapat digunakan, yaitu:
+\subsection{Jenis - jenis Acknowledge \cite{Prakasm_2014}}
+Dalam mencapai reliability dapat digunakan \textit{acknowledge} saat melakukan pengiriman data. Terdapat empat jenis \textit{acknowledge} yang dapat digunakan, yaitu:
 \begin{enumerate}
 	\item Explicit Acknowledge (eACK) : Penerima memberitahu pengirim bahwa paket telah diterima dengan tepat sekaligus memberitahu pengirim paket mana yang belum diterima untuk dilakukan \textit{retransmission}.
 	\item Negative Acknowledge (nACK) : Penerima memberitahu pengirim bahwa paket yang diterima tidak benar dan diperlukan \textit{retransmission}.
@@ -378,7 +380,7 @@ Dalam mencapai reliability dapat digunakan acknowledge saat melakukan pengiriman
 	\item Selective Acknowledge (sACK) : Hanya paket yang hilang dari sebuah pesan yang akan dikirim ulang
 \end{enumerate}
 
-\subsection{Protokol Transport yang Reliable}
+\subsection{Protokol Transport yang Reliable \cite{Prakasm_2014}}
 Ada banyak protokol untuk memastikan \textit{reliability} pada WSN. Beberapa protokol mendukung \textit{upstream} dan beberapa protokol mendukung \textit{downstream}. Hanya ada sedikit protokol yang dapat mendukung keduanya. Selain itu ada protokol yang memiliki fokus utama untuk menangani \textit{reliability} saja dan ada yang menangani \textit{congestion} sekaligus \textit{reliability}. 
 
 Beberapa protokol transport yang sering digunakan antara lain:
@@ -393,12 +395,12 @@ Beberapa protokol transport yang sering digunakan antara lain:
 \end{itemize}
 
 \subsubsection{GARUDA}
-GARUDA adalah salah satu protokol \textit{downstream} yang menggunakan \textit{hop-by-hop retransmission} dalam memastikan \textit{reliability}. Protokol ini dapat berjalan pada arsitektur dengan dua \textit{tier}. Node sensor dengan 3\i hop dari sink node akan dipilih menjadi node sensor inti (\textit{core}). Node sensor lain (\textit{noncore}) akan disebut dengan \textit{second-tier nodes}. Setiap node noncore menggunakan node \textit{core} untuk memulihkan paket yang hilang.  GARUDA menggunakan mekanisme NACK untuk mendeteksi paket yang hilang. Pemulihan paket yang hilang dilakukan dengan dua fase. Pemulihan paket dalam node \textit{core}, dan pemulihan paket antara node noncore dengan node core. 
+GARUDA adalah salah satu protokol \textit{downstream} yang menggunakan \textit{hop-by-hop retransmission} dalam memastikan \textit{reliability}. Protokol ini dapat berjalan pada arsitektur dengan dua \textit{tier}. Node sensor dengan 3\i hop dari \textit{sink node} akan dipilih menjadi node sensor inti (\textit{core}). Node sensor lain (\textit{noncore}) akan disebut dengan \textit{second-tier nodes}. Setiap node noncore menggunakan node \textit{core} untuk memulihkan paket yang hilang.  GARUDA menggunakan mekanisme NACK untuk mendeteksi paket yang hilang. Pemulihan paket yang hilang dilakukan dengan dua fase. Pemulihan paket dalam node \textit{core}, dan pemulihan paket antara node noncore dengan node core. 
 
-GARUDA menggunakan mekanisme WFP \textit{(Wait for First Packet) pulse transmission} untuk memastikan keberhasilan dalam mengirim satu atau paket pertama. Pulse transmission ini juga digunakan untuk menghitung jumlah hop dan memilih core node. Kekurangan dari GARUDA adalah tidak dapat menangani \textit{upstream reliability} dan tidak menangani ]\textit{congestion control}.  
+GARUDA menggunakan mekanisme WFP \textit{(Wait for First Packet) pulse transmission} untuk memastikan keberhasilan dalam mengirim satu atau paket pertama. \textit{Pulse transmission} ini juga digunakan untuk menghitung jumlah hop dan memilih \textit{core node}. Kekurangan dari GARUDA adalah tidak dapat menangani \textit{upstream reliability} dan tidak menangani ]\textit{congestion control}.  
 
 
-\subsubsection{Event-to-Sink Reliable Transport}
+\subsubsection{Event-to-Sink Reliable Transport \cite{esrt}}
 Pada WSN terdapat \textit{event detection}, yaitu saat node sensor mendeteksi sebuah \textit{event} pada sebuah radius tertentu. Hasil deteksi tersebut yang kemudian dikirimkan ke \textit{sink node}. Gambar~\ref{fig:event_detection} menunjukan \textit{event detection} pada WSN. Event-to-Sink Reliable Transport (ESRT) adalah protokol \textit{upstream} yang lebih banyak digunakan untuk mengirim event dibandingkan paket data. ESRT menggunakan pendekatan end-to-end untuk menjamin \textit{reliability}. Pada ESRT tingkat pengiriman pada setiap node sensor bergantung pada tingkat \textit{reliable} di \textit{sink node} dan dengan status jaringan tersebut (terdapat kemacetan atau tidak). ESRT adalah protokol pertama yang menangani \textit{congestion control} dan \textit{reliability} sekaligus. 
 
 \begin{figure} [H]
@@ -410,10 +412,10 @@ Pada WSN terdapat \textit{event detection}, yaitu saat node sensor mendeteksi se
 
 Pada ESRT setiap node sensor mendeteksi \textit{congestion} berdasarkan peningkatan \textit{buffer} lalu menambahkan N bit pada \textit{header} sebuah paket dan meneruskannya ke sink node. Berdasarkan paket yang diterima oleh \textit{sink node}, dapat diketahui keadaan dari jaringan dan juga \textit{reliability} suatu paket untuk menentukan jumlah paket yang telah berhasil diterima pada periode tertentu. ESRT menggunakan ACK untuk memastikan pengiriman data yang reliable. ESRT dapat berjalan saat \textit{sink node} melihat bahwa jumlah data yang diterima tidak sesuai dengan jumlah yang dikirimkan oleh node sensor.
 
-\subsubsection{Reliable Multi Segment Transport}
-Reliable Multi Segment Transport (RMST) adalah protokol \textit{upstream} yang menjamin transfer paket yang reliable menggunakan \textit{selective NACK} untuk memastikan paket yang \textit{loss} dan mengirim ulang paket tersebut. Setiap node sensor pada RMST ini menyimpan data sementara (\textit{cache}). Data \textit{loss} dapat terjadi pada setiap node sensor. Dalam memulihkan data yang \textit{loss} RMST menggunakan pemulihan hop-by-hop. Saat terjadi loss, node sensor akan melakukan request ke node sensor tetangganya. Jika data tidak ditemukan pada node tetangganya, maka NACK akan diteruskan ke node sensor sebelumnya hingga ke \textit{source node}. RMST ini menggunakan mekanisme \textit{timer-driven} untuk mendeteksi paket yang \textit{loss}. 
+\subsubsection{Reliable Multi Segment Transport \cite{rmst}}
+Reliable Multi Segment Transport (RMST) adalah protokol \textit{upstream} yang menjamin transfer paket yang reliable menggunakan \textit{selective NACK} untuk memastikan paket yang \textit{loss} dan mengirim ulang paket tersebut. Setiap node sensor pada RMST ini menyimpan data sementara (\textit{cache}). Data \textit{loss} dapat terjadi pada setiap node sensor. Dalam memulihkan data yang \textit{loss} RMST menggunakan pemulihan \textit{hop-by-hop} atau \textit{end-to-end}. Saat terjadi data \textit{loss}, node sensor akan melakukan request ke node sensor tetangganya. Jika data tidak ditemukan pada node tetangganya, maka NACK akan diteruskan ke node sensor sebelumnya hingga ke \textit{source node}. RMST ini menggunakan mekanisme \textit{timer-driven} untuk mendeteksi paket yang \textit{loss}. 
 
-RMST dibuat untuk dapat berjalan diatas directed diffusion (Gambar~\ref{fig:directed_diffusion}). \textit{Directed diffusion} berarti protokol routing untuk memastikan reliability untuk diaplikasikan. Pada RMST terdapat dua mekanisme yang dapat dilakukan yaitu mode \textit{caching} dan mode \textit{non caching}. Mode \textit{Caching} berarti node sensor yang berada di tengah dapat mendeteksi celah atau loss dan membuat request (NACK) ke node sebelumnya untuk memulihkan bagian yang hilang. Sedangkan pada mode \textit{non caching} berarti \textit{sink node} yang melakukan deteksi terhadap data yang hilang. Jadi sebenarnya RMST ini dapat dilakukan dengan mekanisme hop-by-hop dan end-to-end. Masalah dari RMST ini adalah tidak menangani \textit{congestion control}, penggunaan energi yang efisien, dan reliable pada aplication layer.
+RMST dibuat untuk dapat berjalan diatas \textit{directed diffusion} (Gambar~\ref{fig:directed_diffusion}). \textit{Directed diffusion} berarti protokol \textit{routing} untuk memastikan \textit{reliability} untuk diaplikasikan. Pada RMST terdapat dua mekanisme yang dapat dilakukan yaitu mode \textit{caching} dan mode \textit{non caching}. Mode \textit{Caching} berarti node sensor yang berada di tengah dapat mendeteksi loss dan membuat request (NACK) ke node sebelumnya untuk memulihkan bagian yang hilang. Sedangkan pada mode \textit{non caching} berarti \textit{sink node} yang melakukan deteksi terhadap data yang hilang. Jadi sebenarnya RMST ini dapat dilakukan dengan mekanisme \textit{hop-by-hop} dan \textit{end-to-end}. Masalah dari RMST ini adalah tidak menangani \textit{congestion control} dan penggunaan energi yang efisien.
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=1]{directed_diffusion}  
@@ -422,17 +424,17 @@ RMST dibuat untuk dapat berjalan diatas directed diffusion (Gambar~\ref{fig:dire
 \end{figure} 
 
 \subsubsection{Pump Slowly Fetch Quickly}
-Pump Slowly Fetch Quickly (PSFQ) adalah protokol yang mengadaptasi perbaikan atau pemulihan dengan hop-by-hop saat terjadi data loss. PSFQ adalah protokol \textit{downstream}. Tujuan dari PSFQ adalah mencapai pengiriman data secara bolak-balik  \textit{reliable} dari \textit{sink node} ke node sensor dengan kecepatan yang relatif lambat, tapi memperbolehkan node sensor untuk melakukan pemulihan data yang hilang dari node tetangganya secara cepat. Protokol ini menggunakan mekanisme hop-by-hop dalam melakukan pengiriman ulang data yang hilang. Pada PSFQ terdapat tiga \textit{operation} yaitu \textit{pump}, \textit{fetch}, dan \textit{report}. 
+Pump Slowly Fetch Quickly (PSFQ) adalah protokol yang mengadaptasi perbaikan atau pemulihan dengan \textit{hop-by-hop} saat terjadi data \textit{loss}. PSFQ adalah protokol \textit{downstream}. Tujuan dari PSFQ adalah mencapai pengiriman data secara bolak-balik  \textit{reliable} dari \textit{sink node} ke node sensor dengan kecepatan yang relatif lambat, tapi memperbolehkan node sensor untuk melakukan pemulihan data yang hilang dari node tetangganya secara cepat. Pada PSFQ terdapat tiga \textit{operation} yaitu \textit{pump}, \textit{fetch}, dan \textit{report}. 
 
-Berikut adalah cara kerja PSFQ. Pertama, secara perodik dan perlahan \textit{sink node} melakukan \textit{broadcast} paket yang terdiri dari ID, panjang file, \textit{sequence number}, TTL, dan \textit{report bit} ke node sensor tetangganya sampai semua \textit{fragment} data dikirim semua. Kedua, node sensor akan memasuki mode \textit{fetch} saat \textit{gap} atau jarak pada \textit{sequence number} terdeteksi. Kemudian NACK akan dikirimkan kepada pengirim untuk memperbaiki \textit{fragment} yang hilang tersebut. Ketiga, dengan mekanisme hop-by-hop \textit{fragment} yang hilang dapat dipulihkan. Protokol ini tidak menangani \textit{congestion} dan tidak menangani untuk satu paket yang hilang, karena saat melakukan \textit{pump} tidak hanya satu paket yang dikirimkan melainkan banyak paket sekaligus dan pemulihannya juga dilakukan semua pake yg dikirimkan pada saat tersebut.
+Berikut adalah cara kerja PSFQ. Pertama, secara perodik dan perlahan \textit{sink node} melakukan \textit{broadcast} paket yang terdiri dari ID, panjang file, \textit{sequence number}, TTL, dan \textit{report bit} ke node sensor tetangganya sampai semua \textit{fragment} data dikirim. Kedua, node sensor akan memasuki mode \textit{fetch} saat \textit{gap} atau jarak pada \textit{sequence number} terdeteksi. Kemudian NACK akan dikirimkan kepada pengirim untuk memperbaiki \textit{fragment} yang hilang tersebut. Ketiga, dengan mekanisme \textit{hop-by-hop} \textit{fragment} yang hilang dapat dipulihkan. Protokol ini tidak menangani \textit{congestion} dan tidak menangani untuk satu paket yang hilang, karena saat melakukan \textit{pump} tidak hanya satu paket yang dikirimkan melainkan banyak paket sekaligus dan pemulihannya juga dilakukan dengan semua paket yang dikirimkan pada saat tersebut.
 
-\subsubsection{Asymmetric Reliable Transport}
+\subsubsection{Asymmetric Reliable Transport \cite{art}}
 Asymmetric Reliable Transport (ART) adalah protokol yang berbasis pada \textit{event} dan \textit{query reliability}. ART merupakan protokol \textit{bidirectional} pertama yang sudah mendukung \textit{congestion control}. Terdiri dari kumpulan node yang disebut \textit{essential node} yang tersebar pada suatu area untuk melakukan \textit{sensing} dan beberapa node yang disebut \textit{non-essential node} yang terlibat pada pengiriman data dan \textit{congestion control}.
 
-\subsubsection{Price Oriented Reliable Transport}
-Price Oriented Reliable Transport Protocol (PORT) adalah protokol \textit{upstream} yang berbasis pada \textit{event reliability} dengan penggunaan energi seminimal mungkin. PORT mendukung mekanisme dengan energi yang efisien disertai \textit{congestion control}. Selain itu PORT juga adalah protokol yang mendukung komunikasi \textit{End-to-End}. PORT membutuhkan \textit{sink node} untuk mengatur aliran data. Kekurangannya adalah tidak ada pemulihan paket yang hilang.
+\subsubsection{Price Oriented Reliable Transport \cite{port}}
+Price Oriented Reliable Transport Protocol (PORT) adalah protokol \textit{upstream} yang berbasis pada \textit{event reliability} dengan penggunaan energi seminimal mungkin. PORT mendukung mekanisme dengan energi yang efisien disertai \textit{congestion control}. Selain itu PORT juga adalah protokol yang mendukung komunikasi \textit{end-to-end}. PORT membutuhkan \textit{sink node} untuk mengatur aliran data. Kekurangannya adalah tidak ada pemulihan paket yang hilang.
 
-\subsubsection{Delay Sensitive Transport}
+\subsubsection{Delay Sensitive Transport \cite{dst}}
 Delay Sensitive Transport (DST) adalah tambahan dari ESRT. Tujuan dari DST adalah dicapai \textit{reliability} pada \textit{sink node}. Pada DST terdapat aturan \textit{Time Critical Event First} (TCEF).TCEF berarti data paket dengan diberikan prioritas untuk melakukan \textit{retransmission}. DST dapat bekerja dengan baik pada satu event, namun pada banyak event akan menjadi lebih kompleks.
 \\
 \\
@@ -442,26 +444,23 @@ Lebih singkat setiap protokol tersebut dapat dilihat pada Tabel~\ref{tab:protoko
 	\caption{Tabel Perbandingan Protokol}
 	\label{tab:protokol_reliable}
 	\begin{tabular}{|c|c|c|c|c|c|c|}
-		\toprule
+	\hline
 		Protokol & Arah & Tingkat & Mekanisme & Tipe ACK & Menangani Congestion & Energi Efisien \\
-
-		\midrule
+    \hline
 		GARUDA & Downstream & Packet & Hop-By-Hop & NACK & Tidak & Tidak\\
 		ESRT & Upstream & Event & End-to-End & - & Ya & Ya\\
-		RMST & Upstream & Packet & Hop-By-Hop & NACK & Tidak & Ya\\
+		RMST & Upstream & Packet & End-to-End & NACK & Tidak & Ya\\
 		PSFQ & Downstream & Packet & Hop-By-Hop & NACK & Tidak & Tidak\\
 		ART & Both & Event & End-to-End	 & - & Ya & Ya\\
 		PORT & Upstream & Event & Hop-By-Hop & - & Ya & Ya\\
 		DST & Upstream & Event & End-to-End & - & Tidak & Ya\\
-
-		\bottomrule
-		
+    \hline
 	\end{tabular} 
 \end{table}
 
 \section{PreonVM}
 \label{sec:PreonVM}
-PreonVM adalah virtual machine (VM) yang dibuat oleh VIRTENIO untuk sistem komputer yang dirancang khusus (\textit{embedded system}) dengan sumber daya yang terbatas. PreonVM dapat digunakan pada node sensor jenis Preon32. PreonVM dibuat sangat optimal dengan tidak dibutuhkannya sistem operasi tambahan dan berjalan langsung pada \textit{microprocessor}. Dengan PreonVM ini \textit{developer} dapat membuat aplikasi dengan mudah pada Bahasa Java yang mengumpulkan data dari sensor dan mengontrol aktuator. API pada PreonVM mendukung antarmuka radio sesuai dengan IEEE 802.15.4 dan AES encryption pada perangkat kerasnya. 
+PreonVM adalah virtual machine (VM) yang dibuat oleh VIRTENIO untuk sistem komputer yang dirancang khusus (\textit{embedded system}) dengan sumber daya yang terbatas \footnote{https://www.virtenio.com/en/preonvm-virtual-machine.html}. PreonVM dapat digunakan pada node sensor jenis Preon32. PreonVM dibuat sangat optimal dengan tidak dibutuhkannya sistem operasi tambahan dan berjalan langsung pada \textit{microprocessor}. Dengan PreonVM ini \textit{developer} dapat membuat aplikasi dengan mudah pada Bahasa Pemrograman Java yang mengumpulkan data dari sensor dan mengontrol aktuator. API pada PreonVM mendukung antarmuka radio sesuai dengan IEEE 802.15.4. 
 
 PreonVM memiliki fitur sebagai berikut:
 \begin{itemize}
@@ -469,10 +468,10 @@ PreonVM memiliki fitur sebagai berikut:
 	\item Mendukung semua tipe data pada Java seperti char, byte, int, long, float atau double
 	%Garbage collection adalah program yang berjalan pada java virtual machine untuk menyingkirkan object yang tidak dibutuhkan pada aplikasi.
 	\item \textit{Garbage collection} dengan \textit{memory defragmentation}
-	\item Mendukung \textit{exception handling}, stack dan array multidimensi
+	\item Mendukung \textit{exception handling}, \textit{stack} dan array multidimensi
 	\item Terdapat \textit{system properties} untuk mengatur aplikasi
 	\item Tidak membutuhkan sistem operasi tambahan
-	\item Mendukung threads termasuk synchronized, Object.wait, Object.notify, Object.notifyAll, Thread.sleep, Thread.interrupt
+	\item Mendukung \textit{thread} termasuk synchronized, Object.wait, Object.notify, Object.notifyAll, Thread.sleep, atau Thread.interrupt
 \end{itemize}
 
 Kelebihan yang dimiliki oleh VIRTENIO ini adalah \textit{object-oriented programming} dengan Bahasa Pemrograman Java. VIRTENIO menyediakan virtual machine sebagai sistem operasi yang inovatif untuk modul Preon32. Dengan menggunakan virtual machine, aplikasi dapat berdiri sendiri pada arsitektur yang dibuat. Dengan demikian aplikasi Java yang dibuat dapat dijalankan pada aristektur yang berbeda tanpa harus modifikasi. Gambar~\ref{fig:PreonVM} menunjukan ilustrasi penggunaan virtual machine pada berbagai perangkat. 
@@ -484,10 +483,10 @@ Kelebihan yang dimiliki oleh VIRTENIO ini adalah \textit{object-oriented program
 	\label{fig:PreonVM} 
 \end{figure} 
 
-Virtual machine juga membatu memisahkan proses pengembangan perangkat keras dengan aplikasi perangkat lunak. Program aplikasi dikembangan dengan antarmuka yang abstrak dan tidak berubah. Sebagai tambahan, virtual mesin berjalan optimal untuk aplikasi kecil pada 8-bit sampai 32-bit microprocessor dengan 8 Kbyte RAM dan 128 Kbyte Flash.  
+\textit{Virtual machine} juga membatu memisahkan proses pengembangan perangkat keras dengan aplikasi perangkat lunak. Program aplikasi dikembangan dengan antarmuka yang abstrak dan tidak berubah. Sebagai tambahan, virtual mesin berjalan optimal untuk aplikasi kecil pada 8-bit sampai 32-bit \textit{microprocessor} dengan 8 Kbyte RAM dan 128 Kbyte Flash.  
 
 \subsection{Preon32}
-Preon32 adalah salah satu jenis node sensor. Preon32 menggunakan PreonVM sebagai sistem operasi. Preon32 versi umum memiliki 5 jenis sensor pada sebuah board. Sensor yang ada pada Preon32 ini antara lain sensor suhu (temperature), sensor cahaya, sensor kelembapan udara (humidity), sensor untuk mengukur tekanan udara (barometer), dan sensor getaran. Pada versi tambahan Preon32 dapat dilengkapi dengan sensor untuk mendeteksi medan magnet (magnetometer), dan gyroscope. Semua jenis sensor tersebut dapat diatur melalui PreonVM dan pemrograman dapat dilakukan dengan Bahasa Pemrograman Java. Gambar~\ref{fig:Preon32board} adalah board dan sensor-sensor pada Preon32.
+Preon32 adalah salah satu jenis node sensor \footnote{https://www.virtenio.com/en/products/radio-module.html}. Preon32 menggunakan PreonVM sebagai \textit{operating software}. Preon32 versi umum memiliki 5 jenis sensor pada sebuah \textit{board}. Sensor yang ada pada Preon32 ini antara lain sensor suhu (\textit{temperature sensor}), sensor cahaya (\textit{light intensity sensor}), sensor kelembaban udara (\textit{relative humidity sensor}), sensor tekanan udara (\textit{air pressure sensor}), dan sensor getaran (\textit{acceleration sensor}). Pada versi tambahan Preon32 dapat dilengkapi dengan sensor untuk mendeteksi medan magnet, dan \textit{gyroscope}. Semua jenis sensor tersebut dapat diatur melalui PreonVM dan pemrograman dapat dilakukan dengan Bahasa Pemrograman Java. Gambar~\ref{fig:Preon32board} adalah \textit{board} Preon32 beserta letak sensor-sensor tersebut.
 \begin{figure} [H]
 	\centering  
 	\includegraphics[scale=0.7]{Preon32board}  
@@ -497,28 +496,286 @@ Preon32 adalah salah satu jenis node sensor. Preon32 menggunakan PreonVM sebagai
 
 Preon32 ini dapat diaplikasikan pada berbagai hal seperti:
 \begin{enumerate}
-	\item Home Automation yang digunakan untuk mengintegrasikan berbagai sistem pada rumah, monitoring area, dan navigasi.  
+	\item \textit{Home Automation} yang digunakan untuk mengintegrasikan berbagai sistem pada rumah, monitoring area, dan navigasi.  
 	\item Platform untuk membantu penelitian
-	\item Implementasi aplikais baru pada jaringan nirkabel
-	\item Algoritma untuk sensor data fusion
+	\item Aplikasi pada jaringan nirkabel
+	\item Algoritma \textit{sensor data fusion}
 \end{enumerate}
 
+\subsubsection{Spesifikasi Sensor Pada Preon32}
+Berikut adalah spesifikasi setiap sensor yang dimiliki oleh Preon32 \footnote{https://www.virtenio.com/en/products/sensor-module.html}:
+\subparagraph{Sensor Suhu \textit{Temperature Sensor}}
+\begin{itemize}
+    \item Manufacture : Analog Devices
+    \item Model : ADT7410
+    \item Interface : digital, I2C
+    \item Resolution : 16-Bit
+    \item Range : -40$\degree$C sampai +105$\degree$C
+    \item Accuracy : $\pm$0.5$\degree$C
+\end{itemize}
 
-%\subsection{Kutipan}
-%\label{subs:kutipan} 
-%Berikut contoh kutipan dari berbagai sumber, untuk keterangan lebih lengkap, silahkan membaca file referensi.bib yang disediakan juga di template ini.
-%Contoh kutipan:
-%\begin{itemize}
-%	\item Buku:~\cite{berg:08:compgeom} 
-%	\item Bab dalam buku:~\cite{kreveld:04:GIS}
-%	\item Artikel dari Jurnal:~\cite{buchin:13:median}
-%	\item Artikel dari prosiding seminar/konferensi:~\cite{kreveld:11:median}
-%	\item Skripsi/Thesis/Disertasi:~\cite{lionov:02:animasi}~\cite{wiratma:10:following}~\cite{wiratma:22:later}
-%	\item Technical/Scientific Report:~\cite{kreveld:07:watertight}
-%	\item RFC (Request For Comments):~\cite{RFC1654}
-%	\item Technical Documentation/Technical Manual:~\cite{Z.500}~\cite{unicode:16:stdv9}~\cite{google:16:and7}
-%	\item Paten:~\cite{webb:12:comm}
-%	\item Tidak dipublikasikan:~\cite{wiratma:09:median}~\cite{lionov:11:cpoly}
-%	\item Laman web:~\cite{erickson:03:cgmodel}  
-%	\item Lain-lain:~\cite{agung:12:tango}
-%\end{itemize}    
+\subparagraph{Sensor Intensitas Cahaya \textit{Light Intensity Sensor}}
+\begin{itemize}
+    \item Manufacture : Rohm
+    \item Model : BH1715FVC
+    \item Interface : digital, I2C
+    \item Resolution : 16-Bit
+    \item Range : 1 lx to 65355 lx
+\end{itemize}
+
+\subparagraph{Sensor kelembaban Udara Relatif \textit{Relative Humidity Sensor}}
+\begin{itemize}
+    \item Manufacture : Sensirion
+    \item Model : SHT21
+    \item Interface : digital, I2C
+    \item Resolution : 12-Bit
+    \item Range : 0 \%RH sampai 100 \%RH
+    \item Accuracy : $\pm$2,0 \%RH (typ.)
+\end{itemize}
+
+\subparagraph{Sensor Tekanan Udara \textit{Air Pressure Sensor}}
+\begin{itemize}
+    \item Manufacture : Freescale
+    \item Model : MPL115A2
+    \item Interface : digital, I2C
+    \item Resolution : 0,15 kPa
+    \item Range : 50 kPa sampai 115 kPa
+    \item Accuracy : $\pm$1.0 kPa
+\end{itemize}
+
+\subparagraph{Sensor Getaran \textit{Acceleration Sensor}}
+\begin{itemize}
+    \item Manufacture : Analog Devices
+    \item Model : ADXL345
+    \item Interface : digital, SPI
+    \item Resolution : 13 Bit per axis
+    \item Range : $\pm$16 g, 3 axis
+    \item Accuracy : 3,9 mg/LSB
+\end{itemize}
+
+\subsection{Class Library JVM Preon32}
+Preon32 mengunakan PreonVM sebagai \textit{Virtual Machine}. Class library pada Virtenio Virtual Machine ini dibagi menjadi beberapa \textit{package} utama diantaranya \textbf{\textit{Radio Packages}}, \textbf{\textit{Route Packages}}, \textbf{\textit{Other Virtenio Packages}}, dan \textbf{\textit{Java Related Packages}}. \textit{Class Library JVM Preon32} dapat dilihat pada website resmi milih Virtenio \footnote{https://www.virtenio.com/assets/vm/javadoc/overview-summary.html}. Tabel~\ref{tab:radio_packages}, sampai Tabel~\ref{tab:java_packages} berisi package yang terdapat pada setiap package utama.
+		
+\begin{table}[H] %atau h saja untuk "kira kira di sini"
+	\centering 
+	\caption{Tabel Radio Packages}
+	\label{tab:radio_packages}
+	\begin{tabular}{|p{8cm}|p{8cm}|}
+	\hline
+		Package & Deksripsi \\
+    \hline
+		com.virtenio.radio & Paket yang berisi kelas terkait radio \\
+		ESRTcom.virtenio.radio.ieee\_802\_15\_4  & Paket yang berisi kelas terkait IEEE 802.15.4 \\
+
+		\hline
+		
+	\end{tabular} 
+\end{table}
+
+\begin{table}[H] %atau h saja untuk "kira kira di sini"
+	\centering 
+	\caption{Tabel Route Packages}
+	\label{tab:route_packages}
+	\begin{tabular}{|p{5cm}|p{11cm}|}
+		\hline
+		Package & Deksripsi \\
+
+		\hline
+		com.virtenio.route.aodv & Paket yang berisi kelas terkait AODV (Ad Hoc On Demand Vector) Routing \\
+
+		\hline
+		
+	\end{tabular} 
+\end{table}
+
+\begin{table}[H] %atau h saja untuk "kira kira di sini"
+	\centering 
+	\caption{Tabel Other Virtenio Packages}
+	\label{tab:other_packages}
+	\begin{tabular}{|p{6cm}|p{10cm}|}
+		\hline
+		Package & Deksripsi \\
+
+		\hline
+		com.virtenio.driver & Paket yang berisi drivers untuk berbagai perangkat \\
+		com.virtenio.driver.adc  & Paket yang berisi kelas ADC driver \\
+		com.virtenio.driver.atmodem & \\
+		com.virtenio.driver.button & Paket yang berisi kelas button driver \\
+		com.virtenio.driver.can & Paket yang berisi kelas CAN driver \\
+		com.virtenio.driver.cpu & Paket yang berisi kelas CPU driver \\
+		com.virtenio.driver.device & Paket yang berisi kelas divice driver \\
+		com.virtenio.driver.device.at86rf212 & Paket yang berisi driver untuk perangkat ATR86RF212 \\
+		com.virtenio.driver.device.at86rf231 & paket yang berisi driver untuk perangkat AT86RF231 \\
+		com.virtenio.driver.flash & Paket yang berisi kelas Flash driver  \\
+		com.virtenio.driver.gpio & Paket yang berisi kelas GPIO device driver \\
+		com.virtenio.driver.i2c & Paket yang berisi kelas I2C device driver \\
+		com.virtenio.driver.irq & Paket yang berisi kelas IRQ device driver \\
+		com.virtenio.driver.led & Paket yang berisi kelas LED device driver \\
+		com.virtenio.driver.lin & Paket yang berisi kelas LIN device driver\\
+		com.virtenio.driver.onewire & Paket yang berisi kelas OneWire device driver\\
+		com.virtenio.driver.pwm & Paket yang berisi kelas PWM (pulse-width modulation) device driver\\
+		com.virtenio.driver.ram & Paket yang berisi kelas FRAM device driver \\
+		com.virtenio.driver.rtc & Paket yang berisi kelas untuk pengaturan jam secara real-time, dan real-counter device driver \\
+		com.virtenio.driver.spi & Paket yang berisi kelas SPI (Serial Peripheral Interface) device driver \\
+		com.virtenio.driver.sw & Paket yang berisi kelas switch device driver \\
+		com.virtenio.driver.timer & Paket yang berisi kelas hardware timer device driver\\
+		com.virtenio.driver.usart & Paket yang berisi USART device driver\\
+		com.virtenio.driver.watchdog & Paket yang berisi \\
+		com.virtenio.io & Paket Virtenio VM yang berisi IO \\
+		com.virtenio.lib & Paket Virtenio VM yang berisi pengaturan classlib\\
+		com.virtenio.misc & Paket tambahan Virtenio VM \\
+		com.virtenio.net & \\
+		com.virtenio.vm & \\
+		com.virtenio.vm.event & Sistem event pada Virtenio VM untuk menangani event asynchronous dan synchronous \\
+		
+		\hline
+	\end{tabular} 
+\end{table}
+
+\begin{table}[H] %atau h saja untuk "kira kira di sini"
+	\centering 
+	\caption{Tabel Java Related Packages}
+	\label{tab:java_packages}
+	\begin{tabular}{|p{6cm}|p{10cm}|}
+		\hline
+		Package & Deksripsi \\
+
+		\hline
+		java.io & Paket Java IO \\
+		java.lang  & Paket Java lang \\
+		java.lang.annotation & Paket Annotation pada Java\\
+		java.lang.ref & \\
+		java.nio & \\
+		java.nio.channels & \\
+		java.text & Paket Java Text \\
+		java.util & Paket Java Utility yang berisi collection\\
+		java.util.regex & Paket Java Regular Expression\\
+		
+		\hline
+	\end{tabular} 
+\end{table}	
+
+\subsection{Pemrograman Pada Preon32}
+Pada subab ini akan dijelaskan bagaimana pemrograman pada Preon32 termasuk struktur file dan perintah-perintah yang digunakan pada ANT scripts. 
+
+Dalam melakukan pemrograman untuk Preon32 diperlukan lingkungan yang mendukung Bahasa Pemrograman Java seperti OpenJDK atau Java Development Kit. Untuk melakukan \textit{compile} dan \textit{transfer} aplikasi ke Preon32 harus menggunakan ANT scripts.
+\subsubsection{Struktur File Sandbox Preon32}
+Dalam membangun aplikasi pada Preon32, digunakan Sandbox yang sudah disediakan oleh Virtenio. Pembangunan aplikasi dilakukan pada Eclipse IDE. Sandbox ini terdiri dari \textit{file-file} dan \textit{folder-folder}. \textit{Folder-folder} tersebut memiliki tujuannya masing-masing. Struktur \textit{folder-folder} tersebut ditampilkan pada Gambar  \ref{fig:Sandbox-structure}.
+\begin{figure}[htbp]
+				\dirtree{%
+					.1 {Sandbox}.
+					.2 {bin} \ldots{} \begin{minipage}[t]{7cm}Digunakan Eclipse untuk \textit{binary files}{.}\end{minipage}.
+					.2 {build} \ldots{} \begin{minipage}[t]{7cm}Folder yang mengandung file-file dari hasil pembangunan \textit{project} dan akan diunggah ke Preon32{.}\end{minipage}.
+					.2 {config} \ldots{} \begin{minipage}[t]{7cm}Folder yang mengandung \textit{application context} dan \textit{properties files}{.} Pada folder ini dapat ditemukan beberapa context dan properties{.}\end{minipage}.
+					.3 {context1.properties}.
+					.3 {currentContext.properties}.
+					.3 {device.properties}.		
+					.2 {example} \ldots{} \begin{minipage}[t]{7cm}Folder yang mengandung contoh-contoh \textit{source code} untuk digunakan pada Preon32{.}\end{minipage}.
+					.2 {lib} \ldots{} \begin{minipage}[t]{6cm}Folder yang mengandung \textit{user libraries}{.}\end{minipage}.
+					.2 {license} \ldots{} \begin{minipage}[t]{7cm}Folder yang mengandung file-file lisensi{.} Lisensi ini diperlukan untuk melakukan pengembangan{.}\end{minipage}.
+					.2 {src} \ldots{} \begin{minipage}[t]{6cm}Folder yang mengandung file-file \textit{source code} dari aplikasi yang dibuat{.}\end{minipage}.
+					.2 {target} \ldots{} \begin{minipage}[t]{7cm}Folder yang mengandung file dengan fungsi spesifik seperti \textit{virtual machine} dan \textit{native runtime libraries} (\textit{rt} dan \textit{rtx}){.}\end{minipage}.
+					.2 {buildUser.xml} \ldots{} \begin{minipage}[t]{7cm}File ANTscript untuk menentukan perangkat mana yang sedang dilakukan konfigurasi {.}\end{minipage}.
+					.2 {build.xml} \ldots{} \begin{minipage}[t]{7cm}File yang mengandung ANTtarget{.} Target disini digunakan untuk melakukan interaksi antara Preon32 dengan Sandbox ini{.}\end{minipage}.
+					.2 {.classpath} \ldots{} \begin{minipage}[t]{7cm}File Classpath pada Eclipse{.}\end{minipage}.
+					.2 {.project} \ldots{} \begin{minipage}[t]{7cm}File Project yang digunakan pada Eclipse{.}\end{minipage}.	
+				}
+				\caption{Tampilan struktur folder pada Sandbox Preon32}
+				\label{fig:Sandbox-structure}
+\end{figure}
+
+\subsubsection{Pengaturan Build System Pada Sandbox}
+Pada bagian ini dijelaskan pengaturan dan adaptasi dari Sandbox. 
+\subparagraph{ANT script "build.xml"}
+Pada file "build.xml" ini terdapat beberapa fungsi-fungsi yang dapat digunakan saat membangun aplikasi Preon32. Fungsi-fungsi tersebut ditunjukan pada Tabel~\ref{tab:build_xml} :
+\begin{table}[H] %atau h saja untuk "kira kira di sini"
+	\centering 
+	\caption{Tabel Fungsi-Fungsi Yang Dapat Digunakan Pada File "puild.xml"}
+	\label{tab:build_xml}
+	\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline
+		Nama Fungsi & Nama Fungsi \\
+
+		\hline
+		.all & cmd.license.upload \\
+		.run  & cmd.module.run \\
+		boot.erase & cmd.module.upload\\
+		boot.firmware.upload & cmd.module.upload.run \\
+		boot.info & cmd.modules.list\\
+		boot.options.cmd.disable & cmd.properties.all\\
+		boot.options.cmd.enable & cmd.properties.clear \\
+		boot.options.modify.disable & cmd.properties.list\\
+		boot.options.modify.enable & cmd.properties.upload\\
+		boot.options.print & cmd.terminal.open\\
+		boot.options.read.protect & cmd.time.synchronize\\
+		boot.options.read.unprotect & devel.all\\
+		boot.options.reset & devel.clean\\
+		boot.options.wdg.disable & devel.compile\\
+		boot.options.wdg.enable & devel.jar\\
+		boot.options.write.protect & devel.proguard\\
+		boot.options.write.unprotect & devel.properties\\
+		boot.reset & devel.vmm\\
+		cmd.info & init\\
+		\hline
+	\end{tabular} 
+\end{table}	
+
+\subparagraph{ANT script "buildUser.xml"}
+ANT script "buildUser.xml" digunakan untuk memilih \textit{context} yang akan digunakan. \textit{Context} yang telah dipilih dapat menjalankan fungsi-fungsi yang terdapat pada Tabel~\ref{tab:build_xml}. Pada file "buildUser.xml" ini dapat dibuat \textit{context} baru sesuai yang diperlukan. Untuk membuat \textit{context} baru, perlu menambahkan Listing \ref{lst:new-context} dibawah \textit{context} yang sudah ada.
+\begin{lstlisting}[caption={Contoh membuat context baru},label={lst:new-context},language=xml]
+    <target name="context.set.1">
+        <switchContext to="config/context1.properties" />
+    </target>
+\end{lstlisting}
+
+\subparagraph{Pengaturan file pada direktori "config"} 
+Didalam direktori "config" terdapat 3 file awal:
+\begin{enumerate}
+	\item \textbf{context1.properties:} Mendeskripsikan context pertama (1). File "buildUser.xml" secara \textit{default} akan terhubung ke file ini.
+	\item \textbf{currentContext.properties:} File ini menunjuk pada context saat ini. Isi dari file ini dapat berubah secara otomatis saat mengganti context pada file "buildUser.xml"
+	\item \textbf{device.properties:} Pada file ini terdapat user properties.
+\end{enumerate}
+
+File paling penting pada direktori "config" adalah "context1.properties". Pada file ini terdapat pengaturan atau properties dari program yang dibuat. Properties penting dalam file ini antara lain:
+\begin{enumerate}
+	\item \textbf{mainClass.name = Prog.} Merupakan nama kelas utama yang digunakan dan akan di eksekusi.
+	\item \textbf{module.name = prog.} Merupakan nama dari sebuah modul yang telah dibuat. Modul yang dibuat dapat berjalan secara otomatis (\textit{autostart}) dengan menggunakan nama "autostart" pada module.name ini.
+	\item \textbf{target.dir = targets/Preon32.} Merupakan direktori yang berisi firmware sesuai dengan perangkat yang digunakan (Preon32).
+	\item \textbf{device.properties.file = config/device.properties.} Properties yang didefinisikan pada file ini dapat dibaca dalam aplikasi pengguna. 
+	\item \textbf{comport = COM10.} Merupakan \textit{port} mana yang terhubung dengan Preon32. 
+\end{enumerate}
+
+\section{Format Struktur Frame} %doc IEEE 802.15.4 page 79
+Berdasarkan Standard IEEE 802.15.4, Gambar~\ref{fig:frame_format_phy} adalah format dari struktur frame pada Physical Layer (PHY). Gambar~\ref{fig:frame_format_mac} adalah format dari struktur frame pada Medium Access Control (MAC) layer.
+
+\begin{figure} [htbp]
+	\centering  
+	\includegraphics[scale=0.73]{frame_format_phy}  
+	\caption[Struktur Frame Pada Physical Layer (PHY)]{Struktur Frame Pada Physical Layer (PHY)} 
+	\label{fig:frame_format_phy} 
+\end{figure} 
+
+\subsubsection{PHY Protocol Layer Data Unit (PPDU)} 
+PHY Protocol Layer Data Unit terdiri dari beberapa bagian yaitu:
+\begin{enumerate}
+    \item \textbf{Synchronization Header (SHR)}, Saat transfer data, SHR ini akan secara otomatis dihasilkan oleh \textit{microcontroller}. Sehingga pada \textit{frame buffer} akan terdiri dari PHR dan PSDU.
+    \item \textbf{PHY Header (PHR)}, PHY Header terdiri dari 1 byte untuk menunjukan panjang dari \textit{frame} tersebut.
+    \item \textbf{PHY Payload (PHY Service Data Unit, PSDU)}, PSDU memiliki panjang antara 0 sampai maksimal 127 byte dengan 2 byte akhir digunakan sebagai \textit{Frame Check Sequence} (FCS). Panjang dari PSDU ini ditentukan oleh PHR. Pada PSDU terdapat MAC Protocol Layer Data Unit (MPDU).
+\end{enumerate}
+
+\subsubsection{MAC Protocol Layer Data Unit (MPDU)} 
+\begin{figure} [H]
+	\centering  
+	\includegraphics[scale=0.91]{frame_format_mac}  
+	\caption[Struktur Frame Pada Medium Access Control (MAC) Layer]{Struktur Frame Pada Medium Access Control (MAC) Layer} 
+	\label{fig:frame_format_mac} 
+\end{figure} 
+
+MAC Protocol Layer Data Unit terdiri dari beberapa bagian yaitu:
+\begin{enumerate}
+    \item \textbf{Frame Control Field (FCF)}, terdiri dari 16 bit dan setiap bit memiliki fungsi yang berbeda-beda.
+    \item \textbf{Sequence Number}, terdiri dari 1 byte untuk mendeteksi duplikasi \textit{frame}.
+    \item \textbf{Addressing Fields}, terdiri dari alamat - alamat yang diperlukan untuk melakukan transfer data. Alamat - alamat ini antara lain \textit{Destination PAN ID}, \textit{Destination Address}, \textit{Source PAN ID}, dan \textit{Source Address}.
+    \item \textbf{MAC Payload}, merupakan data yang akan dikirimkan dari node sensor ke node sensor lain.
+    \item \textbf{Frame Check Sequence (FCS)}, merupakan \textit{checksum} untuk memastikan \textit{bit error} atau redudansi data.
+\end{enumerate}

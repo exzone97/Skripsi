@@ -5,14 +5,13 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-\textit{Wireless Sensor Network} (WSN) adalah suatu jaringan nirkabel yang terdiri dari kumpulan node sensor dengan kemampuan \textit{sensing}, komputasi, dan komunikasi yang tersebar pada suatu tempat. Setiap sensor akan mengumpulkan data dari area yang dideteksi seperti temperatur, suara, getaran, tekanan, gerakan, kelembaban udara dan deteksi lainnya tergantung kemampuan sensor tersebut. Data yang diterima ini kemudian akan diteruskan ke \textit{base station} untuk diolah sehingga memberikan suatu informasi. WSN dapat diimplementasikan pada berbagai bidang kehidupan manusia diantaranya bidang militer untuk deteksi musuh, bidang pertanian untuk pemantauan pertumbuhan tanaman, bidang kesehatan, deteksi bahaya dan bencana alam, bidang pembangunan dan tata kota, dan bidang pendidikan.
+\textit{Wireless Sensor Network} (WSN) adalah suatu jaringan nirkabel yang terdiri dari kumpulan node sensor dengan kemampuan \textit{sensing}, komputasi, dan komunikasi yang tersebar pada suatu tempat. Setiap sensor akan mengumpulkan data dari area yang dideteksi seperti suhu, suara, getaran, tekanan, gerakan, kelembaban udara dan deteksi lainnya tergantung kemampuan sensor tersebut. Data yang diterima ini kemudian akan diteruskan ke \textit{base station} untuk diolah sehingga memberikan suatu informasi. WSN dapat diimplementasikan pada berbagai bidang kehidupan manusia diantaranya bidang militer untuk deteksi musuh, bidang pertanian untuk pemantauan pertumbuhan tanaman, bidang kesehatan, deteksi bahaya dan bencana alam, bidang pembangunan dan tata kota, dan bidang pendidikan.
 
-Terdapat dua macam arsitektur WSN, yaitu hierarki dan flat. Pada arsitektur hierarki, node sensor akan disusun secara berkelompok (\textit{cluster}) dan terdapat node sensor yang memiliki peran sebagai \textit{cluster head}. \textit{Cluster head} berfungsi untuk mengumpulkan data dari node sensor pada suatu \textit{cluster} dan mengirimkan data tersebut ke \textit{base station}. Sedangkan pada arsitektur flat hanya terdapat dua macam node sensor secara fungsional, yaitu \textit{source node} dan \textit{sink node}. Setiap node sensor (\textit{source node}) akan mengirim data ke satu tujuan akhir yaitu \textit{sink node} atau \textit{base station}. Pada arsitektur flat data dari sebuah node sensor dapat diteruskan ke node tetangganya dan seterusnya hingga sampai ke \textit{base station}.
+Terdapat dua macam arsitektur WSN, yaitu hierarki dan flat. Pada arsitektur hierarki, node sensor akan disusun secara berkelompok (\textit{cluster}) dan terdapat node sensor yang memiliki peran sebagai \textit{cluster head}. \textit{Cluster head} berfungsi untuk mengumpulkan data dari node sensor pada suatu \textit{cluster} dan mengirimkan data tersebut ke \textit{base station}. Sedangkan pada arsitektur flat hanya terdapat dua macam node sensor secara fungsional, yaitu \textit{source node} dan \textit{sink node}. Setiap node sensor (\textit{source node}) akan mengirim data ke satu tujuan akhir yaitu \textit{sink node} atau \textit{base station}. Pada arsitektur flat, data dari sebuah node sensor dapat diteruskan ke node tetangganya dan seterusnya hingga sampai ke \textit{base station} (\textit{single-hop}) dan langsung dari node sensor ke \textit{base station} (\textit{multi-hop}).
 
 Dalam praktiknya, pengiriman data merupakan suatu hal yang penting pada WSN. Data yang didapat dari sensor harus sampai ke \textit{base station} dengan utuh dan akurat (\textit{reliable}). Data yang \textit{reliable} ini sangat penting karena hasil pengukuran dan tindakan selanjutnya yang akan diambil akan bergantung pada data-data tersebut. Terdapat beberapa protokol untuk memastikan transfer data \textit{reliable} yaitu dengan protokol \textit{Event to Sink Reliable Transport},\textit{Reliable Multi Segment Transport}, \textit{Price Oriented Reliable Transport}, \textit{Delay Sensitive Transport}, dan lain-lain.
 
-Pada skripsi ini dibangun aplikasi untuk transfer data pada WSN. Aplikasi WSN yang dibuat juga dapat melakukan transfer data ke node sensor tetangganya hingga sampai ke node sensor yang berperan sebagai \textit{base station}. Karena data yang akurat sangat dibutuhkan untuk menentukan tindakan selanjutnya, maka akan dibangun juga WSN yang memiliki sifat \textit{reliable}.
-
+Pada skripsi ini dibangun aplikasi untuk transfer data pada WSN. Aplikasi WSN yang dibuat dapat melakukan transfer data ke node sensor tetangganya hingga sampai ke node sensor yang berperan sebagai \textit{base station} dengan \textit{single-hop} dan \textit{multi-hop}. Karena data yang akurat sangat dibutuhkan untuk menentukan tindakan selanjutnya. Data yang lengkap juga membantu dalam melihat riwayat kejadian pada suatu tempat. Oleh karena itu dibangun juga aplikasi WSN yang memiliki sifat \textit{reliable}.
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
@@ -31,8 +30,9 @@ Pada skripsi ini dibangun aplikasi untuk transfer data pada WSN. Aplikasi WSN ya
 \label{sec:batasan}
 Penelitian ini dibuat berdasarkan batasan-batasan sebagai berikut:
 \begin{enumerate}
-	\item Sensor yang digunakan sebagai penelitian hanya sensor untuk mengukur temperatur, kelembapan, getaran, dan tekanan udara.
-	\item Arsitektur yang digunakan untuk membangun \textit{Wireless Sensor Network} ini adalah flat dan hirarkikal dengan multi-hop.
+	\item Sensor yang digunakan sebagai penelitian hanya sensor untuk mengukur suhu, kelembaban udara, dan getaran.
+	\item Arsitektur yang digunakan untuk membangun \textit{Wireless Sensor Network} ini adalah arsitektur flat dengan \textit{single-hop} dan \textit{multi-hop}.
+	\item Fokus utama penelitian ini adalah membangun aplikasi transfer data yang \textit{reliable} sehingga tidak menghitung konsumsi energi WSN.
 \end{enumerate}
 
 \section{Metodologi}
@@ -41,12 +41,12 @@ Berikut adalah metode penelitian yang digunakan dalam penelitan ini:
 \begin{enumerate}
 	\item Melakukan studi literatur mengenai \textit{Wireless Sensor Network}.
 	\item Mempelajari protokol transfer data yang biasa pada \textit{Wireless Sensor Network}.
-	\item Mempelajari prinsip \textit{Reliable Data Transfer} pada \textit{Wireless Sensor Network}.	
+	\item Mempelajari prinsip \textit{Reliable Data Transfer} yang dapat digunakan pada \textit{Wireless Sensor Network}.	
 	\item Mempelajari pemrograman pada \textit{Wireless Sensor Network} dengan Bahasa Pemrograman JAVA.
 	\item Melakukan perancangan perangkat lunak.
 	\item Mengimplementasi rancangan perangkat lunak pada \textit{Wireless Sensor Network}.
+	\item Melakukan pengujian aplikasi terkait \textit{reliability} dalam pengiriman data.
 \end{enumerate}
-
 
 \section{Sistematika Pembahasan}
 \label{sec:sispem}
@@ -54,10 +54,9 @@ Setiap bab dalam penelitian ini memiliki sistematika penulisan yang dijelaskan k
 
 \begin{enumerate}
 	\item Bab 1: Pendahuluan yaitu membahas mengenai gambaran umum penelitian ini. Berisi tentang latar belakang, rumusan masalah, tujuan, batasan masalah, metode penelitian, dan sistematika penulisan.
-	\item Bab 2: Dasar Teori, yaitu membahas teori-teori yang mendukung berjalannya penelitian ini. Berisi tentang \textit{Wireless Sensor Network}, Reliable Data Transfer di WSN, dan PreonVM.
-	\item Bab 3: Analisis, yaitu membahas mengenai analisis masalah. Berisi tentang analisis pengiriman data dari node sensor ke base station pada WSN, analisis protokol yang reliable saat melakukan pengiriman data dari node sensor ke base station pada WSN, dan analisis aplikasi pengiriman data pada WSN.
-	\item Bab 4: Perancangan, yaitu membahas perancangan aplikasi WSN yang reliable untuk pengiriman data
+	\item Bab 2: Dasar Teori, yaitu membahas teori-teori yang mendukung berjalannya penelitian ini. Berisi tentang \textit{Wireless Sensor Network}, Reliable Data Transfer di WSN, PreonVM, dan Format Struktur Frame.
+	\item Bab 3: Analisis, yaitu membahas mengenai analisis masalah. Berisi tentang analisis aplikasi pengiriman data pada WSN, analisis proses pengiriman data dari node sensor ke \textit{base station} pada WSN, dan analisis terhadap protokol transfer yang \textit{reliable} pada \textit{Wireless Sensor Network}.
+	\item Bab 4: Perancangan, yaitu membahas perancangan aplikasi WSN yang reliable untuk pengiriman data. Berisi tentang perancangan interaksi antar node untuk transfer data di WSN, perancangan kelas aplikasi transfer data di WSN, perancangan masukan dan keluaran, perancangan pseudocode aplikasi transfer data yang reliable, perancangan routing pada aplikasi transfer data, dan perancangan format pesan.
 	\item Bab 5: Implementasi dan Pengujian, yaitu membahas implementasi dari hasil rancangan dan pengujian dari aplikasi WSN yang telah dibuat.
-	\item Bab 6: Kesimpulan, yaitu membahas kesimpulan dari hasil pengujian.
+	\item Bab 6: Kesimpulan, yaitu membahas kesimpulan dari hasil pengujian dan saran untuk pengembangan selanjutnya.
 \end{enumerate}
-	

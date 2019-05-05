@@ -68,6 +68,20 @@
 \usepackage{xstring}%manipulasi string, strchar, ifstreq
 \usepackage[table]{xcolor}%untuk kode program
 \usepackage{pgffor}% untuk foreach
+\usepackage{dirtree}% untuk dirtree
+\usepackage{gensymb}
+\usepackage{csvsimple}
+\usepackage{multirow}
+
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{amsmath}
+
+
+\titleformat{\subparagraph}
+    {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+\titlespacing*{\subparagraph}{\parindent}{3.25ex plus 1ex minus .2ex}{.75ex plus .1ex}
+
 
 \newcommand{\vtemplateauthor}{lionov}
 \newcommand{\dtext}[1]{{\color{lightgray} \lipsum[#1]}}%command untuk dummy text
@@ -254,7 +268,7 @@
 		{\Large \textbf{
 		\vstaINA\\\vspace{1.5cm}
 		\vjudulINA\\\vspace{2.5cm}
-		\includegraphics{Logo-UNPAR}\\\vspace{1cm}
+		\includegraphics{Gambar/logo-unpar.png}\\\vspace{1cm}
 		\uppercase{\vnama}\\\vspace{0.5cm}
 		NPM: \vnpm\\
 		\vfill
@@ -273,7 +287,7 @@
 		{\Large \textbf{
 		\vstaENG\\\vspace{1.5cm}
 		\vjudulENG\\\vspace{2.5cm}
-		\includegraphics{Logo-UNPAR}\\\vspace{1cm}
+		\includegraphics{Gambar/logo-unpar.png}\\\vspace{1cm}
 		\uppercase{\vnama}\\\vspace{0.5cm}
 		NPM: \vnpm \\
 		\vfill
@@ -409,6 +423,14 @@
  
 \pagestyle{fancy}%header 
 
+%listing khusus untuk penulisan kode program, menggunakan font Bera Mono
+\lstset{numbers=left,stepnumber=1, numbersep=5pt, frame=leftline,
+	tabsize=4, breaklines=true, basicstyle=\fontfamily{fvm}\selectfont\tiny, 
+	commentstyle=\itshape\color{gray}, keywordstyle=\bfseries\color{blue}, 
+	identifierstyle=\color{black}, stringstyle=\color{orange},
+	literate={-}{-}1{-\,-}{--}1
+} 
+
 %include bab 
 \foreach \i in \vbab { \edef\vfile{Bab/bab\i} \IfFileExists{\vfile}{\include{\vfile}}} 
 
@@ -421,14 +443,6 @@
 
 \bibliographystyle{compj} %gunakan compj 
 \bibliography{referensi}
-
-%listing khusus untuk penulisan kode program, menggunakan font Bera Mono
-\lstset{numbers=left,stepnumber=1, numbersep=5pt, frame=leftline,
-	tabsize=4, breaklines=true, basicstyle=\fontfamily{fvm}\selectfont\tiny, 
-	commentstyle=\itshape\color{gray}, keywordstyle=\bfseries\color{blue}, 
-	identifierstyle=\color{black}, stringstyle=\color{orange},
-	literate={-}{-}1{-\,-}{--}1
-} 
 
 \appendix%Penomoran lampiran dengan huruf  
 
